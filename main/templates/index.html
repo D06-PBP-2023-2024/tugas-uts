@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
-{% block 'content' %}
-<h1>Kindle Kids</h1>
-{% endblock 'content' %}
+
+{% block content %}
+    <h1>Kindle Kids</h1>
+    {% for book in books %}
+        <p>{{book.title}}</p>
+    {% endfor %}
+{% endblock content %}
