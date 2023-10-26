@@ -4,7 +4,21 @@
     <title>Daftar Diskusi</title>
 </head>
 <body>
-    <h1>Daftar Diskusi</h1>
+    <h1>Reading Forum</h1>
+
+    <!-- Tambahkan tombol "Create Post" -->
+    <a href="{% url 'create_discussion' %}" class="btn btn-primary">Create Post</a>
+
+    <!-- Tambahkan form untuk memilih opsi sorting -->
+    <form method="get">
+        <label for="sort_by">Sort by:</label>
+        <select name="sort_by" id="sort_by">
+            <option value="newest" {% if sort_by == "newest" %}selected{% endif %}>Newest</option>
+            <option value="oldest" {% if sort_by == "oldest" %}selected{% endif %}>Oldest</option>
+        </select>
+        <button type="submit">Sort</button>
+    </form>
+
     <ul>
         {% for discussion in discussions %}
             <li><a href="{% url 'discussion_detail' discussion.id %}">{{ discussion.title }}</a></li>

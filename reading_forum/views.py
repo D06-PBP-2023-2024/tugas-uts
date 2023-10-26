@@ -3,7 +3,18 @@ from .models import Discussion, Reply
 from .forms import DiscussionForm, ReplyForm
 from django.contrib.auth.decorators import login_required
 
+
 def discussion_list(request):
+    sort_by = request.GET.get('sort_by', 'newest')  # Ambil parameter 'sort_by' dari URL
+
+    if sort_by == 'oldest':
+        discussions = Discussion.objects.order_by('created_at')
+    else:
+        discussions = Discussion.objects.order_by('-created_at')  # Default: urutkan berdasarkan yang terbaru
+
+    return render(request, 'discussion_list.html', {'discussions': discussions, 'sort_by': sort_by})
+
+
     discussions = Discussion.objects.all()
     return render(request, 'discussion_list.html', {'discussions': discussions})
 
@@ -23,7 +34,7 @@ def discussion_detail(request, discussion_id):
 
     return render(request, 'discussion_detail.html', {'discussion': discussion, 'replies': replies, 'reply_form': reply_form})
 
-
+@login_required
 def create_discussion(request):
     if request.method == 'POST':
         discussion_form = DiscussionForm(request.POST)
@@ -37,7 +48,7 @@ def create_discussion(request):
 
     return render(request, 'discussion_form.html', {'discussion_form': discussion_form})
 
-
+@login_required
 def create_reply(request, discussion_id):
     discussion = Discussion.objects.get(pk=discussion_id)
 
