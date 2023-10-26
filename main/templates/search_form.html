@@ -13,4 +13,62 @@
 
 <a href="{% url "main:group_tags" %}">Group by Tags</a>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Search by AJAX
+</button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Search by AJAX</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="searchAJAX" method="POST" onsubmit="return false;">
+                {% csrf_token %}
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title">
+                <br>
+                <label for="tags">Tags</label>
+                <input type="text" id="tags" name="tags">
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary search-button">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="result"></div>
+
+
+<script>
+    async function searchProduct() {
+      fetch("{% url 'main:search_result_ajax' %}", {
+        method: "POST",
+        body: new FormData(document.querySelector("#searchAJAX"))
+      })
+      .then(response => response.json())
+      .then(data => {
+        let text = `<h2>Result</h2>`
+        if (data.books != "[]") {
+          let books = JSON.parse(data.books)
+          books.forEach((item) => {
+            text += `${item.fields.title}<br>`
+          })
+        } else {
+          text += `<p>No book(s) was found</p>`
+        }
+        document.querySelector(".result").innerHTML = text;
+      })
+    }
+
+    document.querySelector(".search-button").onclick = searchProduct;
+</script>
+
 {% endblock content %}
