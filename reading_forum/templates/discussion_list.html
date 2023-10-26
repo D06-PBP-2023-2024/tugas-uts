@@ -8,14 +8,14 @@
             Filter
         </button>
         <div class="dropdown-menu" aria-labelledby="filterDropdown">
-            <a class="dropdown-item" href="{% url 'discussion_list' %}">Semua Post</a>
-            <a class="dropdown-item" href="{% url 'discussion_list' %}?filter_by=replies">Dengan Balasan</a>
-            <a class="dropdown-item" href="{% url 'discussion_list' %}?filter_by=noreplies">Tanpa Balasan</a>
+            <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}">Semua Post</a>
+            <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}?filter_by=replies">Dengan Balasan</a>
+            <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}?filter_by=noreplies">Tanpa Balasan</a>
         </div>
         
     </div>
 
-    <form method="GET" action="{% url 'create_discussion' %}">
+    <form method="GET" action="{% url 'reading_forum:create_discussion' %}">
         <button type="submit" class="btn btn-primary">Buat Post</button>
     </form>
     
@@ -32,7 +32,7 @@
             {% for discussion in discussions %}
                 <tr>
                     <td>
-                        <a href="{% url 'discussion_detail' discussion.id %}">{{ discussion.title }}</a>
+                        <a href="{% url 'reading_forum:discussion_detail' discussion.id %}">{{ discussion.title }}</a>
                     </td>
                     <td>{{ discussion.created_at|date:"F j, Y H:i" }}</td>
                     <td>{{ discussion.reply_set.count }}</td>
