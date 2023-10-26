@@ -56,7 +56,7 @@
       .then(response => response.json())
       .then(data => {
         let text = `<h2>Result</h2>`
-        if (data.books != "[]") {
+        if (data.books != "[]" && data.books != null) {
           let books = JSON.parse(data.books)
           books.forEach((item) => {
             text += `${item.fields.title}<br>`
