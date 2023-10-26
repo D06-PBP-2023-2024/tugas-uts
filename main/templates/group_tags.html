@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Books by Tag</h1>
+    {% for tag_subject, books in books_by_tag.items %}
+    <h2>{{ tag_subject }}</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author.name }}</li>
+        {% empty %}
+            <li>No books found with this tag.</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+
+{% endblock content %}
