@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulir Pembuatan Balasan</title>
+</head>
+<body>
+    <h1>Formulir Pembuatan Balasan</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ reply_form.as_p }}
+        <button type="submit">Balas</button>
+    </form>
+</body>
+</html>

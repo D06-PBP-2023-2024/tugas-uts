@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail Diskusi</title>
+</head>
+<body>
+    <h1>{{ discussion.title }}</h1>
+    <p>{{ discussion.content }}</p>
+    <h2>Daftar Balasan</h2>
+    <ul>
+        {% for reply in replies %}
+            <li>{{ reply.content }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Balas Diskusi</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ reply_form.as_p }}
+        <button type="submit">Balas</button>
+    </form>
+</body>
+</html>

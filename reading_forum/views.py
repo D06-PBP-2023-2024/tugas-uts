@@ -4,7 +4,7 @@ from .forms import DiscussionForm, ReplyForm
 
 def discussion_list(request):
     discussions = Discussion.objects.all()
-    return render(request, 'discussion_list.html', {'discussions': discussions})
+    return render(request, 'forum_page.html', {'discussions': discussions})
 
 def discussion_detail(request, discussion_id):
     discussion = Discussion.objects.get(id=discussion_id)
@@ -18,7 +18,7 @@ def discussion_detail(request, discussion_id):
             new_reply.user = request.user  # Set the user as the current logged-in user
             new_reply.discussion = discussion
             new_reply.save()
-            return redirect('discussion_detail', discussion_id=discussion_id)
+            return redirect('forum_detail', discussion_id=discussion_id)
 
     return render(request, 'discussion_detail.html', {'discussion': discussion, 'replies': replies, 'reply_form': reply_form})
 

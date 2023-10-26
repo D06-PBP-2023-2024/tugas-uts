@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Diskusi</title>
+</head>
+<body>
+    <h1>Daftar Diskusi</h1>
+    <ul>
+        {% for discussion in discussions %}
+            <li><a href="{% url 'discussion_detail' discussion.id %}">{{ discussion.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
