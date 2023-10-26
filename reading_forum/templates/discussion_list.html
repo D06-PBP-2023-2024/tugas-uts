@@ -1,28 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Daftar Diskusi</title>
-</head>
-<body>
-    <h1>Reading Forum</h1>
+{% extends "base.html" %}
 
-    <!-- Tambahkan tombol "Create Post" -->
-    <a href="{% url 'create_discussion' %}" class="btn btn-primary">Create Post</a>
+{% block content %}
+    <h1>Daftar Diskusi</h1>
 
-    <!-- Tambahkan form untuk memilih opsi sorting -->
-    <form method="get">
-        <label for="sort_by">Sort by:</label>
-        <select name="sort_by" id="sort_by">
-            <option value="newest" {% if sort_by == "newest" %}selected{% endif %}>Newest</option>
-            <option value="oldest" {% if sort_by == "oldest" %}selected{% endif %}>Oldest</option>
-        </select>
-        <button type="submit">Sort</button>
+    <div class="dropdown">
+        <button id="filterDropdown" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Filter
+        </button>
+        <div class="dropdown-menu" aria-labelledby="filterDropdown">
+            <a class="dropdown-item" href="{% url 'discussion_list' %}">Semua Post</a>
+            <a class="dropdown-item" href="{% url 'discussion_list' %}?filter_by=replies">Dengan Balasan</a>
+            <a class="dropdown-item" href="{% url 'discussion_list' %}?filter_by=noreplies">Tanpa Balasan</a>
+        </div>
+        
+    </div>
+
+    <form method="GET" action="{% url 'create_discussion' %}">
+        <button type="submit" class="btn btn-primary">Buat Post</button>
     </form>
-
-    <ul>
-        {% for discussion in discussions %}
-            <li><a href="{% url 'discussion_detail' discussion.id %}">{{ discussion.title }}</a></li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Judul Post</th>
+                <th scope="col">Tanggal Post Dibuat</th>
+                <th scope="col">Replies</th>
+                <th scope="col">Last Reply</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for discussion in discussions %}
+                <tr>
+                    <td>
+                        <a href="{% url 'discussion_detail' discussion.id %}">{{ discussion.title }}</a>
+                    </td>
+                    <td>{{ discussion.created_at|date:"F j, Y H:i" }}</td>
+                    <td>{{ discussion.reply_set.count }}</td>
+                    <td>
+                        {% if discussion.reply_set.all %}
+                            {{ discussion.reply_set.last.user.username }}
+                            <br>
+                            {{ discussion.reply_set.last.created_at|date:"F j, Y H:i" }}
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

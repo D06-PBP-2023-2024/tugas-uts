@@ -3,20 +3,25 @@ from .models import Discussion, Reply
 from .forms import DiscussionForm, ReplyForm
 from django.contrib.auth.decorators import login_required
 
+from django.shortcuts import render, redirect
+from .models import Discussion, Reply
+from .forms import DiscussionForm, ReplyForm
+from django.contrib.auth.decorators import login_required
+
+from django.db.models import Count
 
 def discussion_list(request):
-    sort_by = request.GET.get('sort_by', 'newest')  # Ambil parameter 'sort_by' dari URL
+    filter_by = request.GET.get('filter_by', 'all')  # Ambil parameter 'filter_by' dari URL
 
-    if sort_by == 'oldest':
-        discussions = Discussion.objects.order_by('created_at')
+    if filter_by == 'replies':
+        discussions = Discussion.objects.annotate(num_replies=Count('reply')).filter(num_replies__gt=0)
+    elif filter_by == 'noreplies':
+        discussions = Discussion.objects.annotate(num_replies=Count('reply')).filter(num_replies=0)
     else:
-        discussions = Discussion.objects.order_by('-created_at')  # Default: urutkan berdasarkan yang terbaru
+        discussions = Discussion.objects.all()  # default
 
-    return render(request, 'discussion_list.html', {'discussions': discussions, 'sort_by': sort_by})
+    return render(request, 'discussion_list.html', {'discussions': discussions, 'filter_by': filter_by})
 
-
-    discussions = Discussion.objects.all()
-    return render(request, 'discussion_list.html', {'discussions': discussions})
 
 def discussion_detail(request, discussion_id):
     discussion = Discussion.objects.get(id=discussion_id)
@@ -27,7 +32,7 @@ def discussion_detail(request, discussion_id):
         reply_form = ReplyForm(request.POST)
         if reply_form.is_valid():
             new_reply = reply_form.save(commit=False)
-            new_reply.user = request.user  # Set the user as the current logged-in user
+            new_reply.user = request.user  
             new_reply.discussion = discussion
             new_reply.save()
             return redirect('discussion_detail', discussion_id=discussion_id)
@@ -40,7 +45,7 @@ def create_discussion(request):
         discussion_form = DiscussionForm(request.POST)
         if discussion_form.is_valid():
             new_discussion = discussion_form.save(commit=False)
-            new_discussion.user = request.user  # Set the user as the current logged-in user
+            new_discussion.user = request.user  
             new_discussion.save()
             return redirect('discussion_list')
     else:
@@ -63,3 +68,21 @@ def create_reply(request, discussion_id):
 
     return redirect('discussion_list')
 
+def reply_form(request, discussion_id):
+    discussion = Discussion.objects.get(pk=discussion_id)
+    reply_form = ReplyForm()
+
+    if request.method == 'POST':
+        reply_form = ReplyForm(request.POST)
+        if reply_form.is_valid():
+            new_reply = reply_form.save(commit=False)
+            new_reply.user = request.user
+            new_reply.discussion = discussion
+            new_reply.save()
+            return redirect('discussion_detail', discussion_id=discussion_id)
+    
+    context = {
+        'discussion': discussion,
+        'reply_form': reply_form,
+    }
+    return render(request, 'reply_form.html', context)
