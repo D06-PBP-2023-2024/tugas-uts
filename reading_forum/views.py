@@ -79,7 +79,7 @@ def reply_form(request, discussion_id):
             new_reply.user = request.user
             new_reply.discussion = discussion
             new_reply.save()
-            return redirect('discussion_detail', discussion_id=discussion_id)
+            return redirect('reading_forum:discussion_detail', discussion_id=discussion_id)
     
     context = {
         'discussion': discussion,
