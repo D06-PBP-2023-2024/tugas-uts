@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulir Pembuatan Diskusi</title>
+</head>
+<body>
+    <h1>Formulir Pembuatan Diskusi</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ discussion_form.as_p }}
+        <button type="submit">Buat Diskusi</button>
+    </form>
+</body>
+</html>
