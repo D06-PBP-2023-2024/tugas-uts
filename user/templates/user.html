@@ -1,7 +1,96 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-    <nav class="navbar navbar-light bg-light">
-        <h1 class="">User</h1>
-    </nav>
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/user.css' %}">
+
+<div style="margin: 35px;">
+    <div style="display: flex;">
+        <nav class="card shadow" style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 35%; height: auto; text-wrap: wrap;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" viewBox="0 0 16 16"
+                style="margin: 20px 15px 5px 15px;">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+            <div style="display: flex; flex-direction: column; margin-top: 10px;">
+                <h3>First Last</h3>
+                <h5 style="opacity: 0.7; margin-bottom: 20px;">username</h5>
+            </div>
+        </nav>
+
+        <div style="width: 100%; margin-left: 30px; padding: 20px;" class="card shadow">
+            <div class="row" style="margin-bottom: -10px;">
+                <div class="col-sm-3">
+                    <h6>Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    email
+                </div>
+            </div>
+            <hr>
+            <div class="row" style="margin-bottom: -10px;">
+                <div class="col-sm-3">
+                    <h6>Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    email
+                </div>
+            </div>
+            <hr>
+            <div class="row" style="margin-bottom: -10px;"">
+                <div class="col-sm-3">
+                    <h6>Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    email
+                </div>
+            </div>
+            <hr>
+            <div class="row" style="margin-bottom: -10px;">
+                <div class="col-sm-3">
+                    <h6>Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    email
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="margin-top: 30px; display: flex; flex-direction: row;">
+        <div class="card shadow" style="width: 50%; margin-right: 15px; padding: 20px 20px 10px 20px;">
+            <h5 style="margin-bottom: 15px;">Like</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <h6 class="mb-0">Judul Buku</h6>
+                </li>
+                <li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <h6 class="mb-0">Judul Buku</h6>
+                </li>
+                <li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <h6 class="mb-0">Judul Buku</h6>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card shadow" style="width: 50%; margin-left: 15px; padding: 20px 20px 10px 20px;">
+            <h5 style="margin-bottom: 15px;">Comment</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <h6 class="mb-0">Comment</h6>
+                </li>
+                <li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <h6 class="mb-0">Comment</h6>
+                </li>
+                <li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <h6 class="mb-0">Comment</h6>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+
 {% endblock content %}
