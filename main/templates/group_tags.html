@@ -2,6 +2,7 @@
 {% block content %}
 
 <h1>Books by Tag</h1>
+<a href="{% url "main:search_form" %}">Go Back</a>
     {% for tag_subject, books in books_by_tag.items %}
     <h2>{{ tag_subject }}</h2>
     <ul>
