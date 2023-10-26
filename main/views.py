@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.urls import reverse
 from main.models import Book, Tag
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def show_main(request):
@@ -12,14 +13,29 @@ def show_main(request):
 
     return render(request, 'index.html', context)
 
-def title_search(request, title):
-    books = Book.objects.filter(title__contains=title)
+def search_result(request):
+    title = request.POST.get("title")
+    tags = request.POST.get("tags")
+
+    if tags != "":
+        tag = Tag.objects.get(subject=tags)
+
+    books = None
+   
+    if title != "":
+        books = Book.objects.filter(title__contains=title)
+    if books is None and tags != "":
+        books = Book.objects.filter(tags=tag)
+    elif books and tags != "":
+        books = books.filter(tags=tag)
     
     context = {
         'books': books,
+        'title': title,
+        'tags': tags,
     }
 
-    return render(request, 'title.html', context)
+    return render(request, 'result.html', context)
 
 def group_tags(request):
     tags = Tag.objects.all()
@@ -36,4 +52,8 @@ def group_tags(request):
 
     return render(request, 'group_tags.html', context)
 
-    
+def search_form(request):
+
+    context = {}
+
+    return render(request, 'search_form.html', context)
