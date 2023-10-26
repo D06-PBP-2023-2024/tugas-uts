@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpRequest, HttpResponse
-from django.core import serializers
 from main.models import Book, Tag
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse, HttpRequest
+from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
+import django.core.serializers as serializers
 
 # Create your views here.
 def index(request: HttpRequest):
@@ -31,14 +32,28 @@ def get_books(request: HttpRequest):
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")
 
 
-def title_search(request, title):
-    books = Book.objects.filter(title__contains=title)
+def search_result(request):
+    title = request.POST.get("title")
+    tags = request.POST.get("tags")
+
+    if tags != "":
+        tag = Tag.objects.filter(subject__contains=tags).first()
+
+    books = None
+    if title != "":
+        books = Book.objects.filter(title__contains=title)
+    if books is None and tags != "" and tag is not None:
+        books = Book.objects.filter(tags=tag)
+    elif books and tags != "" and tag is not None:
+        books = books.filter(tags=tag)
     
     context = {
         'books': books,
+        'title': title,
+        'tags': tags,
     }
 
-    return render(request, 'title.html', context)
+    return render(request, 'result.html', context)
 
 def group_tags(request):
     tags = Tag.objects.all()
@@ -56,3 +71,33 @@ def group_tags(request):
     return render(request, 'group_tags.html', context)
 
     
+def search_form(request):
+    context = {}
+    return render(request, 'search_form.html', context)
+
+@csrf_exempt
+def search_result_ajax(request):
+    title = request.POST.get("title")
+    tags = request.POST.get("tags")
+
+    if tags != "":
+        tag = Tag.objects.filter(subject__contains=tags).first()
+
+    books = None
+    if title != "":
+        books = Book.objects.filter(title__contains=title)
+    if books is None and tags != "" and tag is not None:
+        books = Book.objects.filter(tags=tag)
+    elif books and tags != "" and tag is not None:
+        books = books.filter(tags=tag)
+
+    if books is not None:
+        books = serializers.serialize('json', books)
+    
+    context = {
+        'books': books,
+        'title': title,
+        'tags': tags,
+    }
+
+    return JsonResponse(context)
