@@ -1,23 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Detail Diskusi</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
     <h1>{{ discussion.title }}</h1>
+    <p>{{ discussion.user.username }}</p>
+    <p>{{ discussion.created_at|date:"F j, Y H:i" }}</p>
     <p>{{ discussion.content }}</p>
-    
+</div>
     <h2>Daftar Balasan</h2>
-    <ul>
-        {% for reply in replies %}
-            <li>{{ reply.content }}</li>
-        {% endfor %}
-    </ul>
-    <h2>Balas Diskusi</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ reply_form.as_p }}
-        <button type="submit">Balas</button>
+
+    <h4>Reply</h4>
+    <form method="get" action="{% url 'reading_forum:reply_form' discussion.id %}">
+        <button type="submit" class="btn btn-primary">Reply</button>
     </form>
-</body>
-</html>
+
+    <div class="row mx-1">
+        {% for reply in replies %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ reply.user.username }}</h5>
+                    <h6 class="card-subtitle text-muted">{{ reply.created_at|date:"F j, Y H:i" }}</h6>
+                    <p class="card-text">{{ reply.content }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

@@ -1,17 +1,53 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    <title>Daftar Diskusi</title>
-</head>
+{% block content %}
+<h1>Daftar Diskusi</h1>
 
-<body>
-    <h1>Daftar Diskusi</h1>
-    <ul>
+<div class="dropdown">
+    <button id="filterDropdown" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Filter
+    </button>
+    <div class="dropdown-menu" aria-labelledby="filterDropdown">
+        <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}">Semua Post</a>
+        <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}?filter_by=replies">Dengan Balasan</a>
+        <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}?filter_by=noreplies">Tanpa Balasan</a>
+    </div>
+
+</div>
+
+<form method="GET" action="{% url 'reading_forum:create_discussion' %}">
+    <button type="submit" class="btn btn-primary">Buat Post</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Judul Post</th>
+            <th scope="col">Tanggal Post Dibuat</th>
+            <th scope="col">Replies</th>
+            <th scope="col">Last Reply</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for discussion in discussions %}
-        <li><a href="{% url 'reading_forum:discussion_detail' discussion.id %}">{{ discussion.title }}</a></li>
+        <tr>
+            <td>
+                <a href="{% url 'reading_forum:discussion_detail' discussion.id %}">{{ discussion.title }}</a>
+            </td>
+            <td>{{ discussion.created_at|date:"F j, Y H:i" }}</td>
+            <td>{{ discussion.reply_set.count }}</td>
+            <td>
+                {% if discussion.reply_set.all %}
+                {{ discussion.reply_set.last.user.username }}
+                <br>
+                {{ discussion.reply_set.last.created_at|date:"F j, Y H:i" }}
+                {% else %}
+                N/A
+                {% endif %}
+            </td>
+        </tr>
         {% endfor %}
-    </ul>
-</body>
-
-</html>
+    </tbody>
+</table>
+{% endblock %}
