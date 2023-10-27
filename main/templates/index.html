@@ -29,18 +29,20 @@
 </main>
 <script>
     $(document).ready(() => {
-        const data = fetch("{% url 'get_all_books' %}?page={{ page_obj.number }}")
+        const data = fetch("{% url 'main:get_all_books' %}?page={{ page_obj.number }}")
             .then(res => res.json())
             .then(data => data.map(book => {
                 console.log(data);
                 $("#books-container").append(`
                 <li>
-                    <div class="card book-card" style="width: 18rem;">
-                        <img style="height: 50%; object-fit: cover; object-position: center;" class="card-img-top" src=${book.fields.cover_url} alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">${book.fields.title}</h5>
+                    <a href="/book/${book.pk}">
+                        <div class="card book-card" style="width: 18rem;">
+                            <img style="height: 50%; object-fit: cover; object-position: center;" class="card-img-top" src=${book.fields.cover_url} alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">${book.fields.title}</h5>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </li>
                 `)
             }))
