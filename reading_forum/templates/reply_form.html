@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Formulir Pembuatan Balasan</title>
-</head>
-<body>
-    <h1>Formulir Pembuatan Balasan</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ reply_form.as_p }}
-        <button type="submit">Balas</button>
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Formulir Pembuatan Balasan</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ reply_form.content.label_tag }}
+                {{ reply_form.content }}
+            </div>
+            <button type="submit" class="btn btn-primary">Balas</button>
+        </form>
+    </div>
+{% endblock %}

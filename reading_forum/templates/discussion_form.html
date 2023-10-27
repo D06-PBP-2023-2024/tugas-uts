@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Formulir Pembuatan Diskusi</title>
-</head>
-<body>
-    <h1>Formulir Pembuatan Diskusi</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ discussion_form.as_p }}
-        <button type="submit">Buat Diskusi</button>
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Formulir Pembuatan Diskusi</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ discussion_form.title.label_tag }}
+                {{ discussion_form.title }}
+            </div>
+            <div class="mb-3">
+                {{ discussion_form.content.label_tag }}
+                {{ discussion_form.content }}
+            </div>
+            <button type="submit" class="btn btn-primary">Buat Diskusi</button>
+        </form>
+    </div>
+{% endblock %}
