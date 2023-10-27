@@ -4,6 +4,8 @@ from django.http import HttpResponse, JsonResponse, HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
 import django.core.serializers as serializers
+import requests
+
 
 # Create your views here.
 def index(request: HttpRequest):
