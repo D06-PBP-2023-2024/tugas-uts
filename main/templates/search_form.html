@@ -1,22 +1,55 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "container.html" %}
+{% block container_content %}
 
-<form method="POST" action="{% url "main:search_result" %}">
-    {% csrf_token %}
-    <label for="title">Title</label>
-    <input type="text" id="title" name="title">
-    <br>
-    <label for="tags">Tags</label>
-    <input type="text" id="tags" name="tags">
-    <button>Submit</button>
-</form>
 
-<a href="{% url "main:group_tags" %}">Group by Tags</a>
+<div class="row d-flex justify-content-center h-75 align-items-center">
+  
+  <div class="col-6 border p-4 border-primary-subtle rounded">
+
+    <form method="POST" action="{% url "main:search_result" %}">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title">
+      </div>
+      <div class="mb-4">
+        <label for="tags" class="form-label">Tags</label>
+        <input type="text" class="form-control" id="tags" name="tags">
+        <div class="d-flex justify-content-end"><a href="{% url "main:group_tags" %}">Group by Tags</a></div>
+      </div>
+      
+
+      <div class="row">
+          <div class="col-6">
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </div>
+          <div class="col-6">
+            <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Search by AJAX
+          </button>
+          </div>
+      </div>
+      
+    </form>
+
+  </div>
+  {% comment %} <form method="POST" action="{% url "main:search_result" %}">
+      {% csrf_token %}
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title">
+      <br>
+      <label for="tags">Tags</label>
+      <input type="text" id="tags" name="tags">
+      <button>Submit</button>
+  </form> {% endcomment %}
+</div>
+
+
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+{% comment %} <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Search by AJAX
-</button>
+</button> {% endcomment %}
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -71,4 +104,4 @@
     document.querySelector(".search-button").onclick = searchProduct;
 </script>
 
-{% endblock content %}
+{% endblock container_content %}
