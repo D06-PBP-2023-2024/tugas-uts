@@ -2,7 +2,7 @@
 {% block container_content %}
 
 
-<div class="row d-flex justify-content-center h-75 align-items-center">
+<div class="row d-flex justify-content-center h-75 align-items-center form-div">
   
   <div class="col-6 border p-4 border-primary-subtle rounded">
 
@@ -122,7 +122,12 @@
           text += `<p>No book(s) was found</p>`
         }
         document.querySelector(".result").innerHTML = text;
-        document.querySelector(".show-result").innerHTML = `Result`
+        document.querySelector(".show-result").innerHTML = `Result:`
+        const formDiv = document.querySelector(".form-div");
+        if (formDiv.classList.contains("h-75")) {
+          formDiv.classList.remove("h-75");
+          formDiv.classList.add("h-50");
+        }
       })
     }
 
@@ -140,6 +145,6 @@
   .book-card:hover {
     background: #dedede !important;
   }
-  </style>
+</style>
 
 {% endblock container_content %}
