@@ -39,7 +39,7 @@
                         <div class="card book-card" style="width: 18rem;">
                             <img style="height: 50%; object-fit: cover; object-position: center;" class="card-img-top" src=${book.fields.cover_url} alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">${book.fields.title}</h5>
+                                <h5 class="card-title">${book.fields.title.length > 50 ? book.fields.title.slice(0, 40) + "..." : book.fields.title}</h5>
                             </div>
                         </div>
                     </a>
