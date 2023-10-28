@@ -88,8 +88,10 @@ def search_form(request):
 
 @csrf_exempt
 def search_result_ajax(request):
-    title = request.POST.get("title")
-    tags = request.POST.get("tags")
+    title = request.POST.get("title") or ""
+    tags = request.POST.get("tags") or ""
+    if title == "":
+        title = request.GET.get("title") or ""
 
     if tags != "":
         tag = Tag.objects.filter(subject__contains=tags).first()
