@@ -10,8 +10,14 @@ from django.contrib.auth import get_user_model
 from user.forms import UserForm
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
+from django.http import JsonResponse
 
 User = get_user_model() 
+
+
+@login_required(login_url='/login')
+def user_info(request):
+    return render(request, "user.html")
 
 def register(request):
     form = UserCreationForm()
@@ -21,7 +27,9 @@ def register(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your account has been successfully created!')
-            return redirect('user:login')
+            return JsonResponse({'success': True})
+        else:
+            return JsonResponse({'success': False, 'error': 'Registration failed. Please try again.'})
     context = {'form':form}
     return render(request, 'register.html', context)
 
@@ -32,9 +40,9 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('user:user_info')
+            return JsonResponse({'success': True})
         else:
-            messages.info(request, 'Sorry, incorrect username or password. Please try again.')
+            return JsonResponse({'success': False, 'error': 'Sorry, incorrect username or password. Please try again.'})
     context = {}
     return render(request, 'login.html', context)
 
@@ -89,6 +97,7 @@ def update_profile_form(request):
     return render(request, 'profileform.html', context)
 
 #login required
+
 def logout_user(request):
     logout(request)
     return redirect('user:login')

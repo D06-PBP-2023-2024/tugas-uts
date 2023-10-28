@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from main.models import Book, Tag
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse, HttpRequest
+from main.models import Book, Tag, Author
+from django.http import HttpResponse, JsonResponse, HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
 import django.core.serializers as serializers
+import requests
+
 
 # Create your views here.
 def index(request: HttpRequest):
@@ -17,10 +19,21 @@ def index(request: HttpRequest):
     }
     return render(request, "index.html", context)
 
+def author_details(request: HttpRequest, author_id: int):
+    author = Author.objects.get(id=author_id)
+    author.name = " ".join(author.name.split(",")[::-1])
+    context = {
+        "author": author,
+        "books": author.book_set.all().filter(author=author),
+    }
+    return render(request, "author_details.html", context)
+
 def book_details(request: HttpRequest, book_id: int):
     book = Book.objects.get(id=book_id)
     context = {
         "book": book,
+        "tags": book.tags.all(),
+        "author": book.author,
     }
     return render(request, "book_details.html", context)
 

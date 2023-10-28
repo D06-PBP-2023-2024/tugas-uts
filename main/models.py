@@ -17,6 +17,7 @@ class Author(models.Model):
     
 class Tag(models.Model):
     subject = models.CharField(max_length=100)
+    books = models.ManyToManyField('Book')
 
     def __str__(self):
         return self.subject

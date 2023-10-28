@@ -4,13 +4,15 @@
     <h1 class="book-title">
         {{ book.title }}
     </h1>
+    <a class="book-author" href="{% url 'main:author' book.author.id  %}">
+        {{ book.author.name }}
+    </a>
     <img class="book-banner" src="{{ book.cover_url }}" />
     <ul>
-        {% for tag in book.tags.all %}
+        {% for tag in tags %}
         <li>{{ tag.subject }}</li>
         {% endfor %}
     </ul>
-    <form action="" method="post"></form>
 </div>
 
 <style>
