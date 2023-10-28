@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-3">Formulir Pembuatan Diskusi</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ discussion_form|crispy }}
+        <div class="mb-3">
+            <label for="search_book">Cari Buku:</label>
+            <input type="text" id="search_book" name="search_book">
+            <button type="button" id="cek_buku_button" class="btn btn-secondary">Cek Buku</button>
+        </div>
+        <div id="search_results">
+            <table id="search_results_table">
+                <thead>
+                    <tr>
+                        <th class="p-2">Judul</th>
+                        <th class="p-2">Author</th>
+                        <th class="p-2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <button type="submit my-5" class="btn btn-primary">Buat Diskusi</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#cek_buku_button").click(function (e) {
+            e.preventDefault();
+            var searchQuery = $("#search_book").val();
+            if (searchQuery.length > 0) {
+                $.ajax({
+                    url: `{% url 'main:search_result_ajax' %}`,
+                    method: "GET",
+                    data: { title: searchQuery },
+                    success: function (data) {
+                        var searchResultsTable = $("#search_results_table tbody");
+                        searchResultsTable.empty();
+                        data = data.books;
+                        data = JSON.parse(data);
+                        console.log(data);
+                        if (data.length > 0) {
+                            data.forEach(function (book) {
+                                var row = $("<tr>");
+                                row.append("<td>" + book.fields.title + "</td>");
+                                row.append("<td>" + book.fields.author + "</td>");
+                                var selectButton = $("<button>Pilih</button>");
+                                selectButton.click(function () {
+                                    $("#id_title").val(book.fields.title);
+                                    $("#id_author").val(book.fields.author);
+                                    $("#id_image_url").val(book.fields.image_url);
+                                });
+                                row.append($("<td>").append(selectButton));
+                                searchResultsTable.append(row);
+                            });
+                            $("#submit_button").prop("disabled", false);
+                        } else {
+                            searchResultsTable.append("<tr><td colspan='3'>Buku tidak ditemukan.</td></tr>");
+                            $("#submit_button").prop("disabled", true);
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}

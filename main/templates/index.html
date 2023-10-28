@@ -1,4 +1,57 @@
 {% extends 'base.html' %}
-{% block 'content' %}
-<h1>Kindle Kids</h1>
-{% endblock 'content' %}
+{% load static %}
+{% block meta %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock meta %}
+{% block content %}
+<main>
+    <div id="books-container"></div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination books-pagination">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link"
+                    href="?page={{page_obj.number|add:-1}}">{{page_obj.number|add:-1}}</a>
+            </li>
+            {% endif %}
+            <li class="page-item active"><a class="page-link" href="?page={{page_obj.number}}">{{page_obj.number}}</a>
+            </li>
+            {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link"
+                    href="?page={{page_obj.number|add:1}}">{{page_obj.number|add:1}}</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</main>
+<script>
+    $(document).ready(() => {
+        const data = fetch("{% url 'main:get_all_books' %}?page={{ page_obj.number }}")
+            .then(res => res.json())
+            .then(data => data.map(book => {
+                console.log(data);
+                $("#books-container").append(`
+                <li>
+                    <a href="/book/${book.pk}">
+                        <div class="card book-card" style="width: 18rem;">
+                            <img style="height: 50%; object-fit: cover; object-position: center;" class="card-img-top" src=${book.fields.cover_url} alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">${book.fields.title.length > 50 ? book.fields.title.slice(0, 40) + "..." : book.fields.title}</h5>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                `)
+            }))
+    });
+</script>
+{% endblock %}

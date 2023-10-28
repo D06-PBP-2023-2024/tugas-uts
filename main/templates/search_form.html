@@ -1,0 +1,149 @@
+{% extends "container.html" %}
+{% block container_content %}
+
+<div class="row d-flex justify-content-center h-75 align-items-center form-div">
+  <div class="col-6 border p-4 border-primary-subtle rounded">
+
+    <form method="POST" action="{% url 'main:search_result' %}">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title">
+      </div>
+      <div class="mb-4">
+        <label for="tags" class="form-label">Tags</label>
+        <input type="text" class="form-control" id="tags" name="tags">
+        <div class="d-flex justify-content-end"><a href="{% url 'main:group_tags' %}">Group by Tags</a></div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Search by AJAX
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+  {% comment %}
+  <form method="POST" action="{% url 'main:search_result' %}">
+    {% csrf_token %}
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title">
+    <br>
+    <label for="tags">Tags</label>
+    <input type="text" id="tags" name="tags">
+    <button>Submit</button>
+  </form> {% endcomment %}
+</div>
+
+
+
+<!-- Button trigger modal -->
+{% comment %} <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Search by AJAX
+</button> {% endcomment %}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Search by AJAX</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="searchAJAX" method="POST" onsubmit="return false;">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title">
+          </div>
+          <div class="mb-4">
+            <label for="tags" class="form-label">Tags</label>
+            <input type="text" class="form-control" id="tags" name="tags">
+          </div>
+
+          {% comment %} <label for="title">Title</label>
+          <input type="text" id="title" name="title">
+          <br>
+          <label for="tags">Tags</label>
+          <input type="text" id="tags" name="tags"> {% endcomment %}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary search-button">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-6 result-show">
+    <h2 class="show-result"></h2>
+    <div class="result d-flex flex-wrap"></div>
+  </div>
+</div>
+
+
+<script>
+  async function searchProduct() {
+    fetch("{% url 'main:search_result_ajax' %}", {
+      method: "POST",
+      body: new FormData(document.querySelector("#searchAJAX"))
+    })
+      .then(response => response.json())
+      .then(data => {
+        let text = ``
+        if (data.books != "[]" && data.books != null) {
+          let books = JSON.parse(data.books)
+          books.forEach((item) => {
+            // text += `${item.fields.title}<br>`
+            text += `<li>
+              <a href="/book/${item.pk}">
+                  <div class="card book-card mx-2 my-2" style="width: 18rem;">
+                      <img style="height: 50%; object-fit: cover; object-position: center;" class="card-img-top" src=${item.fields.cover_url} alt="Card image cap">
+                      <div class="card-body">
+                          <h5 class="card-title">${item.fields.title}</h5>
+                      </div>
+                  </div>
+              </a>
+          </li>`
+          })
+        } else {
+          text += `<p>No book(s) was found</p>`
+        }
+        document.querySelector(".result").innerHTML = text;
+        document.querySelector(".show-result").innerHTML = `Result:`
+        const formDiv = document.querySelector(".form-div");
+        if (formDiv.classList.contains("h-75")) {
+          formDiv.classList.remove("h-75");
+          formDiv.classList.add("h-50");
+        }
+      })
+  }
+
+  document.querySelector(".search-button").onclick = searchProduct;
+</script>
+
+<style>
+  .book-card {
+    height: 350px;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+  }
+
+  .book-card:hover {
+    background: #dedede !important;
+  }
+</style>
+
+{% endblock container_content %}

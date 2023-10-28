@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+<form method="POST">  
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="button_save" data-bs-dismiss="modal">Save Changes</button>
+    </div>
+</form>
+
+{% endblock content%}

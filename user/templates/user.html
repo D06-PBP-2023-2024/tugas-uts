@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '../static/css/user.css' %}">
+
+<div class="container">
+    <div class="row d-flex">
+        <nav class="col-sm-4 mt-3">
+            <div class="card shadow d-flex mr-1 align-items-center text-center text-wrap h-100 justify-content-center">
+                <h4 class="mt-3">Welcome!</h4>
+                <div style="display: flex; flex-direction: column; margin-top: 10px;">
+                    <h3 class="text-wrap px-2">{{ first_name }} {{ last_name }}</h3>
+                    <h5 style="opacity: 0.7; margin-bottom: 20px;">{{ username }}</h5>
+                </div>
+            </div>
+        </nav>
+
+        <div class="col-sm-8 mt-3">
+            <div class="card shadow ml-1 h-100 p-4" style="justify-content: center;">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        Email
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                        {{ email }}
+                    </div>
+                </div>
+                <hr>
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        Phone number
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                        {{ phone_number }}
+                    </div>
+                </div>
+                <hr>
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        Domicile
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                        {{ domicile }}
+                    </div>
+                </div>
+                <div class="mt-3 d-flex justify-content-end">
+                    <button type="button" class="btn btn-sm btn-primary px-3" data-bs-toggle="modal"
+                        data-bs-target="#editProfile" style="margin-right: 10px;">Update Profile</button>
+                    <button type="button" class="btn btn-sm btn-primary px-3" id="button_logout" data-bs-toggle="modal"
+                        data-bs-target="#logoutButton">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex ml-2 mb-4">
+        <div class="col-md mt-4">
+            <div class="card shadow h-100" style="padding: 20px 20px 10px 20px;">
+                <h5 style="margin-bottom: 15px;">Like</h5>
+                <ul class="list-group list-group-flush" style="overflow: auto;">
+                    {% for book in liked_books %}
+                    <li class="list-group-item d-flex flex-row"
+                        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                        <div style="flex: 1;">
+                            <img src="{{ book.cover_url }}" alt="Book Cover" style="width: 100px;">
+                        </div>
+                        <div style="flex: 3;" class="m-3">
+                            <h6 class="text-wrap text-start">{{ book.title }}</h6>
+                            <p class="text-wrap text-start"><small>{{ book.author }}</small></p>
+                        </div>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item">
+                        <h6 class="mb-0 mt-2">No book liked yet</h6>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md mt-4 h-100">
+            <div class="card shadow" style="padding: 20px 20px 10px 20px;">
+                <h5 style="margin-bottom: 15px;">Comment</h5>
+                <ul class="list-group list-group-flush" style="overflow: auto;">
+                    {% for comment in comments %}
+                    <li class="list-group-item d-flex flex-row">
+                        <div class="text-left d-flex align-items-center">
+                            <img src="{{ comment.book.cover_url }}" alt="Book Cover" style="width: 50px;">
+                        </div class="text-left">
+                        <div class="d-flex flex-column" style="margin-left: 20px;">
+                            <div class="text-left text-wrap">
+                                <h6 class="mb-0 mt-2">{{ comment.book.title }}</h6>
+                            </div>
+                            <div class="text-left text-wrap">
+                                <p class="mb-0 mt-2">{{ comment.comment }}</p>
+                            </div>
+                        </div>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item"
+                        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                        <h6 class="mb-0 mt-2">No comment yet</h6>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="col-md mt-4 h-100">
+            <div class="card shadow" style="padding: 20px 20px 10px 20px;">
+                <h5 style="margin-bottom: 15px;">Reading List</h5>
+                <ul class="list-group list-group-flush" style="overflow: auto;">
+                    {% for item in reading_list %}
+                    <li class="list-group-item d-flex flex-row">
+                        <div class="text-left d-flex align-items-center">
+                            <img src="{{ item.book.cover_url }}" alt="Book Cover" style="width: 50px;">
+                        </div class="text-left">
+                        <div class="d-flex flex-column" style="margin-left: 20px;">
+                            <div class="text-left text-wrap">
+                                <h6 class="mb-0 mt-2">{{ item.book.title }}</h6>
+                            </div>
+                        </div>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item"
+                        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                        <h6 class="mb-0 mt-2">Nothing Here :D</h6>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Update Profile</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="button_close" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_save" data-bs-dismiss="modal">Save
+                    Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateProfile() {
+        fetch("{% url 'user:update_profile' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(() => {
+            window.location.reload();
+        })
+
+        document.getElementById("form").reset()
+        return false
+    }
+
+    function clearForm() { }
+
+    document.getElementById("button_save").onclick = updateProfile
+
+    function logout() {
+        fetch("{% url 'user:logout' %}", {
+            method: 'GET'
+        }).then(() => {
+            window.location.href = "{% url 'user:logout' %}";
+        })
+    };
+
+    document.getElementById("button_logout").onclick = logout
+
+    document.getElementById("button_close").addEventListener("click", function () {
+        document.getElementById("form").reset();
+    });
+</script>
+
+{% endblock content %}
