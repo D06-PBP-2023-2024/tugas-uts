@@ -12,6 +12,7 @@ urlpatterns = [
     path('search-ajax/', views.search_result_ajax, name='search_result_ajax'),
     path('book/<int:book_id>/comment/', views.comment_book, name='comment_book'),
     path('like/<int:book_id>/', views.like_book, name='like_book'),
+    path('reading_list/<int:book_id>/', views.add_reading_list, name='add_reading_list'),
 ]
 
 

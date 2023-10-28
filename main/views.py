@@ -144,7 +144,7 @@ def comment_book(request, book_id):
     
     context = {
         'form': form, 
-        'book': book
+        'book': book,
     }
     
     return render(request, 'main/comment_form.html', context)
