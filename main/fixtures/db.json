@@ -920,33 +920,15 @@
         "model": "main.author",
         "pk": 44,
         "fields": {
-            "name": "Gibran, Kahlil"
+            "name": "Vatsyayana"
         }
     },
     {
         "model": "main.book",
         "pk": 57,
         "fields": {
-            "title": "The Prophet",
-            "author": 44,
-            "cover_url": "https://www.gutenberg.org/cache/epub/58585/pg58585.cover.medium.jpg",
-            "download_count": 10102,
-            "content": "https://www.gutenberg.org/ebooks/58585.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 45,
-        "fields": {
-            "name": "Vatsyayana"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 58,
-        "fields": {
             "title": "The Kama Sutra of Vatsyayana: Translated From the Sanscrit in Seven Parts With Preface, Introduction and Concluding Remarks",
-            "author": 45,
+            "author": 44,
             "cover_url": "https://www.gutenberg.org/cache/epub/27827/pg27827.cover.medium.jpg",
             "download_count": 9831,
             "content": "https://www.gutenberg.org/ebooks/27827.html.images"
@@ -954,17 +936,17 @@
     },
     {
         "model": "main.author",
-        "pk": 46,
+        "pk": 45,
         "fields": {
             "name": "Conrad, Joseph"
         }
     },
     {
         "model": "main.book",
-        "pk": 59,
+        "pk": 58,
         "fields": {
             "title": "Heart of Darkness",
-            "author": 46,
+            "author": 45,
             "cover_url": "https://www.gutenberg.org/cache/epub/219/pg219.cover.medium.jpg",
             "download_count": 9788,
             "content": "https://www.gutenberg.org/ebooks/219.html.images"
@@ -972,17 +954,17 @@
     },
     {
         "model": "main.author",
-        "pk": 47,
+        "pk": 46,
         "fields": {
             "name": "Marcus Aurelius, Emperor of Rome"
         }
     },
     {
         "model": "main.book",
-        "pk": 60,
+        "pk": 59,
         "fields": {
             "title": "Meditations",
-            "author": 47,
+            "author": 46,
             "cover_url": "https://www.gutenberg.org/cache/epub/2680/pg2680.cover.medium.jpg",
             "download_count": 9767,
             "content": "https://www.gutenberg.org/ebooks/2680.html.images"
@@ -990,20 +972,38 @@
     },
     {
         "model": "main.author",
-        "pk": 48,
+        "pk": 47,
         "fields": {
             "name": "Nietzsche, Friedrich Wilhelm"
         }
     },
     {
         "model": "main.book",
-        "pk": 61,
+        "pk": 60,
         "fields": {
             "title": "Thus Spake Zarathustra: A Book for All and None",
-            "author": 48,
+            "author": 47,
             "cover_url": "https://www.gutenberg.org/cache/epub/1998/pg1998.cover.medium.jpg",
             "download_count": 9746,
             "content": "https://www.gutenberg.org/ebooks/1998.html.images"
+        }
+    },
+    {
+        "model": "main.author",
+        "pk": 48,
+        "fields": {
+            "name": "Gibran, Kahlil"
+        }
+    },
+    {
+        "model": "main.book",
+        "pk": 61,
+        "fields": {
+            "title": "The Prophet",
+            "author": 48,
+            "cover_url": "https://www.gutenberg.org/cache/epub/58585/pg58585.cover.medium.jpg",
+            "download_count": 9598,
+            "content": "https://www.gutenberg.org/ebooks/58585.html.images"
         }
     },
     {
@@ -1351,7 +1351,7 @@
         "pk": 84,
         "fields": {
             "title": "Beyond Good and Evil",
-            "author": 48,
+            "author": 47,
             "cover_url": "https://www.gutenberg.org/cache/epub/4363/pg4363.cover.medium.jpg",
             "download_count": 7226,
             "content": "https://www.gutenberg.org/ebooks/4363.html.images"
@@ -1612,461 +1612,6 @@
             "cover_url": "https://www.gutenberg.org/cache/epub/1250/pg1250.cover.medium.jpg",
             "download_count": 6115,
             "content": "https://www.gutenberg.org/ebooks/1250.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 73,
-        "fields": {
-            "name": "Rizal, Jos\u00e9"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 102,
-        "fields": {
-            "title": "The Philippines a Century Hence",
-            "author": 73,
-            "cover_url": "https://www.gutenberg.org/cache/epub/35899/pg35899.cover.medium.jpg",
-            "download_count": 5745,
-            "content": "https://www.gutenberg.org/ebooks/35899.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 74,
-        "fields": {
-            "name": "Valmiki"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 103,
-        "fields": {
-            "title": "The R\u00e1m\u00e1yan of V\u00e1lm\u00edki, translated into English verse",
-            "author": 74,
-            "cover_url": "https://www.gutenberg.org/cache/epub/24869/pg24869.cover.medium.jpg",
-            "download_count": 5715,
-            "content": "https://www.gutenberg.org/ebooks/24869.html.images"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 104,
-        "fields": {
-            "title": "Persuasion",
-            "author": 3,
-            "cover_url": "https://www.gutenberg.org/cache/epub/105/pg105.cover.medium.jpg",
-            "download_count": 5693,
-            "content": "https://www.gutenberg.org/ebooks/105.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 75,
-        "fields": {
-            "name": "Salten, Felix"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 105,
-        "fields": {
-            "title": "Josefine Mutzenbacher: oder Die Geschichte einer Wienerischen Dirne von ihr selbst erz\u00e4hlt",
-            "author": 75,
-            "cover_url": "https://www.gutenberg.org/cache/epub/31284/pg31284.cover.medium.jpg",
-            "download_count": 5612,
-            "content": "https://www.gutenberg.org/ebooks/31284.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 76,
-        "fields": {
-            "name": "Darwin, Charles"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 106,
-        "fields": {
-            "title": "On the Origin of Species By Means of Natural Selection: Or, the Preservation of Favoured Races in the Struggle for Life",
-            "author": 76,
-            "cover_url": "https://www.gutenberg.org/cache/epub/1228/pg1228.cover.medium.jpg",
-            "download_count": 5530,
-            "content": "https://www.gutenberg.org/ebooks/1228.html.images"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 107,
-        "fields": {
-            "title": "David Copperfield",
-            "author": 23,
-            "cover_url": "https://www.gutenberg.org/cache/epub/766/pg766.cover.medium.jpg",
-            "download_count": 5462,
-            "content": "https://www.gutenberg.org/ebooks/766.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 77,
-        "fields": {
-            "name": "Malory, Thomas, Sir"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 108,
-        "fields": {
-            "title": "Le Morte d'Arthur: Volume 1",
-            "author": 77,
-            "cover_url": "https://www.gutenberg.org/cache/epub/1251/pg1251.cover.medium.jpg",
-            "download_count": 5459,
-            "content": "https://www.gutenberg.org/ebooks/1251.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 78,
-        "fields": {
-            "name": "Mill, John Stuart"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 109,
-        "fields": {
-            "title": "On Liberty",
-            "author": 78,
-            "cover_url": "https://www.gutenberg.org/cache/epub/34901/pg34901.cover.medium.jpg",
-            "download_count": 5361,
-            "content": "https://www.gutenberg.org/ebooks/34901.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 79,
-        "fields": {
-            "name": "Marlowe, Christopher"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 110,
-        "fields": {
-            "title": "The Tragical History of Doctor Faustus: From the Quarto of 1604",
-            "author": 79,
-            "cover_url": "https://www.gutenberg.org/cache/epub/779/pg779.cover.medium.jpg",
-            "download_count": 5341,
-            "content": "https://www.gutenberg.org/ebooks/779.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 80,
-        "fields": {
-            "name": "Hesse, Hermann"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 111,
-        "fields": {
-            "title": "Siddhartha",
-            "author": 80,
-            "cover_url": "https://www.gutenberg.org/cache/epub/2500/pg2500.cover.medium.jpg",
-            "download_count": 5333,
-            "content": "https://www.gutenberg.org/ebooks/2500.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 81,
-        "fields": {
-            "name": "Stowe, Harriet Beecher"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 112,
-        "fields": {
-            "title": "Uncle Tom's Cabin",
-            "author": 81,
-            "cover_url": "https://www.gutenberg.org/cache/epub/203/pg203.cover.medium.jpg",
-            "download_count": 5286,
-            "content": "https://www.gutenberg.org/ebooks/203.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 82,
-        "fields": {
-            "name": "Sunzi, active 6th century B.C."
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 113,
-        "fields": {
-            "title": "The Art of War",
-            "author": 82,
-            "cover_url": "https://www.gutenberg.org/cache/epub/132/pg132.cover.medium.jpg",
-            "download_count": 5210,
-            "content": "https://www.gutenberg.org/ebooks/132.html.images"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 114,
-        "fields": {
-            "title": "The Happy Prince, and Other Tales",
-            "author": 10,
-            "cover_url": "https://www.gutenberg.org/cache/epub/902/pg902.cover.medium.jpg",
-            "download_count": 5198,
-            "content": "https://www.gutenberg.org/ebooks/902.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 83,
-        "fields": {
-            "name": "Christie, Agatha"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 115,
-        "fields": {
-            "title": "The murder of Roger Ackroyd",
-            "author": 83,
-            "cover_url": "https://www.gutenberg.org/cache/epub/69087/pg69087.cover.medium.jpg",
-            "download_count": 5188,
-            "content": "https://www.gutenberg.org/ebooks/69087.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 84,
-        "fields": {
-            "name": "Emerson, Ralph Waldo"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 116,
-        "fields": {
-            "title": "Essays by Ralph Waldo Emerson",
-            "author": 84,
-            "cover_url": "https://www.gutenberg.org/cache/epub/16643/pg16643.cover.medium.jpg",
-            "download_count": 5102,
-            "content": "https://www.gutenberg.org/ebooks/16643.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 85,
-        "fields": {
-            "name": "Engels, Friedrich"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 117,
-        "fields": {
-            "title": "The Communist Manifesto",
-            "author": 85,
-            "cover_url": "https://www.gutenberg.org/cache/epub/61/pg61.cover.medium.jpg",
-            "download_count": 5056,
-            "content": "https://www.gutenberg.org/ebooks/61.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 86,
-        "fields": {
-            "name": "Marx, Karl"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 118,
-        "fields": {
-            "title": "The Communist Manifesto",
-            "author": 86,
-            "cover_url": "https://www.gutenberg.org/cache/epub/61/pg61.cover.medium.jpg",
-            "download_count": 5056,
-            "content": "https://www.gutenberg.org/ebooks/61.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 87,
-        "fields": {
-            "name": "Kipling, Rudyard"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 119,
-        "fields": {
-            "title": "The Jungle Book",
-            "author": 87,
-            "cover_url": "https://www.gutenberg.org/cache/epub/236/pg236.cover.medium.jpg",
-            "download_count": 5035,
-            "content": "https://www.gutenberg.org/ebooks/236.html.images"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 120,
-        "fields": {
-            "title": "Noli Me Tangere",
-            "author": 73,
-            "cover_url": "https://www.gutenberg.org/cache/epub/20228/pg20228.cover.medium.jpg",
-            "download_count": 5026,
-            "content": "https://www.gutenberg.org/ebooks/20228.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 88,
-        "fields": {
-            "name": "Wittgenstein, Ludwig"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 121,
-        "fields": {
-            "title": "Tractatus Logico-Philosophicus",
-            "author": 88,
-            "cover_url": "https://www.gutenberg.org/cache/epub/5740/pg5740.cover.medium.jpg",
-            "download_count": 4989,
-            "content": null
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 89,
-        "fields": {
-            "name": "Chaucer, Geoffrey"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 122,
-        "fields": {
-            "title": "Chaucer's Works, Volume 4 \u2014 The Canterbury Tales",
-            "author": 89,
-            "cover_url": "https://www.gutenberg.org/cache/epub/22120/pg22120.cover.medium.jpg",
-            "download_count": 4942,
-            "content": "https://www.gutenberg.org/ebooks/22120.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 90,
-        "fields": {
-            "name": "Strunk, William"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 123,
-        "fields": {
-            "title": "The Elements of Style",
-            "author": 90,
-            "cover_url": "https://www.gutenberg.org/cache/epub/37134/pg37134.cover.medium.jpg",
-            "download_count": 4923,
-            "content": "https://www.gutenberg.org/ebooks/37134.html.images"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 124,
-        "fields": {
-            "title": "Gulliver's Travels into Several Remote Nations of the World",
-            "author": 17,
-            "cover_url": "https://www.gutenberg.org/cache/epub/829/pg829.cover.medium.jpg",
-            "download_count": 4804,
-            "content": "https://www.gutenberg.org/ebooks/829.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 91,
-        "fields": {
-            "name": "Burnett, Frances Hodgson"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 125,
-        "fields": {
-            "title": "The Secret Garden",
-            "author": 91,
-            "cover_url": "https://www.gutenberg.org/cache/epub/17396/pg17396.cover.medium.jpg",
-            "download_count": 4771,
-            "content": "https://www.gutenberg.org/ebooks/17396.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 92,
-        "fields": {
-            "name": "Blake, William"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 126,
-        "fields": {
-            "title": "Songs of Innocence and of Experience",
-            "author": 92,
-            "cover_url": "https://www.gutenberg.org/cache/epub/1934/pg1934.cover.medium.jpg",
-            "download_count": 4725,
-            "content": "https://www.gutenberg.org/ebooks/1934.html.images"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 127,
-        "fields": {
-            "title": "The Mysterious Affair at Styles",
-            "author": 83,
-            "cover_url": "https://www.gutenberg.org/cache/epub/863/pg863.cover.medium.jpg",
-            "download_count": 4672,
-            "content": "https://www.gutenberg.org/ebooks/863.html.images"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 128,
-        "fields": {
-            "title": "Through the Looking-Glass",
-            "author": 7,
-            "cover_url": "https://www.gutenberg.org/cache/epub/12/pg12.cover.medium.jpg",
-            "download_count": 4625,
-            "content": "https://www.gutenberg.org/ebooks/12.html.images"
-        }
-    },
-    {
-        "model": "main.author",
-        "pk": 93,
-        "fields": {
-            "name": "London, Jack"
-        }
-    },
-    {
-        "model": "main.book",
-        "pk": 129,
-        "fields": {
-            "title": "The call of the wild",
-            "author": 93,
-            "cover_url": "https://www.gutenberg.org/cache/epub/215/pg215.cover.medium.jpg",
-            "download_count": 4558,
-            "content": "https://www.gutenberg.org/ebooks/215.html.images"
         }
     }
 ]
