@@ -31,7 +31,8 @@
                 <button class="btn btn-primary reply-to-this" data-reply-id="{{ reply.id }}">Reply to this</button>
                 
                 <div class="reply-form" style="display: none;">
-                    <form method="post" action="{% url 'reading_forum:discussion_detail' discussion_id=discussion.id %}">
+                    <form method="post" action="{% url 'reading_forum:reply_form' discussion.id %}">
+
                         {% csrf_token %}
                         <input type="hidden" name="quoted_reply_id" value="{{ reply.id }}">
                         {{ reply_form.as_p }}
@@ -45,24 +46,25 @@
     
 
     <script>
-        $(document).ready(function() {
-            // handle klik tombol "Reply to this"
-            $(".reply-to-this").click(function() {
-                var replyId = $(this).data("reply-id"); // Mendapatkan ID reply
-                var replyForm = $("form[action='{% url 'reading_forum:discussion_detail' discussion_id=discussion.id %}']");
-                var quotedReplyIdInput = replyForm.find("input[name='quoted_reply_id']");
-
-
+       $(document).ready(function() {
+    // handle klik tombol "Reply to this"
+    $(".reply-to-this").click(function() {
+        var replyId = $(this).data("reply-id"); // Mendapatkan ID reply
+        var replyForm = $("form[action='reading_forum:reply_form']"); 
         
-                // Menampilkan/menyembunyikan formulir balasan
-                if (replyForm.is(":visible")) {
-                    replyForm.hide();
-                } else {
-                    replyForm.show();
-                }
-            });
+        // Set nilai quoted_reply_id dengan ID balasan yang akan di-reply
+        var quotedReplyIdInput = replyForm.find("input[name='quoted_reply_id']");
+        quotedReplyIdInput.val(replyId);
 
-        });
+        // Menampilkan/menyembunyikan formulir balasan
+        if (replyForm.is(":visible")) {
+            replyForm.hide();
+        } else {
+            replyForm.show();
+        }
+    });
+});
+
         </script>
         
 </div>
