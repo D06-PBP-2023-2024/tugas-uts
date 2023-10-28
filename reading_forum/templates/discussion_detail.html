@@ -1,29 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <h1>{{ discussion.title }}</h1>
-    <p>{{ discussion.user.username }}</p>
-    <p>{{ discussion.created_at|date:"F j, Y H:i" }}</p>
-    <p>{{ discussion.content }}</p>
-</div>
-    <h2>Daftar Balasan</h2>
+<div class="m-5">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">{{ discussion.title }}</h1>
+            <p class="card-subtitle text-muted mb-3">{{ discussion.user.username }}</p>
+            <p class="card-text">{{ discussion.created_at|date:"F j, Y H:i" }}</p>
+            <p class="card-text">{{ discussion.content }}</p>
+        </div>
+    </div>
+    <h2 class="mt-5 mb-3">Daftar Balasan</h2>
 
-    <h4>Reply</h4>
     <form method="get" action="{% url 'reading_forum:reply_form' discussion.id %}">
         <button type="submit" class="btn btn-primary">Reply</button>
     </form>
 
-    <div class="row mx-1">
+    <div class="row mx-1 mt-3">
         {% for reply in replies %}
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">{{ reply.user.username }}</h5>
-                    <h6 class="card-subtitle text-muted">{{ reply.created_at|date:"F j, Y H:i" }}</h6>
-                    <p class="card-text">{{ reply.content }}</p>
-                </div>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ reply.user.username }}</h5>
+                <h6 class="card-subtitle text-muted">{{ reply.created_at|date:"F j, Y H:i" }}</h6>
+                <p class="card-text">{{ reply.content }}</p>
             </div>
+        </div>
         {% endfor %}
     </div>
-    
+</div>
 {% endblock %}

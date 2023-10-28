@@ -1,15 +1,12 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% block content %}
-    <div class="container">
-        <h1>Formulir Pembuatan Balasan</h1>
-        <form method="post">
-            {% csrf_token %}
-            <div class="mb-3">
-                {{ reply_form.content.label_tag }}
-                {{ reply_form.content }}
-            </div>
-            <button type="submit" class="btn btn-primary">Balas</button>
-        </form>
-    </div>
+<div class="m-5 d-flex align-items-center justify-content-center flex-column">
+    <h1 class="text-center mb-5">Formulir Pembuatan Balasan</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ reply_form|crispy }}
+        <button type="submit" class="btn btn-primary">Balas</button>
+    </form>
+</div>
 {% endblock %}

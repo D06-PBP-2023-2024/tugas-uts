@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('main', '0013_readinglist_like_comment_book_comments_book_likes_and_more'),
+        ('main', '0012_alter_loggedinuser_domicile_alter_loggedinuser_email_and_more'),
     ]
 
     operations = [

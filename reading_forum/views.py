@@ -47,7 +47,7 @@ def create_discussion(request):
             new_discussion = discussion_form.save(commit=False)
             new_discussion.user = request.user  
             new_discussion.save()
-            return redirect('discussion_list')
+            return redirect('reading_forum:discussion_list')
     else:
         discussion_form = DiscussionForm()
 
