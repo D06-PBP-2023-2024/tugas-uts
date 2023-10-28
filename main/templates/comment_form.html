@@ -1,12 +1,13 @@
-{% extends "container.html" %}
-{% block container_content %}
-
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
-  <h1>Add Comment to "{{ book.title }}"</h1>
+<div class="container">
+  <h5 class="mt-5 mb-5" style="text-align: center;">Add Comment to "{{ book.title }}"</h5>
   <form method="post" class="comment-form">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy }}
     <button type="submit">Add Comment</button>
   </form>
-  <a href="{% url 'book_detail' book.id %}">Back to Book Detail</a>
-{% endblock %}
+  <a href="{% url 'main:book_details' book.id %}">Back to Book Detail</a>
+</div>
+{% endblock content %}

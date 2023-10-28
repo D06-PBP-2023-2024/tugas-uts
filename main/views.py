@@ -137,7 +137,7 @@ def comment_book(request, book_id):
             comment.book = book 
             comment.user = request.user 
             comment.save()
-            return redirect('book_detail', book_id=book.id)
+            return redirect('main:book_details', book_id=book.id)
     else: 
         form = CommentForm()
     
@@ -146,7 +146,7 @@ def comment_book(request, book_id):
         'book': book
     }
     
-    return render(request, 'main/comment_form.html', context)
+    return render(request, 'comment_form.html', context)
 
 def add_reading_list(request, book_id): 
     book = get_object_or_404(Book, pk=book_id)
