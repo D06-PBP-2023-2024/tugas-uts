@@ -1,58 +1,63 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% block content %}
-<div class="m-5">
+<main class="m-5">
     <div class="card">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <div class="card-body">
             <h1 class="card-title">{{ discussion.title }}</h1>
-            <p class="card-subtitle text-muted mb-3">{{ discussion.user.username }}</p>
-            <p class="card-text">{{ discussion.created_at|date:"F j, Y H:i" }}</p>
+            <p class="card-subtitle text-muted mb-3">{{ discussion.created_at|date:"F j, Y H:i" }}</p>
+            <p class="card-text">{{ discussion.user.username }}</p>
             <p class="card-text">{{ discussion.content }}</p>
         </div>
     </div>
-    <h2 class="mt-5 mb-3">Daftar Balasan</h2>
-    <form method="get" action="{% url 'reading_forum:reply_form' discussion.id %}">
-        <button type="submit" class="btn btn-primary">Reply</button>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <form method="get" action="{% url 'reading_forum:discussion_list' %}">
+        <button type="submit" class="btn btn-outline-danger mt-5 mb-2">Back to Discussion List</button>
     </form>
-    <div class="row mx-1 mt-3">
+    <h4>Replies</h4>
+    <form method="get" action="{% url 'reading_forum:reply_form' discussion.id %}">
+        <button type="submit" class="btn btn-primary my-3">Reply</button>
+    </form>
 
-        <form method="get" action="{% url 'reading_forum:discussion_list' %}">
-            <button type="submit" class="btn btn-primary">Back to Discussion List</button>
-        </form>
-        <h4>Replies</h4>
-        <form method="get" action="{% url 'reading_forum:reply_form' discussion.id %}">
-            <button type="submit" class="btn btn-primary">Reply</button>
-        </form>
+    <div class="row mx-1">
+        {% for reply in replies %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">
+                    {% if reply.user.is_superuser %}
+                    <span class="badge bg-success">Admin</span>
+                    {% endif %}
+                    {{ reply.user.username }}
+                </h5>
+                <h6 class="card-subtitle text-muted">{{ reply.created_at|date:"F j, Y H:i" }}</h6>
+                <p class="card-text">{{ reply.content }}</p>
 
-        <div class="row mx-1">
-            {% for reply in replies %}
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">{{ reply.user.username }}</h5>
-                    <h6 class="card-subtitle text-muted">{{ reply.created_at|date:"F j, Y H:i" }}</h6>
-                    <p class="card-text">{{ reply.content }}</p>
+                <!-- Button to reply to this reply -->
+                <button class="btn btn-primary reply-to-this" data-reply-id="{{ reply.id }}">Reply to
+                    this</button>
+
+                <div class="reply-form" data-hidden="true">
+                    <form method="post" action="{% url 'reading_forum:reply_form' discussion.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="quoted_reply_id" value="{{ reply.id }}">
+                        {{ reply_form|crispy }}
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
+</main>
 
-    <!-- Button to reply to this reply -->
-    <button class="btn btn-primary reply-to-this" data-reply-id="{{ reply.id }}">Reply to this</button>
-    <div class="reply-form" style="display: none;">
-        <form method="post" action="{% url 'reading_forum:reply_form' discussion.id %}">
-            {% csrf_token %}
-            <input type="hidden" name="quoted_reply_id" value="{{ reply.id }}">
-            {{ reply_form|crispy }}
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-</div>
-</div>
-{% endfor %}
-</div>
-
+<style>
+    div[data-hidden="true"] {
+        display: none;
+    }
+</style>
 
 <script>
     $(document).ready(function () {
@@ -65,17 +70,17 @@
             var quotedReplyIdInput = replyForm.find("input[name='quoted_reply_id']");
             quotedReplyIdInput.val(replyId);
 
-            // Menampilkan/menyembunyikan formulir balasan
-            if (replyForm.is(":visible")) {
-                replyForm.hide();
-            } else {
-                replyForm.show();
-            }
+            // Toggle reply form bedasarakan data-hidden
+            var replyFormDiv = $(this).parent().find(".reply-form");
+            var isHidden = replyFormDiv.data("hidden");
+            replyFormDiv.data("hidden", !isHidden);
+            replyFormDiv.toggle();
+
+
         });
     });
 
 </script>
 
 </div>
-
 {% endblock %}

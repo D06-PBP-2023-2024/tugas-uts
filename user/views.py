@@ -10,6 +10,7 @@ from user.forms import UserForm
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 from django.http import JsonResponse
+from main.models import ReadingList
 import json
 import random
 
@@ -80,6 +81,7 @@ def user_info(request):
                 'domicile': logged_in_user.domicile or "Domicile",
                 'liked_books' : books_liked,
                 'comments' : comments,
+                'reading_list' : ReadingList.objects.all().filter(user__pk=user.pk),
                 'form' : form
             }
             return render(request, 'user.html', context)

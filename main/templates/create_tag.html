@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<main class="m-5">
+    <h1 class="text-center">Tambahkan Tag</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-success" value="Submit">
+    </form>
+</main>
+{% endblock content %}

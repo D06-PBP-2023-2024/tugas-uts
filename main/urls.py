@@ -13,6 +13,7 @@ urlpatterns = [
     path('book/<int:book_id>/comment/', views.comment_book, name='comment_book'),
     path('like/<int:book_id>/', views.like_book, name='like_book'),
     path('reading_list/<int:book_id>/', views.add_reading_list, name='add_reading_list'),
+    path('book/<int:id>/create_tag/', views.create_tag, name='create_tag'),
 ]
 
 

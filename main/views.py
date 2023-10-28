@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from main.models import Book, Tag, Author, Like, Comment, ReadingList
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, JsonResponse, HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
 import django.core.serializers as serializers
-from main.forms import CommentForm 
+from main.forms import CommentForm, TagForm
 
 
 # Create your views here.
@@ -30,11 +31,25 @@ def author_details(request: HttpRequest, author_id: int):
 
 def book_details(request: HttpRequest, book_id: int):
     book = Book.objects.get(id=book_id)
-    context = {
-        "book": book,
-        "tags": book.tags.all(),
-        "author": book.author,
-    }
+    if not request.user.is_authenticated:
+        context = {
+            "book": book,
+            "tags": Tag.objects.filter(books__pk=book.pk),
+            "author": book.author,
+            "comments": [],
+            "likes": book.likes.count(),
+            "liked": False,
+        }
+    else:
+        context = {
+            "book": book,
+            "tags": Tag.objects.filter(books__pk=book.pk),
+            "author": book.author,
+            "comments": Comment.objects.filter(book=book),
+            "likes": book.likes.count(),
+            "added": ReadingList.objects.filter(user=request.user, book=book).exists(),
+            "liked": Like.objects.filter(user=request.user, book=book).exists(),
+        }
     return render(request, "book_details.html", context)
 
 def get_books(request: HttpRequest):
@@ -115,12 +130,14 @@ def search_result_ajax(request):
 
     return JsonResponse(context)
 
-def like_book(request, book_id): 
+@login_required(login_url="user:login")
+@csrf_exempt
+def like_book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     user = request.user
     
-    if Like.objects.filter().exists: 
-        Like.objects.filter(user=user, bookd=book).delete()
+    if Like.objects.filter(user=user, book=book).exists(): 
+        Like.objects.filter(user=user, book=book).delete()
         liked = False 
     else: 
         Like.objects.create(user=user, book=book)
@@ -128,7 +145,27 @@ def like_book(request, book_id):
     
     response_data = {'liked': liked, 'likes_count': book.likes.count()}
     return JsonResponse(response_data)
-    
+
+@login_required(login_url="user:login")
+def create_tag(request, id):
+    book = get_object_or_404(Book, pk=id)
+    if request.method == 'POST':
+        form = TagForm(request.POST)
+        if form.is_valid():
+            if not Tag.objects.filter(subject=form.cleaned_data['subject']).exists():
+                tag: Tag = form.save()
+            else:
+                tag = Tag.objects.get(subject=form.cleaned_data['subject'])
+            tag.books.add(book)
+            tag.save()
+            book.tags.add(tag)
+            book.save()
+            return redirect('main:book_details', book_id=book.id)
+    else:
+        form = TagForm()
+    return render(request, 'create_tag.html', {'form': form})
+
+@login_required(login_url="user:login")   
 def comment_book(request, book_id): 
     book = get_object_or_404(Book, pk=book_id)
     
@@ -150,6 +187,13 @@ def comment_book(request, book_id):
     
     return render(request, 'comment_form.html', context)
 
+
+@login_required(login_url="user:login")
 def add_reading_list(request, book_id): 
     book = get_object_or_404(Book, pk=book_id)
-    request.user.reading_list_books.add(book)
+    rl = ReadingList.objects.filter(user=request.user, book=book)
+    if rl.exists():
+        rl.delete()
+    else:
+        ReadingList.objects.create(user=request.user, book=book)
+    return redirect('main:book_details', book_id=book.id)

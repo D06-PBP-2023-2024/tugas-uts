@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{{author.name}}
-<ul>
-    {% for book in books %}
-    <li>
-        {{book.title}}
-    </li>
-    {% endfor %}
-</ul>
+<main class="m-5">
+    <h1 class="text-center">
+        {{author.name}}
+    </h1>
+    <ul class="mt-5 d-flex flex-wrap gap-3">
+        {% for book in books %}
+        <li class="card mb-3" style="width: 250px;">
+            <a href="{% url 'main:book_details' book.pk %}">
+                <img class="card-img" src="{{ book.cover_url }}" alt="img">
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        {{book.title}}
+                    </h5>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</main>
 {% endblock content %}
