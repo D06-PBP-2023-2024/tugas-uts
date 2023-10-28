@@ -5,18 +5,13 @@ from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from main.models import LoggedInUser, Like, Comment
+from main.models import Profile, Like, Comment
 from user.forms import UserForm
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 from django.http import JsonResponse
 import json
 import random
-
-
-@login_required(login_url='/login')
-def user_info(request):
-    return render(request, "user.html")
 
 def register(request):
     form = UserCreationForm()
@@ -25,7 +20,7 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            logged_in_user = LoggedInUser(user=user)
+            logged_in_user = Profile(user=user)
             logged_in_user.save()
             messages.success(request, 'Your account has been successfully created!')
             return JsonResponse({'success': True})
@@ -70,31 +65,66 @@ def login_user(request):
 def user_info(request):
     try:
         user = request.user
-        logged_in_user = get_object_or_404(LoggedInUser, user=user)
-        form = UserForm(request.POST or None)
-        likes = Like.objects.filter(user=user)
-        books_liked = [like.book for like in likes]
-        comments = Comment.objects.filter(user=user)
-        context = {
-            'username' : user.username,
-            'first_name' : logged_in_user.first_name or "",
-            'last_name' : logged_in_user.last_name or "",
-            'email' : logged_in_user.email or "Email",
-            'phone_number': logged_in_user.phone_number or "Phone number",
-            'domicile': logged_in_user.domicile or "Domicile",
-            'liked_books' : books_liked,
-            'comments' : comments,
-            'form' : form
-        }
-        return render(request, 'user.html', context)
+        try:
+            logged_in_user = Profile.objects.get(user=user)
+            form = UserForm(request.POST or None)
+            likes = Like.objects.filter(user=user)
+            books_liked = [like.book for like in likes]
+            comments = Comment.objects.filter(user=user)
+            context = {
+                'username' : user.username,
+                'first_name' : logged_in_user.first_name or "",
+                'last_name' : logged_in_user.last_name or "",
+                'email' : logged_in_user.email or "Email",
+                'phone_number': logged_in_user.phone_number or "Phone number",
+                'domicile': logged_in_user.domicile or "Domicile",
+                'liked_books' : books_liked,
+                'comments' : comments,
+                'form' : form
+            }
+            return render(request, 'user.html', context)
+        except Profile.DoesNotExist:
+            return redirect('user:login')
     except User.DoesNotExist:
         return redirect('user:login')
+    
+def check_user_info(request,id):
+    try:
+        user = User.objects.get(id=id)
+        print(user.pk)
+        print(user.username)
+        try:
+            logged_in_user = Profile.objects.get(user=user)
+            likes = Like.objects.filter(user=user)
+            books_liked = [like.book for like in likes]
+            comments = Comment.objects.filter(user=user)
+            context = {
+                'username' : user.username,
+                'first_name' : logged_in_user.first_name or "",
+                'last_name' : logged_in_user.last_name or "",
+                'email' : logged_in_user.email or "Email",
+                'phone_number': logged_in_user.phone_number or "Phone number",
+                'domicile': logged_in_user.domicile or "Domicile",
+                'liked_books' : books_liked,
+                'comments' : comments,
+            }
+            
+            return HttpResponseRedirect(reverse('main:show_html', context))
+        except Profile.DoesNotExist:
+            print(1)
+            return redirect('user:user_not_found')
+    except User.DoesNotExist:
+        print(2)
+        return redirect('user:user_not_found')
+    
+def user_not_found(request):
+    return render(request, "user_not_found.html")
 
 @csrf_exempt
 def update_profile(request):
     form = UserForm(request.POST or None)
     user = request.user
-    logged_in_user = get_object_or_404(LoggedInUser, user=user)
+    logged_in_user = Profile.objects.get(user=user)
 
     if request.method == "POST":
         first_name = request.POST.get('first_name')
