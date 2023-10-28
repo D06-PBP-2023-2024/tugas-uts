@@ -8,7 +8,7 @@ def load_my_initial_data(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main', '0015_merge_20231029_0008'),
+        ('main', '0016_alter_book_title'),
     ]
 
     operations = [
