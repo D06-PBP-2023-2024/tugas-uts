@@ -1,0 +1,93 @@
+<div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Update Profile</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-2">
+                        <label for="name" class="col-form-label">First Name :</label>
+                        <input type="text" class="form-control" id="fname" name="fname"></input>
+                    </div>
+                    <div class="mb-2">
+                        <label for="name" class="col-form-label">Last Name :</label>
+                        <input type="text" class="form-control" id="lname" name="lname"></input>
+                    </div>
+                    <div class="mb-2">
+                        <label for="description" class="col-form-label">Email :</label>
+                        <input type="text" class="form-control" id="email" name="email"></textarea>
+                    </div>
+                    <div class="mb-2">
+                        <label for="price" class="col-form-label">Phone number :</label>
+                        <input type="text" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-2">
+                        <label for="description" class="col-form-label">Domicile:</label>
+                        <input type="text" class="form-control" id="domicile" name="domicile"></input>
+                    </div>
+                </form>
+
+                <form method="POST" id="form" onsubmit="return false;" action="{% url 'user:update_profile_form' %}">  
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                </form>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <th>Field</th>
+                            <th>Value</th>
+                        </tr>
+                        <tr>
+                            <td>{{ form.first_name.label_tag }}</td>
+                            <td>{{ form.first_name }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.last_name.label_tag }}</td>
+                            <td>{{ form.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.email.label_tag }}</td>
+                            <td>{{ form.email }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.phone_number.label_tag }}</td>
+                            <td>{{ form.phone_number }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.domicile.label_tag }}</td>
+                            <td>{{ form.domicile }}</td>
+                        </tr>
+                    </table>
+                    <button type="submit">Save</button>
+                </form>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_save" data-bs-dismiss="modal">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateProfile() {
+        fetch("{% url 'user:update_profile' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        })
+        // .then(refreshItems)
+
+        document.getElementById("form").reset()
+        return false
+    }
+
+    function clearForm(){}
+
+    document.getElementById("button_save").onclick = updateProfile
+</script>
