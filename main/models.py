@@ -3,11 +3,11 @@ from django.contrib.auth.models import User
 
 class LoggedInUser(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100)
+    first_name = models.CharField(max_length=100, blank=True, null=True)
+    last_name = models.CharField(max_length=100, blank=True, null=True)
+    email = models.EmailField(max_length=100, blank=True, null=True)
     phone_number = models.CharField(max_length=100, blank=True, null=True)
-    domicile = models.CharField(max_length=100)
+    domicile = models.CharField(max_length=100, blank=True, null=True)
 
 class Author(models.Model):
     name = models.CharField(max_length=100)

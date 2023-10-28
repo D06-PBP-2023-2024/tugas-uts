@@ -1,19 +1,14 @@
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, JsonResponse
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages  
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, get_user_model
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from main.models import LoggedInUser
-from django.contrib.auth import get_user_model
 from user.forms import UserForm
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
-from django.http import JsonResponse
-
-User = get_user_model() 
-
 
 @login_required(login_url='/login')
 def user_info(request):
@@ -25,7 +20,9 @@ def register(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            logged_in_user = LoggedInUser(user=user)
+            logged_in_user.save()
             messages.success(request, 'Your account has been successfully created!')
             return JsonResponse({'success': True})
         else:
@@ -48,15 +45,29 @@ def login_user(request):
 
 def user_info(request):
     try:
-        user = User.objects.get(username=request.user.username)
-        context = {
-            'username' : user.username,
-            'first_name' : user.first_name or "not set",
-            'last_name' : user.last_name,
-            'email' : user.email or "Email",
-            'phone_number': getattr(user, 'phone_number', 'Phone number'),
-            'domicile': getattr(user, 'domicile', 'Domicile')
-        }
+        user = request.user
+        logged_in_user = get_object_or_404(LoggedInUser, user=user)
+        form = UserForm(request.POST or None)
+        if logged_in_user.first_name == None and logged_in_user.last_name == None:
+            context = {
+                'username' : user.username,
+                'first_name' : logged_in_user.first_name or "Name",
+                'last_name' : logged_in_user.last_name,
+                'email' : logged_in_user.email or "Email",
+                'phone_number': logged_in_user.phone_number or "Phone number",
+                'domicile': logged_in_user.domicile or "Domicile",
+                'form' : form
+            }
+        else:
+            context = {
+                'username' : user.username,
+                'first_name' : logged_in_user.first_name or "",
+                'last_name' : logged_in_user.last_name or "",
+                'email' : logged_in_user.email or "Email",
+                'phone_number': logged_in_user.phone_number or "Phone number",
+                'domicile': logged_in_user.domicile or "Domicile",
+                'form' : form
+            }
         return render(request, 'user.html', context)
     except User.DoesNotExist:
         return redirect('user:login')
@@ -64,39 +75,31 @@ def user_info(request):
 @csrf_exempt
 def update_profile(request):
     form = UserForm(request.POST or None)
+    user = request.user
+    logged_in_user = get_object_or_404(LoggedInUser, user=user)
 
     if request.method == "POST":
-        user = request.user
-        firstname = request.POST.get("fname")
-        if (firstname != ""):
-            user.first_name = firstname
-        lastname = request.POST.get("lname")
-        if (lastname != ""):
-            user.last_name = lastname
-        email = request.POST.get("email")
+        first_name = request.POST.get('first_name')
+        if (first_name != ""):
+            logged_in_user.first_name = first_name
+        last_name = request.POST.get('last_name')
+        if (last_name != ""):
+            logged_in_user.last_name = last_name
+        email = request.POST.get('email')
         if (email != ""):
-            user.email = email
-        phonenumber = request.POST.get("phone_number")
-        if (phonenumber != ""):
-            user.phone_number = phonenumber
-        domicile = request.POST.get("domicile")
+            logged_in_user.email = email
+        phone_number = request.POST.get('phone_number')
+        if (phone_number != ""):
+            logged_in_user.phone_number = phone_number
+        domicile = request.POST.get('domicile')
         if (domicile != ""):
-            user.domicile = domicile
+            logged_in_user.domicile = domicile
 
-        user.save()
-        return HttpResponseRedirect(reverse('main:index'))
+        logged_in_user.save()
+        return HttpResponseRedirect(reverse('user_info'))
 
     context = {'form': form}
-    print(context)
     return render(request, "user.html", context)
-
-def update_profile_form(request):
-    form = UserForm(request.POST or None)
-    context = {'form': form}
-
-    return render(request, 'profileform.html', context)
-
-#login required
 
 def logout_user(request):
     logout(request)

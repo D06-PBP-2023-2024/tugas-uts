@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% load static %}
 
@@ -15,7 +16,7 @@
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                 </svg>
                 <div style="display: flex; flex-direction: column; margin-top: 10px;">
-                    <h3>{{ first_name }} {{ last_name }}</h3>
+                    <h3 class="text-wrap px-2">{{ first_name }} {{ last_name }}</h3>
                     <h5 style="opacity: 0.7; margin-bottom: 20px;">{{ username }}</h5>
                 </div>
             </div>
@@ -91,6 +92,10 @@
             </div>
         </div>
     </div>
+    <div class="d-flex justify-content-end mt-4">
+        
+        <button type="button" class="btn btn-md btn-primary px-3" id="button_logout" data-bs-toggle="modal" data-bs-target="#logoutButton">Log Out</button>
+    </div>
 </div>
 
 
@@ -102,28 +107,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="form" onsubmit="return false;">
+                <form method="POST" id="form" onsubmit="return false;">  
                     {% csrf_token %}
-                    <div class="mb-2">
-                        <label for="name" class="col-form-label">First Name :</label>
-                        <input type="text" class="form-control" id="fname" name="fname"></input>
-                    </div>
-                    <div class="mb-2">
-                        <label for="name" class="col-form-label">Last Name :</label>
-                        <input type="text" class="form-control" id="lname" name="lname"></input>
-                    </div>
-                    <div class="mb-2">
-                        <label for="description" class="col-form-label">Email :</label>
-                        <input type="text" class="form-control" id="email" name="email"></textarea>
-                    </div>
-                    <div class="mb-2">
-                        <label for="price" class="col-form-label">Phone number :</label>
-                        <input type="text" class="form-control" id="price" name="price"></input>
-                    </div>
-                    <div class="mb-2">
-                        <label for="description" class="col-form-label">Domicile:</label>
-                        <input type="text" class="form-control" id="domicile" name="domicile"></input>
-                    </div>
+                    {{ form|crispy }}
                 </form>
             </div>
             <div class="modal-footer">
@@ -135,21 +121,31 @@
 </div>
 
 <script>
-    function updateProfile() {
-        console.log("masuk")
-        fetch("{% url 'user:update_profile' %}", {
-            method: "POST",
-            body: new FormData(document.querySelector('#form'))
-        })
-        console.log("sini")
-
-        document.getElementById("form").reset()
-        return false
-    }
+        function updateProfile() {
+            fetch("{% url 'user:update_profile' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(() => {
+                window.location.reload();
+            })
+            
+            document.getElementById("form").reset()
+            return false
+        }
 
     function clearForm(){}
 
     document.getElementById("button_save").onclick = updateProfile
+
+    function logout() {
+        fetch("{% url 'user:logout' %}", {
+            method: 'GET'
+        }).then(() => {
+            window.location.href = "{% url 'user:logout' %}";
+        })
+    };
+
+    document.getElementById("button_logout").onclick = logout
 </script>
 
 {% endblock content %}
