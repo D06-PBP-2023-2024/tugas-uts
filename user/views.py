@@ -1,7 +1,7 @@
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, JsonResponse
-from django.shortcuts import get_object_or_404, render, redirect
+from django.http import HttpResponseRedirect, JsonResponse
+from django.shortcuts import render, redirect
 from django.contrib import messages  
-from django.contrib.auth import authenticate, login, logout, get_user_model
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -88,11 +88,9 @@ def user_info(request):
     except User.DoesNotExist:
         return redirect('user:login')
     
-def check_user_info(request,id):
+def check_user_info(request,username):
     try:
-        user = User.objects.get(id=id)
-        print(user.pk)
-        print(user.username)
+        user = User.objects.get(username=username)
         try:
             logged_in_user = Profile.objects.get(user=user)
             likes = Like.objects.filter(user=user)
@@ -108,13 +106,10 @@ def check_user_info(request,id):
                 'liked_books' : books_liked,
                 'comments' : comments,
             }
-            
-            return HttpResponseRedirect(reverse('main:show_html', context))
+            return render(request, "check_user.html", context)
         except Profile.DoesNotExist:
-            print(1)
             return redirect('user:user_not_found')
     except User.DoesNotExist:
-        print(2)
         return redirect('user:user_not_found')
     
 def user_not_found(request):
