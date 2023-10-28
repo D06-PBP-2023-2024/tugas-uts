@@ -75,30 +75,17 @@ def user_info(request):
         likes = Like.objects.filter(user=user)
         books_liked = [like.book for like in likes]
         comments = Comment.objects.filter(user=user)
-        if logged_in_user.first_name == None and logged_in_user.last_name == None:
-            context = {
-                'username' : user.username,
-                'first_name' : logged_in_user.first_name or "Name",
-                'last_name' : logged_in_user.last_name or "",
-                'email' : logged_in_user.email or "Email",
-                'phone_number': logged_in_user.phone_number or "Phone number",
-                'domicile': logged_in_user.domicile or "Domicile",
-                'liked_books' : books_liked,
-                'comments' : comments,
-                'form' : form
-            }
-        else:
-            context = {
-                'username' : user.username,
-                'first_name' : logged_in_user.first_name or "",
-                'last_name' : logged_in_user.last_name or "",
-                'email' : logged_in_user.email or "Email",
-                'phone_number': logged_in_user.phone_number or "Phone number",
-                'domicile': logged_in_user.domicile or "Domicile",
-                'liked_books' : books_liked,
-                'comments' : comments,
-                'form' : form
-            }
+        context = {
+            'username' : user.username,
+            'first_name' : logged_in_user.first_name or "",
+            'last_name' : logged_in_user.last_name or "",
+            'email' : logged_in_user.email or "Email",
+            'phone_number': logged_in_user.phone_number or "Phone number",
+            'domicile': logged_in_user.domicile or "Domicile",
+            'liked_books' : books_liked,
+            'comments' : comments,
+            'form' : form
+        }
         return render(request, 'user.html', context)
     except User.DoesNotExist:
         return redirect('user:login')

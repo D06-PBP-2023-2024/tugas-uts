@@ -10,11 +10,7 @@
     <div class="row d-flex">
         <nav class="col-sm-4 mt-3">
             <div class="card shadow d-flex mr-1 align-items-center text-center text-wrap h-100 justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" viewBox="0 0 16 16"
-                    style="margin: 20px 15px 5px 15px;">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                </svg>
+                <h4>Welcome!</h4>
                 <div style="display: flex; flex-direction: column; margin-top: 10px;">
                     <h3 class="text-wrap px-2">{{ first_name }} {{ last_name }}</h3>
                     <h5 style="opacity: 0.7; margin-bottom: 20px;">{{ username }}</h5>
@@ -74,7 +70,9 @@
                             </div>
                         </li>
                     {% empty %}
-                        <h6 class="mb-0 mt-2">No book liked yet</h6>
+                        <li class="list-group-item">
+                            <h6 class="mb-0 mt-2">No book liked yet</h6>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
