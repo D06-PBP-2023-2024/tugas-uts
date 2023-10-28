@@ -11,7 +11,7 @@ import requests
 def index(request: HttpRequest):
     page = int(request.GET.get("page", 1))
     book_list = Book.objects.all().order_by("title")
-    paginator = Paginator(book_list, 10)
+    paginator = Paginator(book_list, 8)
     page_obj = paginator.get_page(page)
     context = {
         "page": page,
@@ -38,7 +38,7 @@ def book_details(request: HttpRequest, book_id: int):
     return render(request, "book_details.html", context)
 
 def get_books(request: HttpRequest):
-    limit = 10
+    limit = 8
     page = int(request.GET.get("page", 1))
     books = Book.objects.all()[(page - 1)*limit:page*limit]
     serializers.serialize("json", books)
