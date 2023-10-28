@@ -1,9 +1,10 @@
-from django.shortcuts import render
-from main.models import Book, Tag, Author
+from django.shortcuts import render, get_object_or_404, redirect
+from main.models import Book, Tag, Author, Like, Comment, ReadingList
 from django.http import HttpResponse, JsonResponse, HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
 import django.core.serializers as serializers
+from .forms import CommentForm 
 import requests
 
 
@@ -44,14 +45,13 @@ def get_books(request: HttpRequest):
     serializers.serialize("json", books)
     return HttpResponse(serializers.serialize("json", books), content_type="application/json")
 
-
 def search_result(request):
     title = request.POST.get("title")
     tags = request.POST.get("tags")
 
     if tags != "":
         tag = Tag.objects.filter(subject__contains=tags).first()
-
+ 
     books = None
     if title != "":
         books = Book.objects.filter(title__contains=title)
@@ -83,7 +83,6 @@ def group_tags(request):
 
     return render(request, 'group_tags.html', context)
 
-    
 def search_form(request):
     context = {}
     return render(request, 'search_form.html', context)
@@ -114,3 +113,42 @@ def search_result_ajax(request):
     }
 
     return JsonResponse(context)
+
+def like_book(request, book_id): 
+    book = get_object_or_404(Book, pk=book_id)
+    user = request.user
+    
+    if Like.objects.filter().exists: 
+        Like.objects.filter(user=user, bookd=book).delete()
+        liked = False 
+    else: 
+        Like.objects.create(user=user, book=book)
+        liked = True 
+    
+    response_data = {'liked': liked, 'likes_count': book.likes.count()}
+    return JsonResponse(response_data)
+    
+def comment_book(request, book_id): 
+    book = get_object_or_404(Book, pk=book_id)
+    
+    if request.method == 'POST': 
+        form = CommentForm(request.POST)
+        if form.is_valid(): 
+            comment = form.save(commit=False)
+            comment.book = book 
+            comment.user = request.user 
+            comment.save()
+            return redirect('book_detail', book_id=book.id)
+    else: 
+        form = CommentForm()
+    
+    context = {
+        'form': form, 
+        'book': book
+    }
+    
+    return render(request, 'main/comment_form.html', context)
+
+def add_reading_list(request, book_id): 
+    book = get_object_or_404(Book, pk=book_id)
+    request.user.reading_list_books.add(book)
