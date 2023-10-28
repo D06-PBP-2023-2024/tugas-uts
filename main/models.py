@@ -36,7 +36,7 @@ class ReadingList(models.Model):
     book = models.ForeignKey('Book', on_delete=models.CASCADE)
 
 class Book(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=255)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     cover_url = models.TextField()
     download_count = models.IntegerField()
