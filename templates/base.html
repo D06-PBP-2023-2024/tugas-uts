@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+    <title>Kindle Kids</title>
     {% block meta %}
     {% endblock meta %}
     <meta charset="UTF-8" />
@@ -41,8 +42,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
                     <a class="nav-link" href="{% url 'reading_forum:discussion_list' %}">Forum Diskusi</a>
                     <a class="nav-link" href="{% url 'user:user_info' %}">My Account</a>
                 </div>
@@ -59,7 +58,6 @@
 
         body {
             overflow-x: hidden;
-            overflow-y: hidden;
         }
 
         * {

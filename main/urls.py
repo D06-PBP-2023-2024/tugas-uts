@@ -10,6 +10,8 @@ urlpatterns = [
     path('tags/', views.group_tags, name='group_tags'),
     path('search/', views.search_form, name='search_form'),
     path('search-ajax/', views.search_result_ajax, name='search_result_ajax'),
+    path('book/<int:book_id>/comment/', views.comment_book, name='comment_book'),
+    path('like/<int:book_id>/', views.like_book, name='like_book'),
 ]
 
 
