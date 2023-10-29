@@ -143,9 +143,17 @@ class MainTestCase(TestCase):
         response = c.get(reverse("main:create_tag", args=[book.id]))
         self.assertEqual(response.status_code, 200)
 
-def test_get_books(self):
-    author = Author.objects.create(name="Author")
-    book = Book.objects.create(title="Book", author=author, download_count=0)
-    c = Client()
-    response = c.get(reverse("main:get_all_books"))
-    self.assertEqual(response.status_code, 200)
+    def test_get_books(self):
+        author = Author.objects.create(name="Author")
+        book = Book.objects.create(title="Book", author=author, download_count=0)
+        c = Client()
+        response = c.get(reverse("main:get_all_books"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_search_url_is_exist(self):
+        response = Client().get('/search/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_search_using_search_template(self):
+        response = Client().get('/search/')
+        self.assertTemplateUsed(response, 'search_form.html')

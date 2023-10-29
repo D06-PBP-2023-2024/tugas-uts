@@ -3,49 +3,49 @@
         "model": "main.tag",
         "pk": 1,
         "fields": {
-            "subject": "Conflict of generations -- Drama"
+            "subject": "conflict of generations -- drama"
         }
     },
     {
         "model": "main.tag",
         "pk": 2,
         "fields": {
-            "subject": "Juliet (Fictitious character) -- Drama"
+            "subject": "juliet (fictitious character) -- drama"
         }
     },
     {
         "model": "main.tag",
         "pk": 3,
         "fields": {
-            "subject": "Romeo (Fictitious character) -- Drama"
+            "subject": "romeo (fictitious character) -- drama"
         }
     },
     {
         "model": "main.tag",
         "pk": 4,
         "fields": {
-            "subject": "Tragedies"
+            "subject": "tragedies"
         }
     },
     {
         "model": "main.tag",
         "pk": 5,
         "fields": {
-            "subject": "Vendetta -- Drama"
+            "subject": "vendetta -- drama"
         }
     },
     {
         "model": "main.tag",
         "pk": 6,
         "fields": {
-            "subject": "Verona (Italy) -- Drama"
+            "subject": "verona (italy) -- drama"
         }
     },
     {
         "model": "main.tag",
         "pk": 7,
         "fields": {
-            "subject": "Youth -- Drama"
+            "subject": "youth -- drama"
         }
     },
     {
@@ -59,7 +59,7 @@
         "model": "main.book",
         "pk": 1,
         "fields": {
-            "title": "Romeo and Juliet",
+            "title": "romeo and juliet",
             "author": 1,
             "cover_url": "https://www.gutenberg.org/cache/epub/1513/pg1513.cover.medium.jpg",
             "download_count": 68248,
@@ -79,49 +79,49 @@
         "model": "main.tag",
         "pk": 8,
         "fields": {
-            "subject": "Frankenstein's monster (Fictitious character) -- Fiction"
+            "subject": "frankenstein's monster (fictitious character) -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 9,
         "fields": {
-            "subject": "Frankenstein, Victor (Fictitious character) -- Fiction"
+            "subject": "frankenstein, victor (fictitious character) -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 10,
         "fields": {
-            "subject": "Gothic fiction"
+            "subject": "gothic fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 11,
         "fields": {
-            "subject": "Horror tales"
+            "subject": "horror tales"
         }
     },
     {
         "model": "main.tag",
         "pk": 12,
         "fields": {
-            "subject": "Monsters -- Fiction"
+            "subject": "monsters -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 13,
         "fields": {
-            "subject": "Science fiction"
+            "subject": "science fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 14,
         "fields": {
-            "subject": "Scientists -- Fiction"
+            "subject": "scientists -- fiction"
         }
     },
     {
@@ -135,7 +135,7 @@
         "model": "main.book",
         "pk": 2,
         "fields": {
-            "title": "Frankenstein; Or, The Modern Prometheus",
+            "title": "frankenstein; or, the modern prometheus",
             "author": 2,
             "cover_url": "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg",
             "download_count": 58506,
@@ -155,49 +155,49 @@
         "model": "main.tag",
         "pk": 15,
         "fields": {
-            "subject": "Courtship -- Fiction"
+            "subject": "courtship -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 16,
         "fields": {
-            "subject": "Domestic fiction"
+            "subject": "domestic fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 17,
         "fields": {
-            "subject": "England -- Fiction"
+            "subject": "england -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 18,
         "fields": {
-            "subject": "Love stories"
+            "subject": "love stories"
         }
     },
     {
         "model": "main.tag",
         "pk": 19,
         "fields": {
-            "subject": "Sisters -- Fiction"
+            "subject": "sisters -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 20,
         "fields": {
-            "subject": "Social classes -- Fiction"
+            "subject": "social classes -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 21,
         "fields": {
-            "subject": "Young women -- Fiction"
+            "subject": "young women -- fiction"
         }
     },
     {
@@ -211,7 +211,7 @@
         "model": "main.book",
         "pk": 3,
         "fields": {
-            "title": "Pride and Prejudice",
+            "title": "pride and prejudice",
             "author": 3,
             "cover_url": "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
             "download_count": 58114,
@@ -231,63 +231,63 @@
         "model": "main.tag",
         "pk": 22,
         "fields": {
-            "subject": "Adventure stories"
+            "subject": "adventure stories"
         }
     },
     {
         "model": "main.tag",
         "pk": 23,
         "fields": {
-            "subject": "Ahab, Captain (Fictitious character) -- Fiction"
+            "subject": "ahab, captain (fictitious character) -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 24,
         "fields": {
-            "subject": "Mentally ill -- Fiction"
+            "subject": "mentally ill -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 25,
         "fields": {
-            "subject": "Psychological fiction"
+            "subject": "psychological fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 26,
         "fields": {
-            "subject": "Sea stories"
+            "subject": "sea stories"
         }
     },
     {
         "model": "main.tag",
         "pk": 27,
         "fields": {
-            "subject": "Ship captains -- Fiction"
+            "subject": "ship captains -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 28,
         "fields": {
-            "subject": "Whales -- Fiction"
+            "subject": "whales -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 29,
         "fields": {
-            "subject": "Whaling -- Fiction"
+            "subject": "whaling -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 30,
         "fields": {
-            "subject": "Whaling ships -- Fiction"
+            "subject": "whaling ships -- fiction"
         }
     },
     {
@@ -301,7 +301,7 @@
         "model": "main.book",
         "pk": 4,
         "fields": {
-            "title": "Moby Dick; Or, The Whale",
+            "title": "moby dick; or, the whale",
             "author": 4,
             "cover_url": "https://www.gutenberg.org/cache/epub/2701/pg2701.cover.medium.jpg",
             "download_count": 49674,
@@ -323,70 +323,77 @@
         "model": "main.tag",
         "pk": 31,
         "fields": {
-            "subject": "Adultery -- Fiction"
+            "subject": "adultery -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 32,
         "fields": {
-            "subject": "Boston (Mass.) -- History -- Colonial period, ca. 1600-1775 -- Fiction"
+            "subject": "boston (mass.) -- history -- colonial period, ca. 1600-1775 -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 33,
         "fields": {
-            "subject": "Clergy -- Fiction"
+            "subject": "clergy -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 34,
         "fields": {
-            "subject": "Historical fiction"
+            "subject": "historical fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 35,
         "fields": {
-            "subject": "Illegitimate children -- Fiction"
+            "subject": "illegitimate children -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 36,
         "fields": {
-            "subject": "Married women -- Fiction"
+            "subject": "married women -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 37,
         "fields": {
-            "subject": "Puritans -- Fiction"
+            "subject": "psychological fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 38,
         "fields": {
-            "subject": "Revenge -- Fiction"
+            "subject": "puritans -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 39,
         "fields": {
-            "subject": "Triangles (Interpersonal relations) -- Fiction"
+            "subject": "revenge -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 40,
         "fields": {
-            "subject": "Women immigrants -- Fiction"
+            "subject": "triangles (interpersonal relations) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 41,
+        "fields": {
+            "subject": "women immigrants -- fiction"
         }
     },
     {
@@ -400,7 +407,7 @@
         "model": "main.book",
         "pk": 5,
         "fields": {
-            "title": "The Scarlet Letter",
+            "title": "the scarlet letter",
             "author": 5,
             "cover_url": "https://www.gutenberg.org/cache/epub/25344/pg25344.cover.medium.jpg",
             "download_count": 34410,
@@ -412,40 +419,68 @@
                 34,
                 35,
                 36,
-                25,
                 37,
                 38,
                 39,
-                40
+                40,
+                41
             ]
-        }
-    },
-    {
-        "model": "main.tag",
-        "pk": 41,
-        "fields": {
-            "subject": "Bildungsromans"
         }
     },
     {
         "model": "main.tag",
         "pk": 42,
         "fields": {
-            "subject": "City and town life -- Fiction"
+            "subject": "bildungsromans"
         }
     },
     {
         "model": "main.tag",
         "pk": 43,
         "fields": {
-            "subject": "Didactic fiction"
+            "subject": "city and town life -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 44,
         "fields": {
-            "subject": "Married people -- Fiction"
+            "subject": "didactic fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 45,
+        "fields": {
+            "subject": "domestic fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 46,
+        "fields": {
+            "subject": "england -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 47,
+        "fields": {
+            "subject": "love stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 48,
+        "fields": {
+            "subject": "married people -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 49,
+        "fields": {
+            "subject": "young women -- fiction"
         }
     },
     {
@@ -459,49 +494,49 @@
         "model": "main.book",
         "pk": 6,
         "fields": {
-            "title": "Middlemarch",
+            "title": "middlemarch",
             "author": 6,
             "cover_url": "https://www.gutenberg.org/cache/epub/145/pg145.cover.medium.jpg",
             "download_count": 31517,
             "content": "https://www.gutenberg.org/ebooks/145.html.images",
             "tags": [
-                41,
                 42,
                 43,
-                16,
-                17,
-                18,
                 44,
-                21
+                45,
+                46,
+                47,
+                48,
+                49
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 45,
+        "pk": 50,
         "fields": {
-            "subject": "Alice (Fictitious character from Carroll) -- Juvenile fiction"
+            "subject": "alice (fictitious character from carroll) -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 46,
+        "pk": 51,
         "fields": {
-            "subject": "Children's stories"
+            "subject": "children's stories"
         }
     },
     {
         "model": "main.tag",
-        "pk": 47,
+        "pk": 52,
         "fields": {
-            "subject": "Fantasy fiction"
+            "subject": "fantasy fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 48,
+        "pk": 53,
         "fields": {
-            "subject": "Imaginary places -- Juvenile fiction"
+            "subject": "imaginary places -- juvenile fiction"
         }
     },
     {
@@ -515,66 +550,66 @@
         "model": "main.book",
         "pk": 7,
         "fields": {
-            "title": "Alice's Adventures in Wonderland",
+            "title": "alice's adventures in wonderland",
             "author": 7,
             "cover_url": "https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg",
             "download_count": 29704,
             "content": "https://www.gutenberg.org/ebooks/11.html.images",
             "tags": [
-                45,
-                46,
-                47,
-                48
+                50,
+                51,
+                52,
+                53
             ]
-        }
-    },
-    {
-        "model": "main.tag",
-        "pk": 49,
-        "fields": {
-            "subject": "Canada -- History -- 1914-1945 -- Fiction"
-        }
-    },
-    {
-        "model": "main.tag",
-        "pk": 50,
-        "fields": {
-            "subject": "Choice -- Fiction"
-        }
-    },
-    {
-        "model": "main.tag",
-        "pk": 51,
-        "fields": {
-            "subject": "Love -- Fiction"
-        }
-    },
-    {
-        "model": "main.tag",
-        "pk": 52,
-        "fields": {
-            "subject": "Romance fiction"
-        }
-    },
-    {
-        "model": "main.tag",
-        "pk": 53,
-        "fields": {
-            "subject": "Self-actualization (Psychology) -- Fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 54,
         "fields": {
-            "subject": "Single women -- Fiction"
+            "subject": "canada -- history -- 1914-1945 -- fiction"
         }
     },
     {
         "model": "main.tag",
         "pk": 55,
         "fields": {
-            "subject": "Young adult fiction"
+            "subject": "choice -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 56,
+        "fields": {
+            "subject": "love -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 57,
+        "fields": {
+            "subject": "romance fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 58,
+        "fields": {
+            "subject": "self-actualization (psychology) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 59,
+        "fields": {
+            "subject": "single women -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 60,
+        "fields": {
+            "subject": "young adult fiction"
         }
     },
     {
@@ -588,55 +623,69 @@
         "model": "main.book",
         "pk": 8,
         "fields": {
-            "title": "The Blue Castle: a novel",
+            "title": "the blue castle: a novel",
             "author": 8,
             "cover_url": "https://www.gutenberg.org/cache/epub/67979/pg67979.cover.medium.jpg",
             "download_count": 28031,
             "content": "https://www.gutenberg.org/ebooks/67979.html.images",
             "tags": [
-                49,
-                50,
-                51,
-                52,
-                53,
                 54,
-                55
+                55,
+                56,
+                57,
+                58,
+                59,
+                60
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 56,
+        "pk": 61,
         "fields": {
-            "subject": "Dracula, Count (Fictitious character) -- Fiction"
+            "subject": "dracula, count (fictitious character) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 57,
+        "pk": 62,
         "fields": {
-            "subject": "Epistolary fiction"
+            "subject": "epistolary fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 58,
+        "pk": 63,
         "fields": {
-            "subject": "Transylvania (Romania) -- Fiction"
+            "subject": "gothic fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 59,
+        "pk": 64,
         "fields": {
-            "subject": "Vampires -- Fiction"
+            "subject": "horror tales"
         }
     },
     {
         "model": "main.tag",
-        "pk": 60,
+        "pk": 65,
         "fields": {
-            "subject": "Whitby (England) -- Fiction"
+            "subject": "transylvania (romania) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 66,
+        "fields": {
+            "subject": "vampires -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 67,
+        "fields": {
+            "subject": "whitby (england) -- fiction"
         }
     },
     {
@@ -650,69 +699,76 @@
         "model": "main.book",
         "pk": 9,
         "fields": {
-            "title": "Dracula",
+            "title": "dracula",
             "author": 9,
             "cover_url": "https://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg",
             "download_count": 26457,
             "content": "https://www.gutenberg.org/ebooks/345.html.images",
             "tags": [
-                56,
-                57,
-                10,
-                11,
-                58,
-                59,
-                60
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 61,
+        "pk": 68,
         "fields": {
-            "subject": "Appearance (Philosophy) -- Fiction"
+            "subject": "appearance (philosophy) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 62,
+        "pk": 69,
         "fields": {
-            "subject": "Conduct of life -- Fiction"
+            "subject": "conduct of life -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 63,
+        "pk": 70,
         "fields": {
-            "subject": "Great Britain -- History -- Victoria, 1837-1901 -- Fiction"
+            "subject": "didactic fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 64,
+        "pk": 71,
         "fields": {
-            "subject": "London (England) -- History -- 1800-1950 -- Fiction"
+            "subject": "great britain -- history -- victoria, 1837-1901 -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 65,
+        "pk": 72,
         "fields": {
-            "subject": "Paranormal fiction"
+            "subject": "london (england) -- history -- 1800-1950 -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 66,
+        "pk": 73,
         "fields": {
-            "subject": "Portraits -- Fiction"
+            "subject": "paranormal fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 67,
+        "pk": 74,
         "fields": {
-            "subject": "Supernatural -- Fiction"
+            "subject": "portraits -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 75,
+        "fields": {
+            "subject": "supernatural -- fiction"
         }
     },
     {
@@ -726,49 +782,63 @@
         "model": "main.book",
         "pk": 10,
         "fields": {
-            "title": "The Picture of Dorian Gray",
+            "title": "the picture of dorian gray",
             "author": 10,
             "cover_url": "https://www.gutenberg.org/cache/epub/174/pg174.cover.medium.jpg",
             "download_count": 24052,
             "content": "https://www.gutenberg.org/ebooks/174.html.images",
             "tags": [
-                61,
-                62,
-                43,
-                63,
-                64,
-                65,
-                66,
-                67
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 68,
+        "pk": 76,
         "fields": {
-            "subject": "Female friendship -- Fiction"
+            "subject": "england -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 69,
+        "pk": 77,
         "fields": {
-            "subject": "Older women -- Fiction"
+            "subject": "female friendship -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 70,
+        "pk": 78,
         "fields": {
-            "subject": "Pastoral fiction"
+            "subject": "older women -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 71,
+        "pk": 79,
         "fields": {
-            "subject": "Villages -- Fiction"
+            "subject": "pastoral fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 80,
+        "fields": {
+            "subject": "sisters -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 81,
+        "fields": {
+            "subject": "villages -- fiction"
         }
     },
     {
@@ -782,47 +852,54 @@
         "model": "main.book",
         "pk": 11,
         "fields": {
-            "title": "Cranford",
+            "title": "cranford",
             "author": 11,
             "cover_url": "https://www.gutenberg.org/cache/epub/394/pg394.cover.medium.jpg",
             "download_count": 23844,
             "content": "https://www.gutenberg.org/ebooks/394.html.images",
             "tags": [
-                17,
-                68,
-                69,
-                70,
-                19,
-                71
+                76,
+                77,
+                78,
+                79,
+                80,
+                81
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 72,
+        "pk": 82,
         "fields": {
-            "subject": "Feminist fiction"
+            "subject": "feminist fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 73,
+        "pk": 83,
         "fields": {
-            "subject": "Married women -- Psychology -- Fiction"
+            "subject": "married women -- psychology -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 74,
+        "pk": 84,
         "fields": {
-            "subject": "Mentally ill women -- Fiction"
+            "subject": "mentally ill women -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 75,
+        "pk": 85,
         "fields": {
-            "subject": "Sex role -- Fiction"
+            "subject": "psychological fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 86,
+        "fields": {
+            "subject": "sex role -- fiction"
         }
     },
     {
@@ -836,32 +913,39 @@
         "model": "main.book",
         "pk": 12,
         "fields": {
-            "title": "The Yellow Wallpaper",
+            "title": "the yellow wallpaper",
             "author": 12,
             "cover_url": "https://www.gutenberg.org/cache/epub/1952/pg1952.cover.medium.jpg",
             "download_count": 22571,
             "content": "https://www.gutenberg.org/ebooks/1952.html.images",
             "tags": [
-                72,
-                73,
-                74,
-                25,
-                75
+                82,
+                83,
+                84,
+                85,
+                86
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 76,
+        "pk": 87,
         "fields": {
-            "subject": "Great Britain -- Fiction"
+            "subject": "epistolary fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 77,
+        "pk": 88,
         "fields": {
-            "subject": "Travelers -- Fiction"
+            "subject": "great britain -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 89,
+        "fields": {
+            "subject": "travelers -- fiction"
         }
     },
     {
@@ -875,23 +959,23 @@
         "model": "main.book",
         "pk": 13,
         "fields": {
-            "title": "The Expedition of Humphry Clinker",
+            "title": "the expedition of humphry clinker",
             "author": 13,
             "cover_url": "https://www.gutenberg.org/cache/epub/2160/pg2160.cover.medium.jpg",
             "download_count": 21649,
             "content": "https://www.gutenberg.org/ebooks/2160.html.images",
             "tags": [
-                57,
-                76,
-                77
+                87,
+                88,
+                89
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 78,
+        "pk": 90,
         "fields": {
-            "subject": "France -- History -- Louis XIV, 1643-1715 -- Fiction"
+            "subject": "france -- history -- louis xiv, 1643-1715 -- fiction"
         }
     },
     {
@@ -905,13 +989,13 @@
         "model": "main.book",
         "pk": 14,
         "fields": {
-            "title": "Twenty years after",
+            "title": "twenty years after",
             "author": 14,
             "cover_url": "https://www.gutenberg.org/cache/epub/1259/pg1259.cover.medium.jpg",
             "download_count": 21415,
             "content": "https://www.gutenberg.org/ebooks/1259.html.images",
             "tags": [
-                78
+                90
             ]
         }
     },
@@ -926,21 +1010,28 @@
         "model": "main.book",
         "pk": 15,
         "fields": {
-            "title": "Twenty years after",
+            "title": "twenty years after",
             "author": 15,
             "cover_url": "https://www.gutenberg.org/cache/epub/1259/pg1259.cover.medium.jpg",
             "download_count": 21415,
             "content": "https://www.gutenberg.org/ebooks/1259.html.images",
             "tags": [
-                78
+                90
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 79,
+        "pk": 91,
         "fields": {
-            "subject": "Metamorphosis -- Fiction"
+            "subject": "metamorphosis -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 92,
+        "fields": {
+            "subject": "psychological fiction"
         }
     },
     {
@@ -954,36 +1045,36 @@
         "model": "main.book",
         "pk": 16,
         "fields": {
-            "title": "Metamorphosis",
+            "title": "metamorphosis",
             "author": 16,
             "cover_url": "https://www.gutenberg.org/cache/epub/5200/pg5200.cover.medium.jpg",
             "download_count": 20548,
             "content": "https://www.gutenberg.org/ebooks/5200.html.images",
             "tags": [
-                79,
-                25
+                91,
+                92
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 80,
+        "pk": 93,
         "fields": {
-            "subject": "Ireland -- Politics and government -- 18th century -- Humor"
+            "subject": "ireland -- politics and government -- 18th century -- humor"
         }
     },
     {
         "model": "main.tag",
-        "pk": 81,
+        "pk": 94,
         "fields": {
-            "subject": "Political satire, English"
+            "subject": "political satire, english"
         }
     },
     {
         "model": "main.tag",
-        "pk": 82,
+        "pk": 95,
         "fields": {
-            "subject": "Religious satire, English"
+            "subject": "religious satire, english"
         }
     },
     {
@@ -997,93 +1088,107 @@
         "model": "main.book",
         "pk": 17,
         "fields": {
-            "title": "A Modest Proposal: For preventing the children of poor people in Ireland, from being a burden on their parents or country, and for making them beneficial to the publick",
+            "title": "a modest proposal: for preventing the children of poor people in ireland, from being a burden on their parents or country, and for making them beneficial to the publick",
             "author": 17,
             "cover_url": "https://www.gutenberg.org/cache/epub/1080/pg1080.cover.medium.jpg",
             "download_count": 20402,
             "content": "https://www.gutenberg.org/ebooks/1080.html.images",
             "tags": [
-                80,
-                81,
-                82
+                93,
+                94,
+                95
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 83,
+        "pk": 96,
         "fields": {
-            "subject": "Impressment -- Fiction"
+            "subject": "england -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 84,
+        "pk": 97,
         "fields": {
-            "subject": "Picaresque literature"
+            "subject": "impressment -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 85,
+        "pk": 98,
         "fields": {
-            "subject": "Rogues and vagabonds -- Fiction"
+            "subject": "picaresque literature"
         }
     },
     {
         "model": "main.tag",
-        "pk": 86,
+        "pk": 99,
         "fields": {
-            "subject": "Sailors -- Fiction"
+            "subject": "rogues and vagabonds -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 87,
+        "pk": 100,
         "fields": {
-            "subject": "Scots -- England -- Fiction"
+            "subject": "sailors -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 88,
+        "pk": 101,
         "fields": {
-            "subject": "Warships -- Fiction"
+            "subject": "scots -- england -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 102,
+        "fields": {
+            "subject": "sea stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 103,
+        "fields": {
+            "subject": "warships -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 18,
         "fields": {
-            "title": "The Adventures of Roderick Random",
+            "title": "the adventures of roderick random",
             "author": 13,
             "cover_url": "https://www.gutenberg.org/cache/epub/4085/pg4085.cover.medium.jpg",
             "download_count": 19867,
             "content": "https://www.gutenberg.org/ebooks/4085.html.images",
             "tags": [
-                17,
-                83,
-                84,
-                85,
-                86,
-                87,
-                26,
-                88
+                96,
+                97,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 89,
+        "pk": 104,
         "fields": {
-            "subject": "Composers -- Germany -- Biography"
+            "subject": "composers -- germany -- biography"
         }
     },
     {
         "model": "main.tag",
-        "pk": 90,
+        "pk": 105,
         "fields": {
-            "subject": "Wagner, Richard, 1813-1883"
+            "subject": "wagner, richard, 1813-1883"
         }
     },
     {
@@ -1097,58 +1202,86 @@
         "model": "main.book",
         "pk": 19,
         "fields": {
-            "title": "My Life \u2014 Volume 1",
+            "title": "my life \u2014 volume 1",
             "author": 18,
             "cover_url": "https://www.gutenberg.org/cache/epub/5197/pg5197.cover.medium.jpg",
             "download_count": 19283,
             "content": "https://www.gutenberg.org/ebooks/5197.html.images",
             "tags": [
-                89,
-                90
+                104,
+                105
             ]
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 106,
+        "fields": {
+            "subject": "adventure stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 107,
+        "fields": {
+            "subject": "gothic fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 20,
         "fields": {
-            "title": "The Adventures of Ferdinand Count Fathom \u2014 Complete",
+            "title": "the adventures of ferdinand count fathom \u2014 complete",
             "author": 13,
             "cover_url": "https://www.gutenberg.org/cache/epub/6761/pg6761.cover.medium.jpg",
             "download_count": 18585,
             "content": "https://www.gutenberg.org/ebooks/6761.html.images",
             "tags": [
-                22,
-                10
+                106,
+                107
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 91,
+        "pk": 108,
         "fields": {
-            "subject": "Foundlings -- Fiction"
+            "subject": "bildungsromans"
         }
     },
     {
         "model": "main.tag",
-        "pk": 92,
+        "pk": 109,
         "fields": {
-            "subject": "Humorous stories"
+            "subject": "england -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 93,
+        "pk": 110,
         "fields": {
-            "subject": "Identity (Psychology) -- Fiction"
+            "subject": "foundlings -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 94,
+        "pk": 111,
         "fields": {
-            "subject": "Young men -- Fiction"
+            "subject": "humorous stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 112,
+        "fields": {
+            "subject": "identity (psychology) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 113,
+        "fields": {
+            "subject": "young men -- fiction"
         }
     },
     {
@@ -1162,47 +1295,47 @@
         "model": "main.book",
         "pk": 21,
         "fields": {
-            "title": "History of Tom Jones, a Foundling",
+            "title": "history of tom jones, a foundling",
             "author": 19,
             "cover_url": "https://www.gutenberg.org/cache/epub/6593/pg6593.cover.medium.jpg",
             "download_count": 18476,
             "content": "https://www.gutenberg.org/ebooks/6593.html.images",
             "tags": [
-                41,
-                17,
-                91,
-                92,
-                93,
-                94
+                108,
+                109,
+                110,
+                111,
+                112,
+                113
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 95,
+        "pk": 114,
         "fields": {
-            "subject": "Man-woman relationships -- Drama"
+            "subject": "man-woman relationships -- drama"
         }
     },
     {
         "model": "main.tag",
-        "pk": 96,
+        "pk": 115,
         "fields": {
-            "subject": "Marriage -- Drama"
+            "subject": "marriage -- drama"
         }
     },
     {
         "model": "main.tag",
-        "pk": 97,
+        "pk": 116,
         "fields": {
-            "subject": "Norwegian drama -- Translations into English"
+            "subject": "norwegian drama -- translations into english"
         }
     },
     {
         "model": "main.tag",
-        "pk": 98,
+        "pk": 117,
         "fields": {
-            "subject": "Wives -- Drama"
+            "subject": "wives -- drama"
         }
     },
     {
@@ -1216,45 +1349,45 @@
         "model": "main.book",
         "pk": 22,
         "fields": {
-            "title": "A Doll's House : a play",
+            "title": "a doll's house : a play",
             "author": 20,
             "cover_url": "https://www.gutenberg.org/cache/epub/2542/pg2542.cover.medium.jpg",
             "download_count": 18269,
             "content": "https://www.gutenberg.org/ebooks/2542.html.images",
             "tags": [
-                95,
-                96,
-                97,
-                98
+                114,
+                115,
+                116,
+                117
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 99,
+        "pk": 118,
         "fields": {
-            "subject": "Achilles (Mythological character) -- Poetry"
+            "subject": "achilles (mythological character) -- poetry"
         }
     },
     {
         "model": "main.tag",
-        "pk": 100,
+        "pk": 119,
         "fields": {
-            "subject": "Classical literature"
+            "subject": "classical literature"
         }
     },
     {
         "model": "main.tag",
-        "pk": 101,
+        "pk": 120,
         "fields": {
-            "subject": "Epic poetry, Greek -- Translations into English"
+            "subject": "epic poetry, greek -- translations into english"
         }
     },
     {
         "model": "main.tag",
-        "pk": 102,
+        "pk": 121,
         "fields": {
-            "subject": "Trojan War -- Poetry"
+            "subject": "trojan war -- poetry"
         }
     },
     {
@@ -1268,38 +1401,52 @@
         "model": "main.book",
         "pk": 23,
         "fields": {
-            "title": "The Iliad",
+            "title": "the iliad",
             "author": 21,
             "cover_url": "https://www.gutenberg.org/cache/epub/6130/pg6130.cover.medium.jpg",
             "download_count": 17735,
             "content": "https://www.gutenberg.org/ebooks/6130.html.images",
             "tags": [
-                99,
-                100,
-                101,
-                102
+                118,
+                119,
+                120,
+                121
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 103,
+        "pk": 122,
         "fields": {
-            "subject": "First loves -- Fiction"
+            "subject": "first loves -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 104,
+        "pk": 123,
         "fields": {
-            "subject": "Long Island (N.Y.) -- Fiction"
+            "subject": "long island (n.y.) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 105,
+        "pk": 124,
         "fields": {
-            "subject": "Rich people -- Fiction"
+            "subject": "married women -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 125,
+        "fields": {
+            "subject": "psychological fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 126,
+        "fields": {
+            "subject": "rich people -- fiction"
         }
     },
     {
@@ -1313,74 +1460,81 @@
         "model": "main.book",
         "pk": 24,
         "fields": {
-            "title": "The Great Gatsby",
+            "title": "the great gatsby",
             "author": 22,
             "cover_url": "https://www.gutenberg.org/cache/epub/64317/pg64317.cover.medium.jpg",
             "download_count": 17652,
             "content": "https://www.gutenberg.org/ebooks/64317.html.images",
             "tags": [
-                103,
-                104,
-                36,
-                25,
-                105
+                122,
+                123,
+                124,
+                125,
+                126
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 106,
+        "pk": 127,
         "fields": {
-            "subject": "British -- France -- Paris -- Fiction"
+            "subject": "british -- france -- paris -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 107,
+        "pk": 128,
         "fields": {
-            "subject": "Executions and executioners -- Fiction"
+            "subject": "executions and executioners -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 108,
+        "pk": 129,
         "fields": {
-            "subject": "France -- History -- Revolution, 1789-1799 -- Fiction"
+            "subject": "france -- history -- revolution, 1789-1799 -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 109,
+        "pk": 130,
         "fields": {
-            "subject": "French -- England -- London -- Fiction"
+            "subject": "french -- england -- london -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 110,
+        "pk": 131,
         "fields": {
-            "subject": "London (England) -- History -- 18th century -- Fiction"
+            "subject": "historical fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 111,
+        "pk": 132,
         "fields": {
-            "subject": "Lookalikes -- Fiction"
+            "subject": "london (england) -- history -- 18th century -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 112,
+        "pk": 133,
         "fields": {
-            "subject": "Paris (France) -- History -- 1789-1799 -- Fiction"
+            "subject": "lookalikes -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 113,
+        "pk": 134,
         "fields": {
-            "subject": "War stories"
+            "subject": "paris (france) -- history -- 1789-1799 -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 135,
+        "fields": {
+            "subject": "war stories"
         }
     },
     {
@@ -1394,50 +1548,78 @@
         "model": "main.book",
         "pk": 25,
         "fields": {
-            "title": "A Tale of Two Cities",
+            "title": "a tale of two cities",
             "author": 23,
             "cover_url": "https://www.gutenberg.org/cache/epub/98/pg98.cover.medium.jpg",
             "download_count": 17107,
             "content": "https://www.gutenberg.org/ebooks/98.html.images",
             "tags": [
-                106,
-                107,
-                108,
-                109,
-                34,
-                110,
-                111,
-                112,
-                113
+                127,
+                128,
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 114,
+        "pk": 136,
         "fields": {
-            "subject": "Dragons -- Poetry"
+            "subject": "dragons -- poetry"
         }
     },
     {
         "model": "main.tag",
-        "pk": 115,
+        "pk": 137,
         "fields": {
-            "subject": "Epic poetry, English (Old)"
+            "subject": "epic poetry, english (old)"
         }
     },
     {
         "model": "main.tag",
-        "pk": 116,
+        "pk": 138,
         "fields": {
-            "subject": "Monsters -- Poetry"
+            "subject": "monsters -- poetry"
         }
     },
     {
         "model": "main.tag",
-        "pk": 117,
+        "pk": 139,
         "fields": {
-            "subject": "Russia -- Fiction"
+            "subject": "adultery -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 140,
+        "fields": {
+            "subject": "didactic fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 141,
+        "fields": {
+            "subject": "love stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 142,
+        "fields": {
+            "subject": "married women -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 143,
+        "fields": {
+            "subject": "russia -- fiction"
         }
     },
     {
@@ -1451,25 +1633,25 @@
         "model": "main.book",
         "pk": 26,
         "fields": {
-            "title": "Anna Karenina",
+            "title": "anna karenina",
             "author": 24,
             "cover_url": "https://www.gutenberg.org/cache/epub/1399/pg1399.cover.medium.jpg",
             "download_count": 16508,
             "content": "https://www.gutenberg.org/ebooks/1399.html.images",
             "tags": [
-                31,
-                43,
-                18,
-                36,
-                117
+                139,
+                140,
+                141,
+                142,
+                143
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 118,
+        "pk": 144,
         "fields": {
-            "subject": "African Americans"
+            "subject": "african americans"
         }
     },
     {
@@ -1483,35 +1665,35 @@
         "model": "main.book",
         "pk": 27,
         "fields": {
-            "title": "The Souls of Black Folk",
+            "title": "the souls of black folk",
             "author": 25,
             "cover_url": "https://www.gutenberg.org/cache/epub/408/pg408.cover.medium.jpg",
             "download_count": 16356,
             "content": "https://www.gutenberg.org/ebooks/408.html.images",
             "tags": [
-                118
+                144
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 119,
+        "pk": 145,
         "fields": {
-            "subject": "Detective and mystery stories, English"
+            "subject": "detective and mystery stories, english"
         }
     },
     {
         "model": "main.tag",
-        "pk": 120,
+        "pk": 146,
         "fields": {
-            "subject": "Holmes, Sherlock (Fictitious character) -- Fiction"
+            "subject": "holmes, sherlock (fictitious character) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 121,
+        "pk": 147,
         "fields": {
-            "subject": "Private investigators -- England -- Fiction"
+            "subject": "private investigators -- england -- fiction"
         }
     },
     {
@@ -1525,82 +1707,82 @@
         "model": "main.book",
         "pk": 28,
         "fields": {
-            "title": "The Adventures of Sherlock Holmes",
+            "title": "the adventures of sherlock holmes",
             "author": 26,
             "cover_url": "https://www.gutenberg.org/cache/epub/1661/pg1661.cover.medium.jpg",
             "download_count": 16268,
             "content": "https://www.gutenberg.org/ebooks/1661.html.images",
             "tags": [
-                119,
-                120,
-                121
+                145,
+                146,
+                147
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 122,
+        "pk": 148,
         "fields": {
-            "subject": "Comedies"
+            "subject": "comedies"
         }
     },
     {
         "model": "main.tag",
-        "pk": 123,
+        "pk": 149,
         "fields": {
-            "subject": "England -- Drama"
+            "subject": "england -- drama"
         }
     },
     {
         "model": "main.tag",
-        "pk": 124,
+        "pk": 150,
         "fields": {
-            "subject": "Foundlings -- Drama"
+            "subject": "foundlings -- drama"
         }
     },
     {
         "model": "main.tag",
-        "pk": 125,
+        "pk": 151,
         "fields": {
-            "subject": "Identity (Psychology) -- Drama"
+            "subject": "identity (psychology) -- drama"
         }
     },
     {
         "model": "main.book",
         "pk": 29,
         "fields": {
-            "title": "The Importance of Being Earnest: A Trivial Comedy for Serious People",
+            "title": "the importance of being earnest: a trivial comedy for serious people",
             "author": 10,
             "cover_url": "https://www.gutenberg.org/cache/epub/844/pg844.cover.medium.jpg",
             "download_count": 15230,
             "content": "https://www.gutenberg.org/ebooks/844.html.images",
             "tags": [
-                122,
-                123,
-                124,
-                125
+                148,
+                149,
+                150,
+                151
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 126,
+        "pk": 152,
         "fields": {
-            "subject": "Political ethics -- Early works to 1800"
+            "subject": "political ethics -- early works to 1800"
         }
     },
     {
         "model": "main.tag",
-        "pk": 127,
+        "pk": 153,
         "fields": {
-            "subject": "Political science -- Philosophy -- Early works to 1800"
+            "subject": "political science -- philosophy -- early works to 1800"
         }
     },
     {
         "model": "main.tag",
-        "pk": 128,
+        "pk": 154,
         "fields": {
-            "subject": "State, The -- Early works to 1800"
+            "subject": "state, the -- early works to 1800"
         }
     },
     {
@@ -1614,37 +1796,44 @@
         "model": "main.book",
         "pk": 30,
         "fields": {
-            "title": "The Prince",
+            "title": "the prince",
             "author": 27,
             "cover_url": "https://www.gutenberg.org/cache/epub/1232/pg1232.cover.medium.jpg",
             "download_count": 14966,
             "content": "https://www.gutenberg.org/ebooks/1232.html.images",
             "tags": [
-                126,
-                127,
-                128
+                152,
+                153,
+                154
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 129,
+        "pk": 155,
         "fields": {
-            "subject": "Brothers -- Fiction"
+            "subject": "brothers -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 130,
+        "pk": 156,
         "fields": {
-            "subject": "Fathers and sons -- Fiction"
+            "subject": "didactic fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 131,
+        "pk": 157,
         "fields": {
-            "subject": "Russia -- Social life and customs -- 1533-1917 -- Fiction"
+            "subject": "fathers and sons -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 158,
+        "fields": {
+            "subject": "russia -- social life and customs -- 1533-1917 -- fiction"
         }
     },
     {
@@ -1658,45 +1847,66 @@
         "model": "main.book",
         "pk": 31,
         "fields": {
-            "title": "The Brothers Karamazov",
+            "title": "the brothers karamazov",
             "author": 28,
             "cover_url": "https://www.gutenberg.org/cache/epub/28054/pg28054.cover.medium.jpg",
             "download_count": 14882,
             "content": "https://www.gutenberg.org/ebooks/28054.html.images",
             "tags": [
-                129,
-                43,
-                130,
-                131
+                155,
+                156,
+                157,
+                158
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 132,
+        "pk": 159,
         "fields": {
-            "subject": "London (England) -- Fiction"
+            "subject": "horror tales"
         }
     },
     {
         "model": "main.tag",
-        "pk": 133,
+        "pk": 160,
         "fields": {
-            "subject": "Multiple personality -- Fiction"
+            "subject": "london (england) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 134,
+        "pk": 161,
         "fields": {
-            "subject": "Physicians -- Fiction"
+            "subject": "multiple personality -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 135,
+        "pk": 162,
         "fields": {
-            "subject": "Self-experimentation in medicine -- Fiction"
+            "subject": "physicians -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 163,
+        "fields": {
+            "subject": "psychological fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 164,
+        "fields": {
+            "subject": "science fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 165,
+        "fields": {
+            "subject": "self-experimentation in medicine -- fiction"
         }
     },
     {
@@ -1710,76 +1920,104 @@
         "model": "main.book",
         "pk": 32,
         "fields": {
-            "title": "The Strange Case of Dr. Jekyll and Mr. Hyde",
+            "title": "the strange case of dr. jekyll and mr. hyde",
             "author": 29,
             "cover_url": "https://www.gutenberg.org/cache/epub/43/pg43.cover.medium.jpg",
             "download_count": 14687,
             "content": "https://www.gutenberg.org/ebooks/43.html.images",
             "tags": [
-                11,
-                132,
-                133,
-                134,
-                25,
-                13,
-                135
+                159,
+                160,
+                161,
+                162,
+                163,
+                164,
+                165
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 136,
+        "pk": 166,
         "fields": {
-            "subject": "Benefactors -- Fiction"
+            "subject": "benefactors -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 137,
+        "pk": 167,
         "fields": {
-            "subject": "Ex-convicts -- Fiction"
+            "subject": "bildungsromans"
         }
     },
     {
         "model": "main.tag",
-        "pk": 138,
+        "pk": 168,
         "fields": {
-            "subject": "Man-woman relationships -- Fiction"
+            "subject": "england -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 139,
+        "pk": 169,
         "fields": {
-            "subject": "Orphans -- Fiction"
+            "subject": "ex-convicts -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 170,
+        "fields": {
+            "subject": "man-woman relationships -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 171,
+        "fields": {
+            "subject": "orphans -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 172,
+        "fields": {
+            "subject": "revenge -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 173,
+        "fields": {
+            "subject": "young men -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 33,
         "fields": {
-            "title": "Great Expectations",
+            "title": "great expectations",
             "author": 23,
             "cover_url": "https://www.gutenberg.org/cache/epub/1400/pg1400.cover.medium.jpg",
             "download_count": 14200,
             "content": "https://www.gutenberg.org/ebooks/1400.html.images",
             "tags": [
-                136,
-                41,
-                17,
-                137,
-                138,
-                139,
-                38,
-                94
+                166,
+                167,
+                168,
+                169,
+                170,
+                171,
+                172,
+                173
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 140,
+        "pk": 174,
         "fields": {
-            "subject": "Fairy tales -- Germany"
+            "subject": "fairy tales -- germany"
         }
     },
     {
@@ -1793,13 +2031,13 @@
         "model": "main.book",
         "pk": 34,
         "fields": {
-            "title": "Grimms' Fairy Tales",
+            "title": "grimms' fairy tales",
             "author": 30,
             "cover_url": "https://www.gutenberg.org/cache/epub/2591/pg2591.cover.medium.jpg",
             "download_count": 14050,
             "content": "https://www.gutenberg.org/ebooks/2591.html.images",
             "tags": [
-                140
+                174
             ]
         }
     },
@@ -1814,61 +2052,82 @@
         "model": "main.book",
         "pk": 35,
         "fields": {
-            "title": "Grimms' Fairy Tales",
+            "title": "grimms' fairy tales",
             "author": 31,
             "cover_url": "https://www.gutenberg.org/cache/epub/2591/pg2591.cover.medium.jpg",
             "download_count": 14050,
             "content": "https://www.gutenberg.org/ebooks/2591.html.images",
             "tags": [
-                140
+                174
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 141,
+        "pk": 175,
         "fields": {
-            "subject": "Dant\u00e8s, Edmond (Fictitious character) -- Fiction"
+            "subject": "adventure stories"
         }
     },
     {
         "model": "main.tag",
-        "pk": 142,
+        "pk": 176,
         "fields": {
-            "subject": "France -- History -- 19th century -- Fiction"
+            "subject": "dant\u00e8s, edmond (fictitious character) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 143,
+        "pk": 177,
         "fields": {
-            "subject": "Pirates -- Fiction"
+            "subject": "france -- history -- 19th century -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 144,
+        "pk": 178,
         "fields": {
-            "subject": "Prisoners -- Fiction"
+            "subject": "historical fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 179,
+        "fields": {
+            "subject": "pirates -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 180,
+        "fields": {
+            "subject": "prisoners -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 181,
+        "fields": {
+            "subject": "revenge -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 36,
         "fields": {
-            "title": "The Count of Monte Cristo",
+            "title": "the count of monte cristo",
             "author": 14,
             "cover_url": "https://www.gutenberg.org/cache/epub/1184/pg1184.cover.medium.jpg",
             "download_count": 13270,
             "content": "https://www.gutenberg.org/ebooks/1184.html.images",
             "tags": [
-                22,
-                141,
-                142,
-                34,
-                143,
-                144,
-                38
+                175,
+                176,
+                177,
+                178,
+                179,
+                180,
+                181
             ]
         }
     },
@@ -1876,80 +2135,101 @@
         "model": "main.book",
         "pk": 37,
         "fields": {
-            "title": "The Count of Monte Cristo",
+            "title": "the count of monte cristo",
             "author": 15,
             "cover_url": "https://www.gutenberg.org/cache/epub/1184/pg1184.cover.medium.jpg",
             "download_count": 13270,
             "content": "https://www.gutenberg.org/ebooks/1184.html.images",
             "tags": [
-                22,
-                141,
-                142,
-                34,
-                143,
-                144,
-                38
+                175,
+                176,
+                177,
+                178,
+                179,
+                180,
+                181
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 145,
+        "pk": 182,
         "fields": {
-            "subject": "Aristocracy (Social class) -- Russia -- Fiction"
+            "subject": "aristocracy (social class) -- russia -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 146,
+        "pk": 183,
         "fields": {
-            "subject": "Napoleonic Wars, 1800-1815 -- Campaigns -- Russia -- Fiction"
+            "subject": "historical fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 147,
+        "pk": 184,
         "fields": {
-            "subject": "Russia -- History -- Alexander I, 1801-1825 -- Fiction"
+            "subject": "napoleonic wars, 1800-1815 -- campaigns -- russia -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 185,
+        "fields": {
+            "subject": "russia -- history -- alexander i, 1801-1825 -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 186,
+        "fields": {
+            "subject": "war stories"
         }
     },
     {
         "model": "main.book",
         "pk": 38,
         "fields": {
-            "title": "War and Peace",
+            "title": "war and peace",
             "author": 24,
             "cover_url": "https://www.gutenberg.org/cache/epub/2600/pg2600.cover.medium.jpg",
             "download_count": 13190,
             "content": "https://www.gutenberg.org/ebooks/2600.html.images",
             "tags": [
-                145,
-                34,
-                146,
-                147,
-                113
+                182,
+                183,
+                184,
+                185,
+                186
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 148,
+        "pk": 187,
         "fields": {
-            "subject": "Justice -- Early works to 1800"
+            "subject": "classical literature"
         }
     },
     {
         "model": "main.tag",
-        "pk": 149,
+        "pk": 188,
         "fields": {
-            "subject": "Political science -- Early works to 1800"
+            "subject": "justice -- early works to 1800"
         }
     },
     {
         "model": "main.tag",
-        "pk": 150,
+        "pk": 189,
         "fields": {
-            "subject": "Utopias -- Early works to 1800"
+            "subject": "political science -- early works to 1800"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 190,
+        "fields": {
+            "subject": "utopias -- early works to 1800"
         }
     },
     {
@@ -1963,31 +2243,52 @@
         "model": "main.book",
         "pk": 39,
         "fields": {
-            "title": "The Republic",
+            "title": "the republic",
             "author": 32,
             "cover_url": "https://www.gutenberg.org/cache/epub/1497/pg1497.cover.medium.jpg",
             "download_count": 13114,
             "content": "https://www.gutenberg.org/ebooks/1497.html.images",
             "tags": [
-                100,
-                148,
-                149,
-                150
+                187,
+                188,
+                189,
+                190
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 151,
+        "pk": 191,
         "fields": {
-            "subject": "British -- Italy -- Fiction"
+            "subject": "british -- italy -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 152,
+        "pk": 192,
         "fields": {
-            "subject": "Italy -- Fiction"
+            "subject": "domestic fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 193,
+        "fields": {
+            "subject": "female friendship -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 194,
+        "fields": {
+            "subject": "italy -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 195,
+        "fields": {
+            "subject": "love stories"
         }
     },
     {
@@ -2001,92 +2302,148 @@
         "model": "main.book",
         "pk": 40,
         "fields": {
-            "title": "The Enchanted April",
+            "title": "the enchanted april",
             "author": 33,
             "cover_url": "https://www.gutenberg.org/cache/epub/16389/pg16389.cover.medium.jpg",
             "download_count": 13015,
             "content": "https://www.gutenberg.org/ebooks/16389.html.images",
             "tags": [
-                151,
-                16,
-                68,
-                152,
-                18
+                191,
+                192,
+                193,
+                194,
+                195
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 153,
+        "pk": 196,
         "fields": {
-            "subject": "Crime -- Psychological aspects -- Fiction"
+            "subject": "crime -- psychological aspects -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 154,
+        "pk": 197,
         "fields": {
-            "subject": "Detective and mystery stories"
+            "subject": "detective and mystery stories"
         }
     },
     {
         "model": "main.tag",
-        "pk": 155,
+        "pk": 198,
         "fields": {
-            "subject": "Murder -- Fiction"
+            "subject": "murder -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 156,
+        "pk": 199,
         "fields": {
-            "subject": "Saint Petersburg (Russia) -- Fiction"
+            "subject": "psychological fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 200,
+        "fields": {
+            "subject": "saint petersburg (russia) -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 41,
         "fields": {
-            "title": "Crime and Punishment",
+            "title": "crime and punishment",
             "author": 28,
             "cover_url": "https://www.gutenberg.org/cache/epub/2554/pg2554.cover.medium.jpg",
             "download_count": 12969,
             "content": "https://www.gutenberg.org/ebooks/2554.html.images",
             "tags": [
-                153,
-                154,
-                155,
-                25,
-                156
+                196,
+                197,
+                198,
+                199,
+                200
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 157,
+        "pk": 201,
         "fields": {
-            "subject": "Charity-schools -- Fiction"
+            "subject": "bildungsromans"
         }
     },
     {
         "model": "main.tag",
-        "pk": 158,
+        "pk": 202,
         "fields": {
-            "subject": "Country homes -- Fiction"
+            "subject": "charity-schools -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 159,
+        "pk": 203,
         "fields": {
-            "subject": "Fathers and daughters -- Fiction"
+            "subject": "country homes -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 160,
+        "pk": 204,
         "fields": {
-            "subject": "Governesses -- Fiction"
+            "subject": "england -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 205,
+        "fields": {
+            "subject": "fathers and daughters -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 206,
+        "fields": {
+            "subject": "governesses -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 207,
+        "fields": {
+            "subject": "love stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 208,
+        "fields": {
+            "subject": "married people -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 209,
+        "fields": {
+            "subject": "mentally ill women -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 210,
+        "fields": {
+            "subject": "orphans -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 211,
+        "fields": {
+            "subject": "young women -- fiction"
         }
     },
     {
@@ -2100,80 +2457,101 @@
         "model": "main.book",
         "pk": 42,
         "fields": {
-            "title": "Jane Eyre: An Autobiography",
+            "title": "jane eyre: an autobiography",
             "author": 34,
             "cover_url": "https://www.gutenberg.org/cache/epub/1260/pg1260.cover.medium.jpg",
             "download_count": 12572,
             "content": "https://www.gutenberg.org/ebooks/1260.html.images",
             "tags": [
-                41,
-                157,
-                158,
-                17,
-                159,
-                160,
-                18,
-                44,
-                74,
-                139,
-                21
+                201,
+                202,
+                203,
+                204,
+                205,
+                206,
+                207,
+                208,
+                209,
+                210,
+                211
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 161,
+        "pk": 212,
         "fields": {
-            "subject": "Boys -- Fiction"
+            "subject": "adventure stories"
         }
     },
     {
         "model": "main.tag",
-        "pk": 162,
+        "pk": 213,
         "fields": {
-            "subject": "Finn, Huckleberry (Fictitious character) -- Fiction"
+            "subject": "bildungsromans"
         }
     },
     {
         "model": "main.tag",
-        "pk": 163,
+        "pk": 214,
         "fields": {
-            "subject": "Fugitive slaves -- Fiction"
+            "subject": "boys -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 164,
+        "pk": 215,
         "fields": {
-            "subject": "Male friendship -- Fiction"
+            "subject": "finn, huckleberry (fictitious character) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 165,
+        "pk": 216,
         "fields": {
-            "subject": "Mississippi River -- Fiction"
+            "subject": "fugitive slaves -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 166,
+        "pk": 217,
         "fields": {
-            "subject": "Missouri -- Fiction"
+            "subject": "humorous stories"
         }
     },
     {
         "model": "main.tag",
-        "pk": 167,
+        "pk": 218,
         "fields": {
-            "subject": "Race relations -- Fiction"
+            "subject": "male friendship -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 168,
+        "pk": 219,
         "fields": {
-            "subject": "Runaway children -- Fiction"
+            "subject": "mississippi river -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 220,
+        "fields": {
+            "subject": "missouri -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 221,
+        "fields": {
+            "subject": "race relations -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 222,
+        "fields": {
+            "subject": "runaway children -- fiction"
         }
     },
     {
@@ -2187,59 +2565,66 @@
         "model": "main.book",
         "pk": 43,
         "fields": {
-            "title": "Adventures of Huckleberry Finn",
+            "title": "adventures of huckleberry finn",
             "author": 35,
             "cover_url": "https://www.gutenberg.org/cache/epub/76/pg76.cover.medium.jpg",
             "download_count": 12512,
             "content": "https://www.gutenberg.org/ebooks/76.html.images",
             "tags": [
-                22,
-                41,
-                161,
-                162,
-                163,
-                92,
-                164,
-                165,
-                166,
-                167,
-                168
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                218,
+                219,
+                220,
+                221,
+                222
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 169,
+        "pk": 223,
         "fields": {
-            "subject": "English drama -- Early modern and Elizabethan, 1500-1600"
+            "subject": "english drama -- early modern and elizabethan, 1500-1600"
         }
     },
     {
         "model": "main.book",
         "pk": 44,
         "fields": {
-            "title": "The Complete Works of William Shakespeare",
+            "title": "the complete works of william shakespeare",
             "author": 1,
             "cover_url": "https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg",
             "download_count": 12507,
             "content": "https://www.gutenberg.org/ebooks/100.html.images",
             "tags": [
-                169
+                223
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 170,
+        "pk": 224,
         "fields": {
-            "subject": "Liberty -- Early works to 1800"
+            "subject": "liberty -- early works to 1800"
         }
     },
     {
         "model": "main.tag",
-        "pk": 171,
+        "pk": 225,
         "fields": {
-            "subject": "Toleration -- Early works to 1800"
+            "subject": "political science -- early works to 1800"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 226,
+        "fields": {
+            "subject": "toleration -- early works to 1800"
         }
     },
     {
@@ -2253,23 +2638,23 @@
         "model": "main.book",
         "pk": 45,
         "fields": {
-            "title": "Second Treatise of Government",
+            "title": "second treatise of government",
             "author": 36,
             "cover_url": "https://www.gutenberg.org/cache/epub/7370/pg7370.cover.medium.jpg",
             "download_count": 12432,
             "content": "https://www.gutenberg.org/ebooks/7370.html.images",
             "tags": [
-                170,
-                149,
-                171
+                224,
+                225,
+                226
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 172,
+        "pk": 227,
         "fields": {
-            "subject": "French essays -- Translations into English"
+            "subject": "french essays -- translations into english"
         }
     },
     {
@@ -2283,14 +2668,28 @@
         "model": "main.book",
         "pk": 46,
         "fields": {
-            "title": "Essays of Michel de Montaigne \u2014 Complete",
+            "title": "essays of michel de montaigne \u2014 complete",
             "author": 37,
             "cover_url": "https://www.gutenberg.org/cache/epub/3600/pg3600.cover.medium.jpg",
             "download_count": 11803,
             "content": "https://www.gutenberg.org/ebooks/3600.html.images",
             "tags": [
-                172
+                227
             ]
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 228,
+        "fields": {
+            "subject": "political science -- early works to 1800"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 229,
+        "fields": {
+            "subject": "state, the -- early works to 1800"
         }
     },
     {
@@ -2304,71 +2703,71 @@
         "model": "main.book",
         "pk": 47,
         "fields": {
-            "title": "Leviathan",
+            "title": "leviathan",
             "author": 38,
             "cover_url": "https://www.gutenberg.org/cache/epub/3207/pg3207.cover.medium.jpg",
             "download_count": 11800,
             "content": "https://www.gutenberg.org/ebooks/3207.html.images",
             "tags": [
-                149,
-                128
+                228,
+                229
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 173,
+        "pk": 230,
         "fields": {
-            "subject": "Authors, American -- 19th century -- Biography"
+            "subject": "authors, american -- 19th century -- biography"
         }
     },
     {
         "model": "main.tag",
-        "pk": 174,
+        "pk": 231,
         "fields": {
-            "subject": "Civil disobedience"
+            "subject": "civil disobedience"
         }
     },
     {
         "model": "main.tag",
-        "pk": 175,
+        "pk": 232,
         "fields": {
-            "subject": "Government, Resistance to"
+            "subject": "government, resistance to"
         }
     },
     {
         "model": "main.tag",
-        "pk": 176,
+        "pk": 233,
         "fields": {
-            "subject": "Natural history -- Massachusetts -- Walden Woods"
+            "subject": "natural history -- massachusetts -- walden woods"
         }
     },
     {
         "model": "main.tag",
-        "pk": 177,
+        "pk": 234,
         "fields": {
-            "subject": "Solitude"
+            "subject": "solitude"
         }
     },
     {
         "model": "main.tag",
-        "pk": 178,
+        "pk": 235,
         "fields": {
-            "subject": "Thoreau, Henry David, 1817-1862 -- Homes and haunts -- Massachusetts -- Walden Woods"
+            "subject": "thoreau, henry david, 1817-1862 -- homes and haunts -- massachusetts -- walden woods"
         }
     },
     {
         "model": "main.tag",
-        "pk": 179,
+        "pk": 236,
         "fields": {
-            "subject": "Walden Woods (Mass.) -- Social life and customs"
+            "subject": "walden woods (mass.) -- social life and customs"
         }
     },
     {
         "model": "main.tag",
-        "pk": 180,
+        "pk": 237,
         "fields": {
-            "subject": "Wilderness areas -- Massachusetts -- Walden Woods"
+            "subject": "wilderness areas -- massachusetts -- walden woods"
         }
     },
     {
@@ -2382,49 +2781,49 @@
         "model": "main.book",
         "pk": 48,
         "fields": {
-            "title": "Walden, and On The Duty Of Civil Disobedience",
+            "title": "walden, and on the duty of civil disobedience",
             "author": 39,
             "cover_url": "https://www.gutenberg.org/cache/epub/205/pg205.cover.medium.jpg",
             "download_count": 11680,
             "content": "https://www.gutenberg.org/ebooks/205.html.images",
             "tags": [
-                173,
-                174,
-                175,
-                176,
-                177,
-                178,
-                179,
-                180
+                230,
+                231,
+                232,
+                233,
+                234,
+                235,
+                236,
+                237
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 181,
+        "pk": 238,
         "fields": {
-            "subject": "Abolitionists -- United States -- Biography"
+            "subject": "abolitionists -- united states -- biography"
         }
     },
     {
         "model": "main.tag",
-        "pk": 182,
+        "pk": 239,
         "fields": {
-            "subject": "African American abolitionists -- Biography"
+            "subject": "african american abolitionists -- biography"
         }
     },
     {
         "model": "main.tag",
-        "pk": 183,
+        "pk": 240,
         "fields": {
-            "subject": "Douglass, Frederick, 1818-1895"
+            "subject": "douglass, frederick, 1818-1895"
         }
     },
     {
         "model": "main.tag",
-        "pk": 184,
+        "pk": 241,
         "fields": {
-            "subject": "Enslaved persons -- United States -- Biography"
+            "subject": "enslaved persons -- united states -- biography"
         }
     },
     {
@@ -2438,31 +2837,38 @@
         "model": "main.book",
         "pk": 49,
         "fields": {
-            "title": "Narrative of the Life of Frederick Douglass, an American Slave",
+            "title": "narrative of the life of frederick douglass, an american slave",
             "author": 40,
             "cover_url": "https://www.gutenberg.org/cache/epub/23/pg23.cover.medium.jpg",
             "download_count": 11585,
             "content": "https://www.gutenberg.org/ebooks/23.html.images",
             "tags": [
-                181,
-                182,
-                183,
-                184
+                238,
+                239,
+                240,
+                241
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 185,
+        "pk": 242,
         "fields": {
-            "subject": "Enslaved persons -- Great Britain -- Biography"
+            "subject": "enslaved persons -- great britain -- biography"
         }
     },
     {
         "model": "main.tag",
-        "pk": 186,
+        "pk": 243,
         "fields": {
-            "subject": "Equiano, Olaudah, 1745-1797"
+            "subject": "enslaved persons -- united states -- biography"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 244,
+        "fields": {
+            "subject": "equiano, olaudah, 1745-1797"
         }
     },
     {
@@ -2476,81 +2882,123 @@
         "model": "main.book",
         "pk": 50,
         "fields": {
-            "title": "The Interesting Narrative of the Life of Olaudah Equiano, Or Gustavus Vassa, The African: Written By Himself",
+            "title": "the interesting narrative of the life of olaudah equiano, or gustavus vassa, the african: written by himself",
             "author": 41,
             "cover_url": "https://www.gutenberg.org/cache/epub/15399/pg15399.cover.medium.jpg",
             "download_count": 11414,
             "content": "https://www.gutenberg.org/ebooks/15399.html.images",
             "tags": [
-                185,
-                184,
-                186
+                242,
+                243,
+                244
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 187,
+        "pk": 245,
         "fields": {
-            "subject": "Homer -- Translations into English"
+            "subject": "epic poetry, greek -- translations into english"
         }
     },
     {
         "model": "main.tag",
-        "pk": 188,
+        "pk": 246,
         "fields": {
-            "subject": "Odysseus, King of Ithaca (Mythological character)"
+            "subject": "homer -- translations into english"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 247,
+        "fields": {
+            "subject": "odysseus, king of ithaca (mythological character)"
         }
     },
     {
         "model": "main.book",
         "pk": 51,
         "fields": {
-            "title": "The Odyssey: Rendered into English prose for the use of those who cannot read the original",
+            "title": "the odyssey: rendered into english prose for the use of those who cannot read the original",
             "author": 21,
             "cover_url": "https://www.gutenberg.org/cache/epub/1727/pg1727.cover.medium.jpg",
             "download_count": 11268,
             "content": "https://www.gutenberg.org/ebooks/1727.html.images",
             "tags": [
-                101,
-                187,
-                188
+                245,
+                246,
+                247
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 189,
+        "pk": 248,
         "fields": {
-            "subject": "Alienation (Social psychology) -- Fiction"
+            "subject": "alienation (social psychology) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 190,
+        "pk": 249,
         "fields": {
-            "subject": "Artists -- Fiction"
+            "subject": "artists -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 191,
+        "pk": 250,
         "fields": {
-            "subject": "Dublin (Ireland) -- Fiction"
+            "subject": "city and town life -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 192,
+        "pk": 251,
         "fields": {
-            "subject": "Epic literature"
+            "subject": "domestic fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 193,
+        "pk": 252,
         "fields": {
-            "subject": "Jewish men -- Fiction"
+            "subject": "dublin (ireland) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 253,
+        "fields": {
+            "subject": "epic literature"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 254,
+        "fields": {
+            "subject": "jewish men -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 255,
+        "fields": {
+            "subject": "male friendship -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 256,
+        "fields": {
+            "subject": "married people -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 257,
+        "fields": {
+            "subject": "psychological fiction"
         }
     },
     {
@@ -2564,81 +3012,130 @@
         "model": "main.book",
         "pk": 52,
         "fields": {
-            "title": "Ulysses",
+            "title": "ulysses",
             "author": 42,
             "cover_url": "https://www.gutenberg.org/cache/epub/4300/pg4300.cover.medium.jpg",
             "download_count": 10979,
             "content": "https://www.gutenberg.org/ebooks/4300.html.images",
             "tags": [
-                189,
-                190,
-                42,
-                16,
-                191,
-                192,
-                193,
-                164,
-                44,
-                25
+                248,
+                249,
+                250,
+                251,
+                252,
+                253,
+                254,
+                255,
+                256,
+                257
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 194,
+        "pk": 258,
         "fields": {
-            "subject": "Child witnesses -- Fiction"
+            "subject": "adventure stories"
         }
     },
     {
         "model": "main.tag",
-        "pk": 195,
+        "pk": 259,
         "fields": {
-            "subject": "Mississippi River Valley -- Fiction"
+            "subject": "bildungsromans"
         }
     },
     {
         "model": "main.tag",
-        "pk": 196,
+        "pk": 260,
         "fields": {
-            "subject": "Sawyer, Tom (Fictitious character) -- Fiction"
+            "subject": "boys -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 261,
+        "fields": {
+            "subject": "child witnesses -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 262,
+        "fields": {
+            "subject": "humorous stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 263,
+        "fields": {
+            "subject": "male friendship -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 264,
+        "fields": {
+            "subject": "mississippi river valley -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 265,
+        "fields": {
+            "subject": "missouri -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 266,
+        "fields": {
+            "subject": "runaway children -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 267,
+        "fields": {
+            "subject": "sawyer, tom (fictitious character) -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 53,
         "fields": {
-            "title": "The Adventures of Tom Sawyer, Complete",
+            "title": "the adventures of tom sawyer, complete",
             "author": 35,
             "cover_url": "https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg",
             "download_count": 10847,
             "content": "https://www.gutenberg.org/ebooks/74.html.images",
             "tags": [
-                22,
-                41,
-                161,
-                194,
-                92,
-                164,
-                195,
-                166,
-                168,
-                196
+                258,
+                259,
+                260,
+                261,
+                262,
+                263,
+                264,
+                265,
+                266,
+                267
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 197,
+        "pk": 268,
         "fields": {
-            "subject": "Ghosts -- Fiction"
+            "subject": "ghosts -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 198,
+        "pk": 269,
         "fields": {
-            "subject": "New York (State) -- History -- 1775-1865 -- Fiction"
+            "subject": "new york (state) -- history -- 1775-1865 -- fiction"
         }
     },
     {
@@ -2652,71 +3149,127 @@
         "model": "main.book",
         "pk": 54,
         "fields": {
-            "title": "The Legend of Sleepy Hollow",
+            "title": "the legend of sleepy hollow",
             "author": 43,
             "cover_url": "https://www.gutenberg.org/cache/epub/41/pg41.cover.medium.jpg",
             "download_count": 10636,
             "content": "https://www.gutenberg.org/ebooks/41.html.images",
             "tags": [
-                197,
-                198
+                268,
+                269
             ]
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 270,
+        "fields": {
+            "subject": "frankenstein's monster (fictitious character) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 271,
+        "fields": {
+            "subject": "frankenstein, victor (fictitious character) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 272,
+        "fields": {
+            "subject": "gothic fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 273,
+        "fields": {
+            "subject": "horror tales"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 274,
+        "fields": {
+            "subject": "monsters -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 275,
+        "fields": {
+            "subject": "science fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 276,
+        "fields": {
+            "subject": "scientists -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 55,
         "fields": {
-            "title": "Frankenstein; Or, The Modern Prometheus",
+            "title": "frankenstein; or, the modern prometheus",
             "author": 2,
             "cover_url": "https://www.gutenberg.org/cache/epub/41445/pg41445.cover.medium.jpg",
             "download_count": 10311,
             "content": "https://www.gutenberg.org/ebooks/41445.html.images",
             "tags": [
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14
+                270,
+                271,
+                272,
+                273,
+                274,
+                275,
+                276
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 199,
+        "pk": 277,
         "fields": {
-            "subject": "Short stories"
+            "subject": "dublin (ireland) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 278,
+        "fields": {
+            "subject": "short stories"
         }
     },
     {
         "model": "main.book",
         "pk": 56,
         "fields": {
-            "title": "Dubliners",
+            "title": "dubliners",
             "author": 42,
             "cover_url": "https://www.gutenberg.org/cache/epub/2814/pg2814.cover.medium.jpg",
             "download_count": 10217,
             "content": "https://www.gutenberg.org/ebooks/2814.html.images",
             "tags": [
-                191,
-                199
+                277,
+                278
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 200,
+        "pk": 279,
         "fields": {
-            "subject": "Love"
+            "subject": "love"
         }
     },
     {
         "model": "main.tag",
-        "pk": 201,
+        "pk": 280,
         "fields": {
-            "subject": "Sex"
+            "subject": "sex"
         }
     },
     {
@@ -2730,50 +3283,57 @@
         "model": "main.book",
         "pk": 57,
         "fields": {
-            "title": "The Kama Sutra of Vatsyayana: Translated From the Sanscrit in Seven Parts With Preface, Introduction and Concluding Remarks",
+            "title": "the kama sutra of vatsyayana: translated from the sanscrit in seven parts with preface, introduction and concluding remarks",
             "author": 44,
             "cover_url": "https://www.gutenberg.org/cache/epub/27827/pg27827.cover.medium.jpg",
             "download_count": 9831,
             "content": "https://www.gutenberg.org/ebooks/27827.html.images",
             "tags": [
-                200,
-                201
+                279,
+                280
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 202,
+        "pk": 281,
         "fields": {
-            "subject": "Africa -- Fiction"
+            "subject": "africa -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 203,
+        "pk": 282,
         "fields": {
-            "subject": "Degeneration -- Fiction"
+            "subject": "degeneration -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 204,
+        "pk": 283,
         "fields": {
-            "subject": "Europeans -- Africa -- Fiction"
+            "subject": "europeans -- africa -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 205,
+        "pk": 284,
         "fields": {
-            "subject": "Imperialism -- Fiction"
+            "subject": "imperialism -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 206,
+        "pk": 285,
         "fields": {
-            "subject": "Trading posts -- Fiction"
+            "subject": "psychological fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 286,
+        "fields": {
+            "subject": "trading posts -- fiction"
         }
     },
     {
@@ -2787,40 +3347,40 @@
         "model": "main.book",
         "pk": 58,
         "fields": {
-            "title": "Heart of Darkness",
+            "title": "heart of darkness",
             "author": 45,
             "cover_url": "https://www.gutenberg.org/cache/epub/219/pg219.cover.medium.jpg",
             "download_count": 9788,
             "content": "https://www.gutenberg.org/ebooks/219.html.images",
             "tags": [
-                202,
-                203,
-                204,
-                205,
-                25,
-                206
+                281,
+                282,
+                283,
+                284,
+                285,
+                286
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 207,
+        "pk": 287,
         "fields": {
-            "subject": "Ethics"
+            "subject": "ethics"
         }
     },
     {
         "model": "main.tag",
-        "pk": 208,
+        "pk": 288,
         "fields": {
-            "subject": "Life"
+            "subject": "life"
         }
     },
     {
         "model": "main.tag",
-        "pk": 209,
+        "pk": 289,
         "fields": {
-            "subject": "Stoics"
+            "subject": "stoics"
         }
     },
     {
@@ -2834,30 +3394,30 @@
         "model": "main.book",
         "pk": 59,
         "fields": {
-            "title": "Meditations",
+            "title": "meditations",
             "author": 46,
             "cover_url": "https://www.gutenberg.org/cache/epub/2680/pg2680.cover.medium.jpg",
             "download_count": 9767,
             "content": "https://www.gutenberg.org/ebooks/2680.html.images",
             "tags": [
-                207,
-                208,
-                209
+                287,
+                288,
+                289
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 210,
+        "pk": 290,
         "fields": {
-            "subject": "Philosophy, German"
+            "subject": "philosophy, german"
         }
     },
     {
         "model": "main.tag",
-        "pk": 211,
+        "pk": 291,
         "fields": {
-            "subject": "Superman (Philosophical concept)"
+            "subject": "superman (philosophical concept)"
         }
     },
     {
@@ -2871,29 +3431,29 @@
         "model": "main.book",
         "pk": 60,
         "fields": {
-            "title": "Thus Spake Zarathustra: A Book for All and None",
+            "title": "thus spake zarathustra: a book for all and none",
             "author": 47,
             "cover_url": "https://www.gutenberg.org/cache/epub/1998/pg1998.cover.medium.jpg",
             "download_count": 9746,
             "content": "https://www.gutenberg.org/ebooks/1998.html.images",
             "tags": [
-                210,
-                211
+                290,
+                291
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 212,
+        "pk": 292,
         "fields": {
-            "subject": "Mysticism -- Poetry"
+            "subject": "mysticism -- poetry"
         }
     },
     {
         "model": "main.tag",
-        "pk": 213,
+        "pk": 293,
         "fields": {
-            "subject": "Prose poems, American"
+            "subject": "prose poems, american"
         }
     },
     {
@@ -2907,57 +3467,57 @@
         "model": "main.book",
         "pk": 61,
         "fields": {
-            "title": "The Prophet",
+            "title": "the prophet",
             "author": 48,
             "cover_url": "https://www.gutenberg.org/cache/epub/58585/pg58585.cover.medium.jpg",
             "download_count": 9598,
             "content": "https://www.gutenberg.org/ebooks/58585.html.images",
             "tags": [
-                212,
-                213
+                292,
+                293
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 214,
+        "pk": 294,
         "fields": {
-            "subject": "Corporal punishment -- Fiction"
+            "subject": "corporal punishment -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 215,
+        "pk": 295,
         "fields": {
-            "subject": "Erotic stories"
+            "subject": "erotic stories"
         }
     },
     {
         "model": "main.tag",
-        "pk": 216,
+        "pk": 296,
         "fields": {
-            "subject": "Incest -- Fiction"
+            "subject": "incest -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 217,
+        "pk": 297,
         "fields": {
-            "subject": "Pornography"
+            "subject": "pornography"
         }
     },
     {
         "model": "main.tag",
-        "pk": 218,
+        "pk": 298,
         "fields": {
-            "subject": "Rape -- Fiction"
+            "subject": "rape -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 219,
+        "pk": 299,
         "fields": {
-            "subject": "Sexual dominance and submission -- Fiction"
+            "subject": "sexual dominance and submission -- fiction"
         }
     },
     {
@@ -2971,47 +3531,54 @@
         "model": "main.book",
         "pk": 62,
         "fields": {
-            "title": "The Romance of Lust: A classic Victorian erotic novel",
+            "title": "the romance of lust: a classic victorian erotic novel",
             "author": 49,
             "cover_url": "https://www.gutenberg.org/cache/epub/30254/pg30254.cover.medium.jpg",
             "download_count": 9462,
             "content": "https://www.gutenberg.org/ebooks/30254.html.images",
             "tags": [
-                214,
-                215,
-                216,
-                217,
-                218,
-                219
+                294,
+                295,
+                296,
+                297,
+                298,
+                299
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 220,
+        "pk": 300,
         "fields": {
-            "subject": "Fairies -- Fiction"
+            "subject": "fairies -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 221,
+        "pk": 301,
         "fields": {
-            "subject": "Fantasy literature"
+            "subject": "fantasy literature"
         }
     },
     {
         "model": "main.tag",
-        "pk": 222,
+        "pk": 302,
         "fields": {
-            "subject": "Never-Never Land (Imaginary place) -- Fiction"
+            "subject": "never-never land (imaginary place) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 223,
+        "pk": 303,
         "fields": {
-            "subject": "Peter Pan (Fictitious character) -- Fiction"
+            "subject": "peter pan (fictitious character) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 304,
+        "fields": {
+            "subject": "pirates -- fiction"
         }
     },
     {
@@ -3025,115 +3592,122 @@
         "model": "main.book",
         "pk": 63,
         "fields": {
-            "title": "Peter Pan",
+            "title": "peter pan",
             "author": 50,
             "cover_url": "https://www.gutenberg.org/cache/epub/16/pg16.cover.medium.jpg",
             "download_count": 9388,
             "content": "https://www.gutenberg.org/ebooks/16.html.images",
             "tags": [
-                220,
-                221,
-                222,
-                223,
-                143
+                300,
+                301,
+                302,
+                303,
+                304
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 224,
+        "pk": 305,
         "fields": {
-            "subject": "Christmas stories"
+            "subject": "christmas stories"
         }
     },
     {
         "model": "main.tag",
-        "pk": 225,
+        "pk": 306,
         "fields": {
-            "subject": "Ghost stories"
+            "subject": "ghost stories"
         }
     },
     {
         "model": "main.tag",
-        "pk": 226,
+        "pk": 307,
         "fields": {
-            "subject": "Misers -- Fiction"
+            "subject": "london (england) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 227,
+        "pk": 308,
         "fields": {
-            "subject": "Poor families -- Fiction"
+            "subject": "misers -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 228,
+        "pk": 309,
         "fields": {
-            "subject": "Scrooge, Ebenezer (Fictitious character) -- Fiction"
+            "subject": "poor families -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 229,
+        "pk": 310,
         "fields": {
-            "subject": "Sick children -- Fiction"
+            "subject": "scrooge, ebenezer (fictitious character) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 311,
+        "fields": {
+            "subject": "sick children -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 64,
         "fields": {
-            "title": "A Christmas Carol in Prose; Being a Ghost Story of Christmas",
+            "title": "a christmas carol in prose; being a ghost story of christmas",
             "author": 23,
             "cover_url": "https://www.gutenberg.org/cache/epub/46/pg46.cover.medium.jpg",
             "download_count": 9321,
             "content": "https://www.gutenberg.org/ebooks/46.html.images",
             "tags": [
-                224,
-                225,
-                132,
-                226,
-                227,
-                228,
-                229
+                305,
+                306,
+                307,
+                308,
+                309,
+                310,
+                311
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 230,
+        "pk": 312,
         "fields": {
-            "subject": "Indian captivities -- Massachusetts"
+            "subject": "indian captivities -- massachusetts"
         }
     },
     {
         "model": "main.tag",
-        "pk": 231,
+        "pk": 313,
         "fields": {
-            "subject": "King Philip's War, 1675-1676"
+            "subject": "king philip's war, 1675-1676"
         }
     },
     {
         "model": "main.tag",
-        "pk": 232,
+        "pk": 314,
         "fields": {
-            "subject": "Lancaster (Mass.) -- History -- Colonial period, ca. 1600-1775"
+            "subject": "lancaster (mass.) -- history -- colonial period, ca. 1600-1775"
         }
     },
     {
         "model": "main.tag",
-        "pk": 233,
+        "pk": 315,
         "fields": {
-            "subject": "Massachusetts -- Biography"
+            "subject": "massachusetts -- biography"
         }
     },
     {
         "model": "main.tag",
-        "pk": 234,
+        "pk": 316,
         "fields": {
-            "subject": "Rowlandson, Mary White, approximately 1635-1711"
+            "subject": "rowlandson, mary white, approximately 1635-1711"
         }
     },
     {
@@ -3147,39 +3721,39 @@
         "model": "main.book",
         "pk": 65,
         "fields": {
-            "title": "Narrative of the Captivity and Restoration of Mrs. Mary Rowlandson",
+            "title": "narrative of the captivity and restoration of mrs. mary rowlandson",
             "author": 51,
             "cover_url": "https://www.gutenberg.org/cache/epub/851/pg851.cover.medium.jpg",
             "download_count": 9206,
             "content": "https://www.gutenberg.org/ebooks/851.html.images",
             "tags": [
-                230,
-                231,
-                232,
-                233,
-                234
+                312,
+                313,
+                314,
+                315,
+                316
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 235,
+        "pk": 317,
         "fields": {
-            "subject": "Knowledge, Theory of"
+            "subject": "knowledge, theory of"
         }
     },
     {
         "model": "main.tag",
-        "pk": 236,
+        "pk": 318,
         "fields": {
-            "subject": "Metaphysics"
+            "subject": "metaphysics"
         }
     },
     {
         "model": "main.tag",
-        "pk": 237,
+        "pk": 319,
         "fields": {
-            "subject": "Philosophy -- Introductions"
+            "subject": "philosophy -- introductions"
         }
     },
     {
@@ -3193,44 +3767,86 @@
         "model": "main.book",
         "pk": 66,
         "fields": {
-            "title": "The Problems of Philosophy",
+            "title": "the problems of philosophy",
             "author": 52,
             "cover_url": "https://www.gutenberg.org/cache/epub/5827/pg5827.cover.medium.jpg",
             "download_count": 9188,
             "content": "https://www.gutenberg.org/ebooks/5827.html.images",
             "tags": [
-                235,
-                236,
-                237
+                317,
+                318,
+                319
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 238,
+        "pk": 320,
         "fields": {
-            "subject": "Heathcliff (Fictitious character : Bront\u00eb) -- Fiction"
+            "subject": "domestic fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 239,
+        "pk": 321,
         "fields": {
-            "subject": "Rejection (Psychology) -- Fiction"
+            "subject": "foundlings -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 240,
+        "pk": 322,
         "fields": {
-            "subject": "Rural families -- Fiction"
+            "subject": "heathcliff (fictitious character : bront\u00eb) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 241,
+        "pk": 323,
         "fields": {
-            "subject": "Yorkshire (England) -- Fiction"
+            "subject": "love stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 324,
+        "fields": {
+            "subject": "psychological fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 325,
+        "fields": {
+            "subject": "rejection (psychology) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 326,
+        "fields": {
+            "subject": "revenge -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 327,
+        "fields": {
+            "subject": "rural families -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 328,
+        "fields": {
+            "subject": "triangles (interpersonal relations) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 329,
+        "fields": {
+            "subject": "yorkshire (england) -- fiction"
         }
     },
     {
@@ -3244,125 +3860,167 @@
         "model": "main.book",
         "pk": 67,
         "fields": {
-            "title": "Wuthering Heights",
+            "title": "wuthering heights",
             "author": 53,
             "cover_url": "https://www.gutenberg.org/cache/epub/768/pg768.cover.medium.jpg",
             "download_count": 9137,
             "content": "https://www.gutenberg.org/ebooks/768.html.images",
             "tags": [
-                16,
-                91,
-                238,
-                18,
-                25,
-                239,
-                38,
-                240,
-                39,
-                241
+                320,
+                321,
+                322,
+                323,
+                324,
+                325,
+                326,
+                327,
+                328,
+                329
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 242,
+        "pk": 330,
         "fields": {
-            "subject": "Canada -- History -- 1867-1914 -- Fiction"
+            "subject": "bildungsromans"
         }
     },
     {
         "model": "main.tag",
-        "pk": 243,
+        "pk": 331,
         "fields": {
-            "subject": "Country life -- Prince Edward Island -- Fiction"
+            "subject": "canada -- history -- 1867-1914 -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 244,
+        "pk": 332,
         "fields": {
-            "subject": "Friendship -- Fiction"
+            "subject": "country life -- prince edward island -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 245,
+        "pk": 333,
         "fields": {
-            "subject": "Girls -- Fiction"
+            "subject": "friendship -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 246,
+        "pk": 334,
         "fields": {
-            "subject": "Islands -- Fiction"
+            "subject": "girls -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 247,
+        "pk": 335,
         "fields": {
-            "subject": "Prince Edward Island -- History -- 20th century -- Fiction"
+            "subject": "islands -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 248,
+        "pk": 336,
         "fields": {
-            "subject": "Shirley, Anne (Fictitious character) -- Fiction"
+            "subject": "orphans -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 337,
+        "fields": {
+            "subject": "prince edward island -- history -- 20th century -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 338,
+        "fields": {
+            "subject": "shirley, anne (fictitious character) -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 68,
         "fields": {
-            "title": "Anne of Green Gables",
+            "title": "anne of green gables",
             "author": 8,
             "cover_url": "https://www.gutenberg.org/cache/epub/45/pg45.cover.medium.jpg",
             "download_count": 8739,
             "content": "https://www.gutenberg.org/ebooks/45.html.images",
             "tags": [
-                41,
-                242,
-                243,
-                244,
-                245,
-                246,
-                139,
-                247,
-                248
+                330,
+                331,
+                332,
+                333,
+                334,
+                335,
+                336,
+                337,
+                338
             ]
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 339,
+        "fields": {
+            "subject": "detective and mystery stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 340,
+        "fields": {
+            "subject": "england -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 341,
+        "fields": {
+            "subject": "holmes, sherlock (fictitious character) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 342,
+        "fields": {
+            "subject": "private investigators -- england -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 69,
         "fields": {
-            "title": "A Study in Scarlet",
+            "title": "a study in scarlet",
             "author": 26,
             "cover_url": "https://www.gutenberg.org/cache/epub/244/pg244.cover.medium.jpg",
             "download_count": 8706,
             "content": "https://www.gutenberg.org/ebooks/244.html.images",
             "tags": [
-                154,
-                17,
-                120,
-                121
+                339,
+                340,
+                341,
+                342
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 249,
+        "pk": 343,
         "fields": {
-            "subject": "Franklin, Benjamin, 1706-1790"
+            "subject": "franklin, benjamin, 1706-1790"
         }
     },
     {
         "model": "main.tag",
-        "pk": 250,
+        "pk": 344,
         "fields": {
-            "subject": "Statesmen -- United States -- Biography"
+            "subject": "statesmen -- united states -- biography"
         }
     },
     {
@@ -3376,106 +4034,113 @@
         "model": "main.book",
         "pk": 70,
         "fields": {
-            "title": "Autobiography of Benjamin Franklin",
+            "title": "autobiography of benjamin franklin",
             "author": 54,
             "cover_url": "https://www.gutenberg.org/cache/epub/20203/pg20203.cover.medium.jpg",
             "download_count": 8702,
             "content": "https://www.gutenberg.org/ebooks/20203.html.images",
             "tags": [
-                249,
-                250
+                343,
+                344
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 251,
+        "pk": 345,
         "fields": {
-            "subject": "Courage -- Juvenile fiction"
+            "subject": "courage -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 252,
+        "pk": 346,
         "fields": {
-            "subject": "Cowardly Lion (Fictitious character) -- Juvenile fiction"
+            "subject": "cowardly lion (fictitious character) -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 253,
+        "pk": 347,
         "fields": {
-            "subject": "Cyclones -- Juvenile fiction"
+            "subject": "cyclones -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 254,
+        "pk": 348,
         "fields": {
-            "subject": "Dreams -- Juvenile fiction"
+            "subject": "dreams -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 255,
+        "pk": 349,
         "fields": {
-            "subject": "Gale, Dorothy (Fictitious character) -- Juvenile fiction"
+            "subject": "fantasy literature"
         }
     },
     {
         "model": "main.tag",
-        "pk": 256,
+        "pk": 350,
         "fields": {
-            "subject": "Good and evil -- Juvenile fiction"
+            "subject": "gale, dorothy (fictitious character) -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 257,
+        "pk": 351,
         "fields": {
-            "subject": "Home -- Juvenile fiction"
+            "subject": "good and evil -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 258,
+        "pk": 352,
         "fields": {
-            "subject": "Oz (Imaginary place) -- Juvenile fiction"
+            "subject": "home -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 259,
+        "pk": 353,
         "fields": {
-            "subject": "Scarecrow (Fictitious character from Baum) -- Juvenile fiction"
+            "subject": "oz (imaginary place) -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 260,
+        "pk": 354,
         "fields": {
-            "subject": "Tin Woodman (Fictitious character) -- Juvenile fiction"
+            "subject": "scarecrow (fictitious character from baum) -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 261,
+        "pk": 355,
         "fields": {
-            "subject": "Toto (Fictitious character) -- Juvenile fiction"
+            "subject": "tin woodman (fictitious character) -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 262,
+        "pk": 356,
         "fields": {
-            "subject": "Witches -- Juvenile fiction"
+            "subject": "toto (fictitious character) -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 263,
+        "pk": 357,
         "fields": {
-            "subject": "Wizard of Oz (Fictitious character) -- Juvenile fiction"
+            "subject": "witches -- juvenile fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 358,
+        "fields": {
+            "subject": "wizard of oz (fictitious character) -- juvenile fiction"
         }
     },
     {
@@ -3489,48 +4154,55 @@
         "model": "main.book",
         "pk": 71,
         "fields": {
-            "title": "The Wonderful Wizard of Oz",
+            "title": "the wonderful wizard of oz",
             "author": 55,
             "cover_url": "https://www.gutenberg.org/cache/epub/55/pg55.cover.medium.jpg",
             "download_count": 8673,
             "content": "https://www.gutenberg.org/ebooks/55.html.images",
             "tags": [
-                251,
-                252,
-                253,
-                254,
-                221,
-                255,
-                256,
-                257,
-                258,
-                259,
-                260,
-                261,
-                262,
-                263
+                345,
+                346,
+                347,
+                348,
+                349,
+                350,
+                351,
+                352,
+                353,
+                354,
+                355,
+                356,
+                357,
+                358
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 264,
+        "pk": 359,
         "fields": {
-            "subject": "Knights and knighthood -- Spain -- Fiction"
+            "subject": "knights and knighthood -- spain -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 265,
+        "pk": 360,
         "fields": {
-            "subject": "Romances"
+            "subject": "picaresque literature"
         }
     },
     {
         "model": "main.tag",
-        "pk": 266,
+        "pk": 361,
         "fields": {
-            "subject": "Spain -- Social life and customs -- 16th century -- Fiction"
+            "subject": "romances"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 362,
+        "fields": {
+            "subject": "spain -- social life and customs -- 16th century -- fiction"
         }
     },
     {
@@ -3544,17 +4216,31 @@
         "model": "main.book",
         "pk": 72,
         "fields": {
-            "title": "Don Quixote",
+            "title": "don quixote",
             "author": 56,
             "cover_url": "https://www.gutenberg.org/cache/epub/996/pg996.cover.medium.jpg",
             "download_count": 8456,
             "content": "https://www.gutenberg.org/ebooks/996.html.images",
             "tags": [
-                264,
-                84,
-                265,
-                266
+                359,
+                360,
+                361,
+                362
             ]
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 363,
+        "fields": {
+            "subject": "vampires -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 364,
+        "fields": {
+            "subject": "young women -- fiction"
         }
     },
     {
@@ -3568,29 +4254,29 @@
         "model": "main.book",
         "pk": 73,
         "fields": {
-            "title": "Carmilla",
+            "title": "carmilla",
             "author": 57,
             "cover_url": "https://www.gutenberg.org/cache/epub/10007/pg10007.cover.medium.jpg",
             "download_count": 8362,
             "content": "https://www.gutenberg.org/ebooks/10007.html.images",
             "tags": [
-                59,
-                21
+                363,
+                364
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 267,
+        "pk": 365,
         "fields": {
-            "subject": "Epic poetry, Italian -- Translations into English"
+            "subject": "epic poetry, italian -- translations into english"
         }
     },
     {
         "model": "main.tag",
-        "pk": 268,
+        "pk": 366,
         "fields": {
-            "subject": "Italian poetry -- To 1400 -- Translations into English"
+            "subject": "italian poetry -- to 1400 -- translations into english"
         }
     },
     {
@@ -3604,74 +4290,88 @@
         "model": "main.book",
         "pk": 74,
         "fields": {
-            "title": "The divine comedy",
+            "title": "the divine comedy",
             "author": 58,
             "cover_url": "https://www.gutenberg.org/cache/epub/8800/pg8800.cover.medium.jpg",
             "download_count": 8347,
             "content": "https://www.gutenberg.org/ebooks/8800.html.images",
             "tags": [
-                267,
-                268
+                365,
+                366
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 269,
+        "pk": 367,
         "fields": {
-            "subject": "Treasure Island (Imaginary place) -- Fiction"
+            "subject": "pirates -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 270,
+        "pk": 368,
         "fields": {
-            "subject": "Treasure troves -- Fiction"
+            "subject": "sea stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 369,
+        "fields": {
+            "subject": "treasure island (imaginary place) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 370,
+        "fields": {
+            "subject": "treasure troves -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 75,
         "fields": {
-            "title": "Treasure Island",
+            "title": "treasure island",
             "author": 29,
             "cover_url": "https://www.gutenberg.org/cache/epub/120/pg120.cover.medium.jpg",
             "download_count": 8320,
             "content": "https://www.gutenberg.org/ebooks/120.html.images",
             "tags": [
-                143,
-                26,
-                269,
-                270
+                367,
+                368,
+                369,
+                370
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 271,
+        "pk": 371,
         "fields": {
-            "subject": "Augustine, Saint, Bishop of Hippo"
+            "subject": "augustine, saint, bishop of hippo"
         }
     },
     {
         "model": "main.tag",
-        "pk": 272,
+        "pk": 372,
         "fields": {
-            "subject": "Bishops -- Algeria -- Hippo (Extinct city) -- Biography"
+            "subject": "bishops -- algeria -- hippo (extinct city) -- biography"
         }
     },
     {
         "model": "main.tag",
-        "pk": 273,
+        "pk": 373,
         "fields": {
-            "subject": "Catholic Church -- Bishops -- Biography"
+            "subject": "catholic church -- bishops -- biography"
         }
     },
     {
         "model": "main.tag",
-        "pk": 274,
+        "pk": 374,
         "fields": {
-            "subject": "Christian saints -- Algeria -- Hippo (Extinct city) -- Biography"
+            "subject": "christian saints -- algeria -- hippo (extinct city) -- biography"
         }
     },
     {
@@ -3685,96 +4385,96 @@
         "model": "main.book",
         "pk": 76,
         "fields": {
-            "title": "The Confessions of St. Augustine",
+            "title": "the confessions of st. augustine",
             "author": 59,
             "cover_url": "https://www.gutenberg.org/cache/epub/3296/pg3296.cover.medium.jpg",
             "download_count": 7874,
             "content": "https://www.gutenberg.org/ebooks/3296.html.images",
             "tags": [
-                271,
-                272,
-                273,
-                274
+                371,
+                372,
+                373,
+                374
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 275,
+        "pk": 375,
         "fields": {
-            "subject": "Political fiction"
+            "subject": "political fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 276,
+        "pk": 376,
         "fields": {
-            "subject": "Russia -- History -- 1801-1917 -- Fiction"
+            "subject": "russia -- history -- 1801-1917 -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 277,
+        "pk": 377,
         "fields": {
-            "subject": "Russia -- Officials and employees -- Fiction"
+            "subject": "russia -- officials and employees -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 77,
         "fields": {
-            "title": "Notes from the Underground",
+            "title": "notes from the underground",
             "author": 28,
             "cover_url": "https://www.gutenberg.org/cache/epub/600/pg600.cover.medium.jpg",
             "download_count": 7843,
             "content": "https://www.gutenberg.org/ebooks/600.html.images",
             "tags": [
-                275,
-                276,
-                277
+                375,
+                376,
+                377
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 278,
+        "pk": 378,
         "fields": {
-            "subject": "Christopher Robin (Fictitious character) -- Juvenile fiction"
+            "subject": "christopher robin (fictitious character) -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 279,
+        "pk": 379,
         "fields": {
-            "subject": "Eeyore (Fictitious character) -- Juvenile fiction"
+            "subject": "eeyore (fictitious character) -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 280,
+        "pk": 380,
         "fields": {
-            "subject": "Piglet (Fictitious character) -- Juvenile fiction"
+            "subject": "piglet (fictitious character) -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 281,
+        "pk": 381,
         "fields": {
-            "subject": "Teddy bears -- Juvenile fiction"
+            "subject": "teddy bears -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 282,
+        "pk": 382,
         "fields": {
-            "subject": "Toys -- Juvenile fiction"
+            "subject": "toys -- juvenile fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 283,
+        "pk": 383,
         "fields": {
-            "subject": "Winnie-the-Pooh (Fictitious character) -- Juvenile fiction"
+            "subject": "winnie-the-pooh (fictitious character) -- juvenile fiction"
         }
     },
     {
@@ -3788,115 +4488,150 @@
         "model": "main.book",
         "pk": 78,
         "fields": {
-            "title": "Winnie-the-Pooh",
+            "title": "winnie-the-pooh",
             "author": 60,
             "cover_url": "https://www.gutenberg.org/cache/epub/67098/pg67098.cover.medium.jpg",
             "download_count": 7674,
             "content": "https://www.gutenberg.org/ebooks/67098.html.images",
             "tags": [
-                278,
-                279,
-                280,
-                281,
-                282,
-                283
+                378,
+                379,
+                380,
+                381,
+                382,
+                383
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 284,
+        "pk": 384,
         "fields": {
-            "subject": "Letter writing"
+            "subject": "letter writing"
         }
     },
     {
         "model": "main.book",
         "pk": 79,
         "fields": {
-            "title": "Eight or Nine Wise Words about Letter-Writing",
+            "title": "eight or nine wise words about letter-writing",
             "author": 7,
             "cover_url": "https://www.gutenberg.org/cache/epub/38065/pg38065.cover.medium.jpg",
             "download_count": 7549,
             "content": "https://www.gutenberg.org/ebooks/38065.html.images",
             "tags": [
-                284
+                384
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 285,
+        "pk": 385,
         "fields": {
-            "subject": "Blessing and cursing -- Fiction"
+            "subject": "blessing and cursing -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 286,
+        "pk": 386,
         "fields": {
-            "subject": "Dartmoor (England) -- Fiction"
+            "subject": "dartmoor (england) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 287,
+        "pk": 387,
         "fields": {
-            "subject": "Dogs -- Fiction"
+            "subject": "detective and mystery stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 388,
+        "fields": {
+            "subject": "dogs -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 389,
+        "fields": {
+            "subject": "holmes, sherlock (fictitious character) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 390,
+        "fields": {
+            "subject": "private investigators -- england -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 80,
         "fields": {
-            "title": "The Hound of the Baskervilles",
+            "title": "the hound of the baskervilles",
             "author": 26,
             "cover_url": "https://www.gutenberg.org/cache/epub/2852/pg2852.cover.medium.jpg",
             "download_count": 7514,
             "content": "https://www.gutenberg.org/ebooks/2852.html.images",
             "tags": [
-                285,
-                286,
-                154,
-                287,
-                120,
-                121
+                385,
+                386,
+                387,
+                388,
+                389,
+                390
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 288,
+        "pk": 391,
         "fields": {
-            "subject": "Imaginary wars and battles -- Fiction"
+            "subject": "imaginary wars and battles -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 289,
+        "pk": 392,
         "fields": {
-            "subject": "Life on other planets -- Fiction"
+            "subject": "life on other planets -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 290,
+        "pk": 393,
         "fields": {
-            "subject": "Mars (Planet) -- Fiction"
+            "subject": "mars (planet) -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 291,
+        "pk": 394,
         "fields": {
-            "subject": "Martians -- Fiction"
+            "subject": "martians -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 292,
+        "pk": 395,
         "fields": {
-            "subject": "Space warfare -- Fiction"
+            "subject": "science fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 396,
+        "fields": {
+            "subject": "space warfare -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 397,
+        "fields": {
+            "subject": "war stories"
         }
     },
     {
@@ -3910,55 +4645,83 @@
         "model": "main.book",
         "pk": 81,
         "fields": {
-            "title": "The War of the Worlds",
+            "title": "the war of the worlds",
             "author": 61,
             "cover_url": "https://www.gutenberg.org/cache/epub/36/pg36.cover.medium.jpg",
             "download_count": 7447,
             "content": "https://www.gutenberg.org/ebooks/36.html.images",
             "tags": [
-                288,
-                289,
-                290,
-                291,
-                13,
-                292,
-                113
+                391,
+                392,
+                393,
+                394,
+                395,
+                396,
+                397
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 293,
+        "pk": 398,
         "fields": {
-            "subject": "Autobiographical fiction"
+            "subject": "autobiographical fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 294,
+        "pk": 399,
         "fields": {
-            "subject": "Family life -- New England -- Fiction"
+            "subject": "bildungsromans"
         }
     },
     {
         "model": "main.tag",
-        "pk": 295,
+        "pk": 400,
         "fields": {
-            "subject": "March family (Fictitious characters) -- Fiction"
+            "subject": "domestic fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 296,
+        "pk": 401,
         "fields": {
-            "subject": "Mothers and daughters -- Fiction"
+            "subject": "family life -- new england -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 297,
+        "pk": 402,
         "fields": {
-            "subject": "New England -- Fiction"
+            "subject": "march family (fictitious characters) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 403,
+        "fields": {
+            "subject": "mothers and daughters -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 404,
+        "fields": {
+            "subject": "new england -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 405,
+        "fields": {
+            "subject": "sisters -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 406,
+        "fields": {
+            "subject": "young women -- fiction"
         }
     },
     {
@@ -3972,61 +4735,103 @@
         "model": "main.book",
         "pk": 82,
         "fields": {
-            "title": "Little Women",
+            "title": "little women",
             "author": 62,
             "cover_url": "https://www.gutenberg.org/cache/epub/514/pg514.cover.medium.jpg",
             "download_count": 7414,
             "content": "https://www.gutenberg.org/ebooks/514.html.images",
             "tags": [
-                293,
-                41,
-                16,
-                294,
-                295,
-                296,
-                297,
-                19,
-                21
+                398,
+                399,
+                400,
+                401,
+                402,
+                403,
+                404,
+                405,
+                406
             ]
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 407,
+        "fields": {
+            "subject": "knights and knighthood -- spain -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 408,
+        "fields": {
+            "subject": "picaresque literature"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 409,
+        "fields": {
+            "subject": "romances"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 410,
+        "fields": {
+            "subject": "spain -- social life and customs -- 16th century -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 83,
         "fields": {
-            "title": "Don Quijote",
+            "title": "don quijote",
             "author": 56,
             "cover_url": "https://www.gutenberg.org/cache/epub/2000/pg2000.cover.medium.jpg",
             "download_count": 7383,
             "content": "https://www.gutenberg.org/ebooks/2000.html.images",
             "tags": [
-                264,
-                84,
-                265,
-                266
+                407,
+                408,
+                409,
+                410
             ]
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 411,
+        "fields": {
+            "subject": "ethics"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 412,
+        "fields": {
+            "subject": "philosophy, german"
         }
     },
     {
         "model": "main.book",
         "pk": 84,
         "fields": {
-            "title": "Beyond Good and Evil",
+            "title": "beyond good and evil",
             "author": 47,
             "cover_url": "https://www.gutenberg.org/cache/epub/4363/pg4363.cover.medium.jpg",
             "download_count": 7226,
             "content": "https://www.gutenberg.org/ebooks/4363.html.images",
             "tags": [
-                207,
-                210
+                411,
+                412
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 298,
+        "pk": 413,
         "fields": {
-            "subject": "Words and phrase lists -- English"
+            "subject": "words and phrase lists -- english"
         }
     },
     {
@@ -4040,49 +4845,98 @@
         "model": "main.book",
         "pk": 85,
         "fields": {
-            "title": "Moby Multiple Language Lists of Common Words",
+            "title": "moby multiple language lists of common words",
             "author": 63,
             "cover_url": "https://www.gutenberg.org/cache/epub/3206/pg3206.cover.medium.jpg",
             "download_count": 7179,
             "content": "https://www.gutenberg.org/ebooks/3206.html.images",
             "tags": [
-                298
+                413
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 299,
+        "pk": 414,
         "fields": {
-            "subject": "Mate selection -- Fiction"
+            "subject": "bildungsromans"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 415,
+        "fields": {
+            "subject": "england -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 416,
+        "fields": {
+            "subject": "fathers and daughters -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 417,
+        "fields": {
+            "subject": "female friendship -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 418,
+        "fields": {
+            "subject": "humorous stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 419,
+        "fields": {
+            "subject": "love stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 420,
+        "fields": {
+            "subject": "mate selection -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 421,
+        "fields": {
+            "subject": "young women -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 86,
         "fields": {
-            "title": "Emma",
+            "title": "emma",
             "author": 3,
             "cover_url": "https://www.gutenberg.org/cache/epub/158/pg158.cover.medium.jpg",
             "download_count": 7167,
             "content": "https://www.gutenberg.org/ebooks/158.html.images",
             "tags": [
-                41,
-                17,
-                159,
-                68,
-                92,
-                18,
-                299,
-                21
+                414,
+                415,
+                416,
+                417,
+                418,
+                419,
+                420,
+                421
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 300,
+        "pk": 422,
         "fields": {
-            "subject": "Calculus"
+            "subject": "calculus"
         }
     },
     {
@@ -4096,87 +4950,143 @@
         "model": "main.book",
         "pk": 87,
         "fields": {
-            "title": "Calculus Made Easy: Being a very-simplest introduction to those beautiful methods which are generally called by the terrifying names of the Differential Calculus and the Integral Calculus",
+            "title": "calculus made easy: being a very-simplest introduction to those beautiful methods which are generally called by the terrifying names of the differential calculus and the integral calculus",
             "author": 64,
             "cover_url": "https://www.gutenberg.org/cache/epub/33283/pg33283.cover.medium.jpg",
             "download_count": 7050,
             "content": null,
             "tags": [
-                300
+                422
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 301,
+        "pk": 423,
         "fields": {
-            "subject": "England -- Social life and customs -- 19th century -- Fiction"
+            "subject": "domestic fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 302,
+        "pk": 424,
         "fields": {
-            "subject": "Gentry -- England -- Fiction"
+            "subject": "england -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 303,
+        "pk": 425,
         "fields": {
-            "subject": "Inheritance and succession -- Fiction"
+            "subject": "england -- social life and customs -- 19th century -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 304,
+        "pk": 426,
         "fields": {
-            "subject": "Regency fiction"
+            "subject": "gentry -- england -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 427,
+        "fields": {
+            "subject": "inheritance and succession -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 428,
+        "fields": {
+            "subject": "love stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 429,
+        "fields": {
+            "subject": "mate selection -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 430,
+        "fields": {
+            "subject": "regency fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 431,
+        "fields": {
+            "subject": "sisters -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 432,
+        "fields": {
+            "subject": "social classes -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 433,
+        "fields": {
+            "subject": "young women -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 88,
         "fields": {
-            "title": "Sense and Sensibility",
+            "title": "sense and sensibility",
             "author": 3,
             "cover_url": "https://www.gutenberg.org/cache/epub/161/pg161.cover.medium.jpg",
             "download_count": 7026,
             "content": "https://www.gutenberg.org/ebooks/161.html.images",
             "tags": [
-                16,
-                17,
-                301,
-                302,
-                303,
-                18,
-                299,
-                304,
-                19,
-                20,
-                21
+                423,
+                424,
+                425,
+                426,
+                427,
+                428,
+                429,
+                430,
+                431,
+                432,
+                433
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 305,
+        "pk": 434,
         "fields": {
-            "subject": "Enslaved persons -- United States -- Social conditions"
+            "subject": "enslaved persons -- united states -- biography"
         }
     },
     {
         "model": "main.tag",
-        "pk": 306,
+        "pk": 435,
         "fields": {
-            "subject": "Enslaved women -- United States -- Biography"
+            "subject": "enslaved persons -- united states -- social conditions"
         }
     },
     {
         "model": "main.tag",
-        "pk": 307,
+        "pk": 436,
         "fields": {
-            "subject": "Jacobs, Harriet A. (Harriet Ann), 1813-1897"
+            "subject": "enslaved women -- united states -- biography"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 437,
+        "fields": {
+            "subject": "jacobs, harriet a. (harriet ann), 1813-1897"
         }
     },
     {
@@ -4190,31 +5100,38 @@
         "model": "main.book",
         "pk": 89,
         "fields": {
-            "title": "Incidents in the Life of a Slave Girl, Written by Herself",
+            "title": "incidents in the life of a slave girl, written by herself",
             "author": 65,
             "cover_url": "https://www.gutenberg.org/cache/epub/11030/pg11030.cover.medium.jpg",
             "download_count": 6975,
             "content": "https://www.gutenberg.org/ebooks/11030.html.images",
             "tags": [
-                184,
-                305,
-                306,
-                307
+                434,
+                435,
+                436,
+                437
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 308,
+        "pk": 438,
         "fields": {
-            "subject": "Monarchy -- Early works to 1800"
+            "subject": "monarchy -- early works to 1800"
         }
     },
     {
         "model": "main.tag",
-        "pk": 309,
+        "pk": 439,
         "fields": {
-            "subject": "United States -- Politics and government -- 1775-1783"
+            "subject": "political science -- early works to 1800"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 440,
+        "fields": {
+            "subject": "united states -- politics and government -- 1775-1783"
         }
     },
     {
@@ -4228,106 +5145,211 @@
         "model": "main.book",
         "pk": 90,
         "fields": {
-            "title": "Common Sense",
+            "title": "common sense",
             "author": 66,
             "cover_url": "https://www.gutenberg.org/cache/epub/147/pg147.cover.medium.jpg",
             "download_count": 6967,
             "content": "https://www.gutenberg.org/ebooks/147.html.images",
             "tags": [
-                308,
-                149,
-                309
+                438,
+                439,
+                440
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 310,
+        "pk": 441,
         "fields": {
-            "subject": "Russian fiction -- Translations into German"
+            "subject": "adultery -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 442,
+        "fields": {
+            "subject": "didactic fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 443,
+        "fields": {
+            "subject": "love stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 444,
+        "fields": {
+            "subject": "married women -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 445,
+        "fields": {
+            "subject": "russia -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 446,
+        "fields": {
+            "subject": "russian fiction -- translations into german"
         }
     },
     {
         "model": "main.book",
         "pk": 91,
         "fields": {
-            "title": "Anna Karenina, 1. Band",
+            "title": "anna karenina, 1. band",
             "author": 24,
             "cover_url": "https://www.gutenberg.org/cache/epub/44956/pg44956.cover.medium.jpg",
             "download_count": 6864,
             "content": "https://www.gutenberg.org/ebooks/44956.html.images",
             "tags": [
-                31,
-                43,
-                18,
-                36,
-                117,
-                310
+                441,
+                442,
+                443,
+                444,
+                445,
+                446
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 311,
+        "pk": 447,
         "fields": {
-            "subject": "Dystopias -- Fiction"
+            "subject": "dystopias -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 312,
+        "pk": 448,
         "fields": {
-            "subject": "Time travel -- Fiction"
+            "subject": "science fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 449,
+        "fields": {
+            "subject": "time travel -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 92,
         "fields": {
-            "title": "The Time Machine",
+            "title": "the time machine",
             "author": 61,
             "cover_url": "https://www.gutenberg.org/cache/epub/35/pg35.cover.medium.jpg",
             "download_count": 6837,
             "content": "https://www.gutenberg.org/ebooks/35.html.images",
             "tags": [
-                311,
-                13,
-                312
+                447,
+                448,
+                449
             ]
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 450,
+        "fields": {
+            "subject": "frankenstein's monster (fictitious character) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 451,
+        "fields": {
+            "subject": "frankenstein, victor (fictitious character) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 452,
+        "fields": {
+            "subject": "gothic fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 453,
+        "fields": {
+            "subject": "horror tales"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 454,
+        "fields": {
+            "subject": "monsters -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 455,
+        "fields": {
+            "subject": "science fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 456,
+        "fields": {
+            "subject": "scientists -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 93,
         "fields": {
-            "title": "Frankenstein; Or, The Modern Prometheus",
+            "title": "frankenstein; or, the modern prometheus",
             "author": 2,
             "cover_url": "https://www.gutenberg.org/cache/epub/42324/pg42324.cover.medium.jpg",
             "download_count": 6650,
             "content": "https://www.gutenberg.org/ebooks/42324.html.images",
             "tags": [
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14
+                450,
+                451,
+                452,
+                453,
+                454,
+                455,
+                456
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 313,
+        "pk": 457,
         "fields": {
-            "subject": "American fiction -- 19th century"
+            "subject": "american fiction -- 19th century"
         }
     },
     {
         "model": "main.tag",
-        "pk": 314,
+        "pk": 458,
         "fields": {
-            "subject": "Horror tales, American"
+            "subject": "fantasy fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 459,
+        "fields": {
+            "subject": "horror tales, american"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 460,
+        "fields": {
+            "subject": "short stories"
         }
     },
     {
@@ -4341,45 +5363,59 @@
         "model": "main.book",
         "pk": 94,
         "fields": {
-            "title": "The Works of Edgar Allan Poe \u2014 Volume 2",
+            "title": "the works of edgar allan poe \u2014 volume 2",
             "author": 67,
             "cover_url": "https://www.gutenberg.org/cache/epub/2148/pg2148.cover.medium.jpg",
             "download_count": 6484,
             "content": "https://www.gutenberg.org/ebooks/2148.html.images",
             "tags": [
-                313,
-                47,
-                314,
-                199
+                457,
+                458,
+                459,
+                460
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 315,
+        "pk": 461,
         "fields": {
-            "subject": "Atlantic Ocean -- Fiction"
+            "subject": "adventure stories"
         }
     },
     {
         "model": "main.tag",
-        "pk": 316,
+        "pk": 462,
         "fields": {
-            "subject": "Castaways -- Fiction"
+            "subject": "atlantic ocean -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 317,
+        "pk": 463,
         "fields": {
-            "subject": "Crusoe, Robinson (Fictitious character) -- Fiction"
+            "subject": "castaways -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 318,
+        "pk": 464,
         "fields": {
-            "subject": "Shipwreck survival -- Fiction"
+            "subject": "crusoe, robinson (fictitious character) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 465,
+        "fields": {
+            "subject": "islands -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 466,
+        "fields": {
+            "subject": "shipwreck survival -- fiction"
         }
     },
     {
@@ -4393,59 +5429,115 @@
         "model": "main.book",
         "pk": 95,
         "fields": {
-            "title": "The Life and Adventures of Robinson Crusoe",
+            "title": "the life and adventures of robinson crusoe",
             "author": 68,
             "cover_url": "https://www.gutenberg.org/cache/epub/521/pg521.cover.medium.jpg",
             "download_count": 6434,
             "content": "https://www.gutenberg.org/ebooks/521.html.images",
             "tags": [
-                22,
-                315,
-                316,
-                317,
-                246,
-                318
+                461,
+                462,
+                463,
+                464,
+                465,
+                466
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 319,
+        "pk": 467,
         "fields": {
-            "subject": "Criminals -- Fiction"
+            "subject": "bildungsromans"
         }
     },
     {
         "model": "main.tag",
-        "pk": 320,
+        "pk": 468,
         "fields": {
-            "subject": "Kidnapping victims -- Fiction"
+            "subject": "boys -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 469,
+        "fields": {
+            "subject": "criminals -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 470,
+        "fields": {
+            "subject": "kidnapping victims -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 471,
+        "fields": {
+            "subject": "london (england) -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 472,
+        "fields": {
+            "subject": "orphans -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 96,
         "fields": {
-            "title": "Oliver Twist",
+            "title": "oliver twist",
             "author": 23,
             "cover_url": "https://www.gutenberg.org/cache/epub/730/pg730.cover.medium.jpg",
             "download_count": 6424,
             "content": "https://www.gutenberg.org/ebooks/730.html.images",
             "tags": [
-                41,
-                161,
-                319,
-                320,
-                132,
-                139
+                467,
+                468,
+                469,
+                470,
+                471,
+                472
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 321,
+        "pk": 473,
         "fields": {
-            "subject": "Paris (France) -- Fiction"
+            "subject": "epic literature"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 474,
+        "fields": {
+            "subject": "ex-convicts -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 475,
+        "fields": {
+            "subject": "historical fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 476,
+        "fields": {
+            "subject": "orphans -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 477,
+        "fields": {
+            "subject": "paris (france) -- fiction"
         }
     },
     {
@@ -4459,32 +5551,39 @@
         "model": "main.book",
         "pk": 97,
         "fields": {
-            "title": "Les Mis\u00e9rables",
+            "title": "les mis\u00e9rables",
             "author": 69,
             "cover_url": "https://www.gutenberg.org/cache/epub/135/pg135.cover.medium.jpg",
             "download_count": 6339,
             "content": "https://www.gutenberg.org/ebooks/135.html.images",
             "tags": [
-                192,
-                137,
-                34,
-                139,
-                321
+                473,
+                474,
+                475,
+                476,
+                477
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 322,
+        "pk": 478,
         "fields": {
-            "subject": "Short stories, American"
+            "subject": "horror tales, american"
         }
     },
     {
         "model": "main.tag",
-        "pk": 323,
+        "pk": 479,
         "fields": {
-            "subject": "United States -- Social life and customs -- 19th century -- Fiction"
+            "subject": "short stories, american"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 480,
+        "fields": {
+            "subject": "united states -- social life and customs -- 19th century -- fiction"
         }
     },
     {
@@ -4498,61 +5597,82 @@
         "model": "main.book",
         "pk": 98,
         "fields": {
-            "title": "The King in Yellow",
+            "title": "the king in yellow",
             "author": 70,
             "cover_url": "https://www.gutenberg.org/cache/epub/8492/pg8492.cover.medium.jpg",
             "download_count": 6209,
             "content": "https://www.gutenberg.org/ebooks/8492.html.images",
             "tags": [
-                314,
-                322,
-                323
+                478,
+                479,
+                480
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 324,
+        "pk": 481,
         "fields": {
-            "subject": "Bible"
+            "subject": "bible"
         }
     },
     {
         "model": "main.tag",
-        "pk": 325,
+        "pk": 482,
         "fields": {
-            "subject": "Men -- Societies and clubs -- Fiction"
+            "subject": "england -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 483,
+        "fields": {
+            "subject": "humorous stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 484,
+        "fields": {
+            "subject": "male friendship -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 485,
+        "fields": {
+            "subject": "men -- societies and clubs -- fiction"
         }
     },
     {
         "model": "main.book",
         "pk": 99,
         "fields": {
-            "title": "The Pickwick Papers",
+            "title": "the pickwick papers",
             "author": 23,
             "cover_url": "https://www.gutenberg.org/cache/epub/580/pg580.cover.medium.jpg",
             "download_count": 6141,
             "content": "https://www.gutenberg.org/ebooks/580.html.images",
             "tags": [
-                17,
-                92,
-                164,
-                325
+                482,
+                483,
+                484,
+                485
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 326,
+        "pk": 486,
         "fields": {
-            "subject": "Optimism -- Fiction"
+            "subject": "optimism -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 327,
+        "pk": 487,
         "fields": {
-            "subject": "Satire"
+            "subject": "satire"
         }
     },
     {
@@ -4566,29 +5686,57 @@
         "model": "main.book",
         "pk": 100,
         "fields": {
-            "title": "Candide",
+            "title": "candide",
             "author": 71,
             "cover_url": "https://www.gutenberg.org/cache/epub/19942/pg19942.cover.medium.jpg",
             "download_count": 6131,
             "content": "https://www.gutenberg.org/ebooks/19942.html.images",
             "tags": [
-                326,
-                327
+                486,
+                487
             ]
         }
     },
     {
         "model": "main.tag",
-        "pk": 328,
+        "pk": 488,
         "fields": {
-            "subject": "Individuality -- Fiction"
+            "subject": "individuality -- fiction"
         }
     },
     {
         "model": "main.tag",
-        "pk": 329,
+        "pk": 489,
         "fields": {
-            "subject": "Men -- Psychology -- Fiction"
+            "subject": "love stories"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 490,
+        "fields": {
+            "subject": "men -- psychology -- fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 491,
+        "fields": {
+            "subject": "psychological fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 492,
+        "fields": {
+            "subject": "science fiction"
+        }
+    },
+    {
+        "model": "main.tag",
+        "pk": 493,
+        "fields": {
+            "subject": "time travel -- fiction"
         }
     },
     {
@@ -4602,18 +5750,18 @@
         "model": "main.book",
         "pk": 101,
         "fields": {
-            "title": "Anthem",
+            "title": "anthem",
             "author": 72,
             "cover_url": "https://www.gutenberg.org/cache/epub/1250/pg1250.cover.medium.jpg",
             "download_count": 6115,
             "content": "https://www.gutenberg.org/ebooks/1250.html.images",
             "tags": [
-                328,
-                18,
-                329,
-                25,
-                13,
-                312
+                488,
+                489,
+                490,
+                491,
+                492,
+                493
             ]
         }
     }
