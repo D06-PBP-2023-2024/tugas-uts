@@ -3,10 +3,6 @@ from .models import Discussion, Reply
 from .forms import DiscussionForm, ReplyForm
 from django.contrib.auth.decorators import login_required
 
-from django.shortcuts import render, redirect
-from .models import Discussion, Reply
-from .forms import DiscussionForm, ReplyForm
-from django.contrib.auth.decorators import login_required
 
 from django.db.models import Count
 
