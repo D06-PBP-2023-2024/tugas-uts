@@ -34,23 +34,28 @@ def book_details(request: HttpRequest, book_id: int):
     if not request.user.is_authenticated:
         context = {
             "book": book,
-            "tags": Tag.objects.filter(books__pk=book.pk),
+            "tags": book.tags.all(),
             "author": book.author,
             "comments": [],
             "likes": book.likes.count(),
             "liked": False,
+            'last_login':None,
         }
+        response = render(request, "book_details.html", context)
     else:
         context = {
             "book": book,
-            "tags": Tag.objects.filter(books__pk=book.pk),
+            "tags": book.tags.all(),
             "author": book.author,
             "comments": Comment.objects.filter(book=book),
             "likes": book.likes.count(),
             "added": ReadingList.objects.filter(user=request.user, book=book).exists(),
             "liked": Like.objects.filter(user=request.user, book=book).exists(),
+            'last_login': request.COOKIES['last_login'] if 'last_login' in request.COOKIES else "N/A",
         }
-    return render(request, "book_details.html", context)
+        response = render(request, "book_details.html", context)
+        response.set_cookie('last_login', request.user.last_login)
+    return response
 
 def get_books(request: HttpRequest):
     limit = 8
@@ -62,20 +67,28 @@ def get_books(request: HttpRequest):
 def search_result(request):
     title = request.POST.get("title")
     tags = request.POST.get("tags")
-
+    # fixed something on search
     if tags != "":
-        tag = Tag.objects.filter(subject__contains=tags).first()
+        tag = Tag.objects.filter(subject__contains=tags)
  
-    books = None
+    books = []
     if title != "":
         books = Book.objects.filter(title__contains=title)
-    if books is None and tags != "" and tag is not None:
-        books = Book.objects.filter(tags=tag)
-    elif books and tags != "" and tag is not None:
-        books = books.filter(tags=tag)
+
+    if books == [] and tags != "" and tag != []:
+        for tg in tag:
+            book = Book.objects.filter(tags=tg)
+            books += book
+
+    elif books and tags != "" and tag != [] and title != "":
+        filtered_book = []
+        for tg in tag:
+            book = books.filter(subject__contains=tg)
+            filtered_book += book
+        books = filtered_book
     
     context = {
-        'books': books,
+        'books': set(books),
         'title': title,
         'tags': tags,
     }
@@ -119,20 +132,30 @@ def search_result_ajax(request):
     if title == "":
         title = request.GET.get("title") or ""
 
+    # fixed something on search
     if tags != "":
-        tag = Tag.objects.filter(subject__contains=tags).first()
-
-    books = None
+        tag = Tag.objects.filter(subject__contains=tags)
+ 
+    books = []
     if title != "":
         books = Book.objects.filter(title__contains=title)
-    if books is None and tags != "" and tag is not None:
-        books = Book.objects.filter(tags=tag)
-    elif books and tags != "" and tag is not None:
-        books = books.filter(tags=tag)
 
-    if books is not None:
-        books = serializers.serialize('json', books)
+    if books == [] and tags != "" and tag != []:
+        for tg in tag:
+            book = Book.objects.filter(tags=tg)
+            books += book
+
+    elif books and tags != "" and tag != [] and title != "":
+        filtered_book = []
+        for tg in tag:
+            book = books.filter(subject__contains=tg)
+            filtered_book += book
+        books = filtered_book
     
+    if books != []:
+        books = set(books)
+        books = serializers.serialize('json', books)
+
     context = {
         'books': books,
         'title': title,

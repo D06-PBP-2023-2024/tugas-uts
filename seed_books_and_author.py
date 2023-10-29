@@ -33,7 +33,7 @@ def main():
                         "model": "main.tag",
                         "pk": tag_cnt,
                         "fields": {
-                            "subject": subject
+                            "subject": subject.lower()
                         }
                     }
                     db_data.append(tag_obj)
@@ -60,7 +60,7 @@ def main():
                     "model": "main.book",
                     "pk": book_cnt,
                     "fields": {
-                        "title": book['title'],
+                        "title": book['title'].lower(),
                         "author": a_id,
                         "cover_url": book['formats']["image/jpeg"],
                         "download_count": book['download_count'],
