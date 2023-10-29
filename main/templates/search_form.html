@@ -1,12 +1,10 @@
 {% extends "container.html" %}
 {% block container_content %}
 
-
 <div class="row d-flex justify-content-center h-75 align-items-center form-div">
-  
   <div class="col-6 border p-4 border-primary-subtle rounded">
 
-    <form method="POST" action="{% url "main:search_result" %}">
+    <form method="POST" action="{% url 'main:search_result' %}">
       {% csrf_token %}
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -15,32 +13,33 @@
       <div class="mb-4">
         <label for="tags" class="form-label">Tags</label>
         <input type="text" class="form-control" id="tags" name="tags">
-        <div class="d-flex justify-content-end"><a href="{% url "main:group_tags" %}">Group by Tags</a></div>
+        <div class="d-flex justify-content-end"><a href="{% url 'main:group_tags' %}">Group by Tags</a></div>
       </div>
-      
+
 
       <div class="row">
-          <div class="col-6">
-            <button type="submit" class="btn btn-primary w-100">Submit</button>
-          </div>
-          <div class="col-6">
-            <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Search by AJAX
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Search by AJAX
           </button>
-          </div>
+        </div>
       </div>
-      
+
     </form>
 
   </div>
-  {% comment %} <form method="POST" action="{% url "main:search_result" %}">
-      {% csrf_token %}
-      <label for="title">Title</label>
-      <input type="text" id="title" name="title">
-      <br>
-      <label for="tags">Tags</label>
-      <input type="text" id="tags" name="tags">
-      <button>Submit</button>
+  {% comment %}
+  <form method="POST" action="{% url 'main:search_result' %}">
+    {% csrf_token %}
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title">
+    <br>
+    <label for="tags">Tags</label>
+    <input type="text" id="tags" name="tags">
+    <button>Submit</button>
   </form> {% endcomment %}
 </div>
 
@@ -48,43 +47,43 @@
 
 <!-- Button trigger modal -->
 {% comment %} <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Search by AJAX
+  Search by AJAX
 </button> {% endcomment %}
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Search by AJAX</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form id="searchAJAX" method="POST" onsubmit="return false;">
-                {% csrf_token %}
-                <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
-                </div>
-                <div class="mb-4">
-                  <label for="tags" class="form-label">Tags</label>
-                  <input type="text" class="form-control" id="tags" name="tags">
-                </div>
-      
-                {% comment %} <label for="title">Title</label>
-                <input type="text" id="title" name="title">
-                <br>
-                <label for="tags">Tags</label>
-                <input type="text" id="tags" name="tags"> {% endcomment %}
-            </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary search-button">Search</button>
-        </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Search by AJAX</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="searchAJAX" method="POST" onsubmit="return false;">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title">
+          </div>
+          <div class="mb-4">
+            <label for="tags" class="form-label">Tags</label>
+            <input type="text" class="form-control" id="tags" name="tags">
+          </div>
+
+          {% comment %} <label for="title">Title</label>
+          <input type="text" id="title" name="title">
+          <br>
+          <label for="tags">Tags</label>
+          <input type="text" id="tags" name="tags"> {% endcomment %}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary search-button">Search</button>
       </div>
     </div>
   </div>
+</div>
 
 <div class="row d-flex justify-content-center">
   <div class="col-6 result-show">
@@ -95,11 +94,11 @@
 
 
 <script>
-    async function searchProduct() {
-      fetch("{% url 'main:search_result_ajax' %}", {
-        method: "POST",
-        body: new FormData(document.querySelector("#searchAJAX"))
-      })
+  async function searchProduct() {
+    fetch("{% url 'main:search_result_ajax' %}", {
+      method: "POST",
+      body: new FormData(document.querySelector("#searchAJAX"))
+    })
       .then(response => response.json())
       .then(data => {
         let text = ``
@@ -129,9 +128,9 @@
           formDiv.classList.add("h-50");
         }
       })
-    }
+  }
 
-    document.querySelector(".search-button").onclick = searchProduct;
+  document.querySelector(".search-button").onclick = searchProduct;
 </script>
 
 <style>

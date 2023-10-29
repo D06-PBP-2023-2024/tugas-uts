@@ -2,7 +2,7 @@ import requests
 import json
 c = 0
 d = []
-url = "https://gutendex.com/books?bookshelves=Children's%20Literature"
+url = "http://gutendex.com/books/?bookshelves=Children%27s%20Myths,%20Fairy%20Tales"
 while c < 100:
     response = requests.get(url)
     data = response.json()
@@ -10,6 +10,8 @@ while c < 100:
         d.append(book)
         print(book['title'])
         c += 1
+        if c >= 100:
+            break
     url = data['next']
     print(f"ZCZC {c}/100 >>> {url}")
 

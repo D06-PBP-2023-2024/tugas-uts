@@ -1,35 +1,62 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+<link rel="stylesheet" href="{% static 'css/book_details.css' %}">
+{% endblock meta %}
 {% block content %}
-<div class="book-details">
-    <h1 class="book-title">
+<div class="book-details" data-id="{{ book.pk }}">
+    <img class=" book-banner" src="{{ book.cover_url }}" />
+    <h5 class="book-title">
         {{ book.title }}
-    </h1>
-    <img class="book-banner" src="{{ book.cover_url }}" />
-    <ul>
-        {% for tag in book.tags.all %}
-        <li>{{ tag.subject }}</li>
+    </h5>
+    <a class="btn btn-success" href="{{ book.content }}">Baca Buku</a>
+    <ul class="d-flex w-100 align-items-center justify-content-center">
+        {% for tag in tags %}
+        <li class="badge mx-1 bg-secondary">{{ tag.subject }}</li>
         {% endfor %}
+        <li class="badge mx-3 bg-warning">
+            <a href="{% url 'main:create_tag' book.pk %}" style="color: white; text-decoration: none;">+</a>
+        </li>
     </ul>
-    <form action="" method="post"></form>
+    <p>
+        By <a class="book-author" href="{% url 'main:author' book.author.id  %}">
+            {{ book.author.name }}
+        </a>
+    </p>
+    {% if user.is_authenticated %}
+    <form id="likeform" onsubmit="return false;">
+        {% if liked %}
+        <input type="submit" class="btn btn-danger" value="Unlike {{likes}}">
+        {% else %}
+        <input type="submit" class="btn btn-outline-danger" value="Like {{likes}}">
+        {% endif %}
+    </form>
+    <form action="{% url 'main:add_reading_list' book.pk %}" method="post">
+        {% csrf_token %}
+        {% if added %}
+        <input type="submit" class="btn btn-danger" value="Remove from Reading List">
+        {% else %}
+        <input type="submit" class="btn btn-outline-success" value="Add to Reading List">
+        {% endif %}
+    </form>
+    <h6>Komentar</h6>
+    <a href="{% url 'main:comment_book' book.pk %}" class="btn btn-primary">Berikan Komentar</a>
+    <ul style="display: flex; justify-content: center; flex-direction: column;">
+        {% for comment in comments %}
+        <li style="width: 250px;" class="card mb-2">
+            <div class="card-body">
+                <p class="card-title">
+                    {% if comment.user.is_superuser %}
+                    <span class="badge bg-success">Admin</span>
+                    {% endif %}
+                    {{ comment.user }}
+                </p>
+                <p class="card-text">{{ comment.comment }}</p>
+            </div>
+        </li>
+        {% endfor %}
+        {% endif %}
+    </ul>
 </div>
-
-<style>
-    .book-details {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .book-banner {
-        width: 30%;
-        min-width: 150px;
-        object-fit: cover;
-    }
-
-    .book-title {
-        margin-top: 30px;
-        text-align: center;
-    }
-</style>
+<script src="{% static 'js/book_details.js' %}"></script>
 {% endblock content %}
