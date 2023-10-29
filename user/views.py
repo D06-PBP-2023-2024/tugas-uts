@@ -141,7 +141,7 @@ def update_profile(request):
             logged_in_user.domicile = domicile
 
         logged_in_user.save()
-        return HttpResponseRedirect(reverse('user_info'))
+        return HttpResponseRedirect(reverse('user:user_info'))
 
     context = {'form': form}
     return render(request, "user.html", context)

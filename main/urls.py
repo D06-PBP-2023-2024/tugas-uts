@@ -14,6 +14,7 @@ urlpatterns = [
     path('like/<int:book_id>/', views.like_book, name='like_book'),
     path('reading_list/<int:book_id>/', views.add_reading_list, name='add_reading_list'),
     path('book/<int:id>/create_tag/', views.create_tag, name='create_tag'),
+    path('create-comment-ajax/<int:book_id>/', views.create_comment_by_ajax, name='create_comment_ajax'),
 ]
 
 

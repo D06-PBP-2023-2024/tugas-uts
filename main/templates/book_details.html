@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{% static 'css/book_details.css' %}">
 {% endblock meta %}
 {% block content %}
-<div class="book-details" data-id="{{ book.pk }}">
+<div class="book-details" data-id="{{ book.pk }}" data-username="{{user.username}}">
     <img class=" book-banner" src="{{ book.cover_url }}" />
     <h5 class="book-title">
         {{ book.title }}
@@ -41,7 +41,32 @@
     </form>
     <h6>Komentar</h6>
     <a href="{% url 'main:comment_book' book.pk %}" class="btn btn-primary">Berikan Komentar</a>
-    <ul style="display: flex; justify-content: center; flex-direction: column;">
+    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Berikan Komentar (AJAX)
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Comment by AJAX</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="commentform" method="POST" onsubmit="return false;">
+                        <input type="hidden" name="book_id" value="{{ book.pk }}">
+                        <div class="d-flex" style="flex-direction: column;">
+                            <label for="comment">Comment</label>
+                            <textarea id="comment" name="comment"></textarea>
+                        </div>
+                        <button type="submit" data-bs-dismiss="modal" id="comment_submit"
+                            class="mt-5 btn btn-primary search-button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="comment-list" style="display: flex; justify-content: center; flex-direction: column;">
         {% for comment in comments %}
         <li style="width: 250px;" class="card mb-2">
             <div class="card-body">

@@ -101,6 +101,17 @@ def search_form(request):
     context = {}
     return render(request, 'search_form.html', context)
 
+@login_required(login_url="user:login")
+@csrf_exempt
+def create_comment_by_ajax(request: HttpRequest, book_id):
+    if request.method != "POST":
+        return JsonResponse({"success": False})
+    comment = request.POST.get("comment")
+    print(request.POST)
+    book = get_object_or_404(Book, pk=book_id)
+    Comment.objects.create(user=request.user, book=book, comment=comment)
+    return JsonResponse({"success": True})
+
 @csrf_exempt
 def search_result_ajax(request):
     title = request.POST.get("title") or ""
