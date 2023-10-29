@@ -62,7 +62,7 @@ def get_books(request: HttpRequest):
 def search_result(request):
     title = request.POST.get("title")
     tags = request.POST.get("tags")
-
+    # fixed something on search
     if tags != "":
         tag = Tag.objects.filter(subject__contains=tags)
  
