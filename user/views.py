@@ -116,6 +116,7 @@ def check_user_info(request,username):
                 'domicile': logged_in_user.domicile or "Domicile",
                 'liked_books' : books_liked,
                 'comments' : comments,
+                'reading_list' : ReadingList.objects.all().filter(user__pk=user.pk),
             }
             return render(request, "check_user.html", context)
         except Profile.DoesNotExist:
