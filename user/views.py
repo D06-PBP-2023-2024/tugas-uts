@@ -1,15 +1,16 @@
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages  
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from main.models import Profile, Like, Comment
+from main.models import Profile, Like, Comment, Author
 from user.forms import UserForm
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 from django.http import JsonResponse
+from django.core import serializers
 import json
 import random
 
@@ -65,6 +66,14 @@ def login_user(request):
 def user_info(request):
     try:
         user = request.user
+
+        if request.user.is_superuser:
+            try:
+                logged_in_user = Profile.objects.get(user=user)
+            except Profile.DoesNotExist:
+                profile = Profile(user=user)
+                profile.save()
+
         try:
             logged_in_user = Profile.objects.get(user=user)
             form = UserForm(request.POST or None)
@@ -115,6 +124,20 @@ def check_user_info(request,username):
 def user_not_found(request):
     return render(request, "user_not_found.html")
 
+def liked_book_json(request):
+    user = request.user
+    likes = Like.objects.filter(user=user)
+    books_liked = []
+    for like in likes:
+        tmp = {
+            "title" : like.book.title,
+            "cover_url" : like.book.cover_url,
+            "author" : like.book.author.name
+        }           
+        books_liked.append(tmp)
+
+    return JsonResponse({"books" : books_liked})
+
 @csrf_exempt
 def update_profile(request):
     form = UserForm(request.POST or None)
@@ -123,19 +146,19 @@ def update_profile(request):
 
     if request.method == "POST":
         first_name = request.POST.get('first_name')
-        if (first_name != ""):
+        if (first_name != "" and not first_name.isspace()):
             logged_in_user.first_name = first_name
         last_name = request.POST.get('last_name')
-        if (last_name != ""):
+        if (last_name != "" and not last_name.isspace()):
             logged_in_user.last_name = last_name
         email = request.POST.get('email')
-        if (email != ""):
+        if (email != "" and not email.isspace()):
             logged_in_user.email = email
         phone_number = request.POST.get('phone_number')
-        if (phone_number != ""):
+        if (phone_number != "" and not phone_number.isspace()):
             logged_in_user.phone_number = phone_number
         domicile = request.POST.get('domicile')
-        if (domicile != ""):
+        if (domicile != "" and not domicile.isspace()):
             logged_in_user.domicile = domicile
 
         logged_in_user.save()

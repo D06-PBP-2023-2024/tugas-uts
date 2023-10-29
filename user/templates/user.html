@@ -58,23 +58,7 @@
         <div class="col-md mt-4">
             <div class="card shadow h-100" style="padding: 20px 20px 10px 20px;">
                 <h5 style="margin-bottom: 15px;">Like</h5>
-                <ul class="list-group list-group-flush" style="overflow: auto;">
-                    {% for book in liked_books %}
-                        <li class="list-group-item d-flex flex-row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-                            <div style="flex: 1;">
-                                <img src="{{ book.cover_url }}" alt="Book Cover" style="width: 100px;">
-                            </div>
-                            <div style="flex: 3;" class="m-3">
-                                <h6 class="text-wrap text-start">{{ book.title }}</h6>
-                                <p class="text-wrap text-start"><small>{{ book.author }}</small></p>
-                            </div>
-                        </li>
-                    {% empty %}
-                        <li class="list-group-item">
-                            <h6 class="mb-0 mt-2">No book liked yet</h6>
-                        </li>
-                    {% endfor %}
-                </ul>
+                <ul id="likes" class="list-group list-group-flush" style="overflow: auto;"></ul>
             </div>
         </div>
 
@@ -159,6 +143,39 @@
     document.getElementById("button_close").addEventListener("click", function() {
         document.getElementById("form").reset();
     });
+
+    async function getLikedBook() {
+        return fetch("{% url 'user:liked_book' %}").then((res) => res.json())
+    }
+
+    async function likedBooks() {
+        document.getElementById("likes").innerHTML = ""
+        const liked_books = await getLikedBook()
+        let htmlString = ``
+        
+        liked_books.books.forEach((book) => {
+            htmlString += `\n<li class="list-group-item d-flex flex-row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1;">
+                    <img src="${book.cover_url}" alt="Book Cover" style="width: 100px;">
+                </div>
+                <div style="flex: 3;" class="m-3">
+                    <h6 class="text-wrap text-start">${book.title}</h6>
+                    <p class="text-wrap text-start"><small>${book.author}</small></p>
+                </div>
+            </li>`
+        })
+
+        if (htmlString === "") {
+            htmlString += `\n
+            <li class="list-group-item">
+                <h6 class="mb-0 mt-2">No book liked yet</h6>
+            </li>`
+        }
+        
+        document.getElementById("likes").innerHTML = htmlString
+    }
+
+    likedBooks()
 </script>
 
 {% endblock content %}
