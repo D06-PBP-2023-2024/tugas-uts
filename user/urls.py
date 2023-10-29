@@ -7,6 +7,7 @@ urlpatterns = [
     path('info/<str:username>/', check_user_info, name="check_user_info"),
     path('user-not-found', user_not_found, name="user_not_found"),
     path('update-profile', update_profile, name='update_profile'),
+    path('liked-books', liked_book_json, name='liked_book'),
     path('register/', register, name='register'),
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
