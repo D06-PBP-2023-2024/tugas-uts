@@ -23,6 +23,16 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{book.title}}</h5>
                                 </div>
+                                {% if user.is_authenticated %}
+                                <form action="{% url 'main:add_reading_list' book.pk %}" method="post">
+                                    {% csrf_token %}
+                                    {% if added %}
+                                    <input type="submit" class="btn btn-danger" value="Remove from Reading List">
+                                    {% else %}
+                                    <input type="submit" class="btn btn-outline-success" value="Add to Reading List">
+                                    {% endif %}
+                                </form>
+                                {% endif %}
                             </div>
                         </a>
                     </li>
