@@ -157,3 +157,109 @@ class MainTestCase(TestCase):
     def test_search_using_search_template(self):
         response = Client().get('/search/')
         self.assertTemplateUsed(response, 'search_form.html')
+
+    def test_search_with_title(self):
+        Book.objects.create(title='Book', download_count=0, author=Author.objects.create(name='Author'))
+        response = Client().post('/search/', {'title': 'Book'})
+        self.assertEquals(response.status_code, 200)
+
+    def test_search_with_tags(self):
+        tag = Tag.objects.create(subject='Tag')
+        book = Book.objects.create(title='Book', download_count=0, author=Author.objects.create(name='Author'))
+        book.tags.add(tag)
+        response = Client().post('/search/', {'tags': 'Tag'})
+        self.assertEquals(response.status_code, 200)
+
+
+    def test_search_with_title_and_tags(self):
+        tag = Tag.objects.create(subject='Tag')
+        book = Book.objects.create(title='Book', download_count=0, author=Author.objects.create(name='Author'))
+        book.tags.add(tag)
+        # post with formdata
+        response = Client().post('/search/', {'title': 'Book', 'tags': 'Tag'})
+        self.assertEquals(response.status_code, 200)
+
+    def test_group_tags(self):
+        response = Client().get('/tags/')
+        self.assertEquals(response.status_code, 200)
+
+    def test_search_form(self):
+        response = Client().get('/search/')
+        self.assertEquals(response.status_code, 200)
+
+    def test_comment_form(self):
+        response = Client().get('/book/1/comment/')
+        self.assertEquals(response.status_code, 302)
+
+    def test_comment_form_with_login(self):
+        user = User.objects.create(username="user")
+        user.set_password("password")
+        user.save()
+        c = Client()
+        c.login(username="user", password="password")
+        response = c.get('/book/1/comment/')
+        self.assertEquals(response.status_code, 200)
+    
+    def test_like_book(self):
+        response = Client().get('/like/1/')
+        self.assertEquals(response.status_code, 302)
+
+    def test_like_book_twice(self):
+        response = Client().get('/like/1/')
+        response = Client().get('/like/1/')
+        self.assertEquals(response.status_code, 302)
+
+    def test_like_book_with_login(self):
+        user = User.objects.create(username="user")
+        user.set_password("password")
+        user.save()
+        c = Client()
+        c.login(username="user", password="password")
+        response = c.get('/like/1/')
+        self.assertEquals(response.status_code, 200)
+
+    def test_like_twice_book_with_login(self):
+        user = User.objects.create(username="user")
+        user.set_password("password")
+        user.save()
+        c = Client()
+        c.login(username="user", password="password")
+        response = c.get('/like/1/')
+        response = c.get('/like/1/')
+        self.assertEquals(response.status_code, 200)
+
+    def test_add_reading_list(self):
+        response = Client().get('/reading_list/1/')
+        self.assertEquals(response.status_code, 302)
+
+    def test_add_reading_list_with_login(self):
+        user = User.objects.create(username="user")
+        user.set_password("password")
+        user.save()
+        c = Client()
+        c.login(username="user", password="password")
+        response = c.get('/reading_list/1/')
+        self.assertEquals(response.status_code, 302)
+
+    def test_post_comment_with_form_data(self):
+        response = Client().post('/book/1/comment/', {'comment': 'Comment'})
+        self.assertEquals(response.status_code, 302)
+
+    def test_post_comment_with_form_data_with_login(self):
+        user = User.objects.create(username="user")
+        user.set_password("password")
+        user.save()
+        c = Client()
+        c.login(username="user", password="password")
+        response = c.post('/book/1/comment/', {'comment': 'Comment'})
+        self.assertEquals(response.status_code, 302)
+
+    def test_add_reading_list_twice_with_login(self):
+        user = User.objects.create(username="user")
+        user.set_password("password")
+        user.save()
+        c = Client()
+        c.login(username="user", password="password")
+        response = c.get('/reading_list/1/')
+        response = c.get('/reading_list/1/')
+        self.assertEquals(response.status_code, 302)
