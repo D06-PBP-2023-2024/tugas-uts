@@ -34,23 +34,28 @@ def book_details(request: HttpRequest, book_id: int):
     if not request.user.is_authenticated:
         context = {
             "book": book,
-            "tags": Tag.objects.filter(books__pk=book.pk),
+            "tags": book.tags.all(),
             "author": book.author,
             "comments": [],
             "likes": book.likes.count(),
             "liked": False,
+            'last_login':None,
         }
+        response = render(request, "book_details.html", context)
     else:
         context = {
             "book": book,
-            "tags": Tag.objects.filter(books__pk=book.pk),
+            "tags": book.tags.all(),
             "author": book.author,
             "comments": Comment.objects.filter(book=book),
             "likes": book.likes.count(),
             "added": ReadingList.objects.filter(user=request.user, book=book).exists(),
             "liked": Like.objects.filter(user=request.user, book=book).exists(),
+            'last_login': request.COOKIES['last_login'] if 'last_login' in request.COOKIES else "N/A",
         }
-    return render(request, "book_details.html", context)
+        response = render(request, "book_details.html", context)
+        response.set_cookie('last_login', request.user.last_login)
+    return response
 
 def get_books(request: HttpRequest):
     limit = 8
