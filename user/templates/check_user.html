@@ -39,7 +39,7 @@
                 <hr>
                 <div class="row align-items-center">
                     <div class="col-md-3">
-                       Domicile
+                        Domicile
                     </div>
                     <div class="col-md-9 text-secondary">
                         {{ domicile }}
@@ -78,25 +78,49 @@
                 <h5 style="margin-bottom: 15px;">Comment</h5>
                 <ul class="list-group list-group-flush" style="overflow: auto;">
                     {% for comment in comments %}
-                        <li class="list-group-item d-flex flex-row">
-                            <div class="text-left d-flex align-items-center">
-                                <img src="{{ comment.book.cover_url }}" alt="Book Cover" style="width: 50px;">
-                            </div class="text-left">
-                            <div class="d-flex flex-column" style="margin-left: 20px;">
-                                <div class="text-left text-wrap">
-                                    <h6 class="mb-0 mt-2">{{ comment.book.title }}</h6>
-                                </div>
-                                <div class="text-left text-wrap">
-                                    <p class="mb-0 mt-2">{{ comment.comment }}</p>
-                                </div>
+                    <li class="list-group-item d-flex flex-row">
+                        <div class="text-left d-flex align-items-center">
+                            <img src="{{ comment.book.cover_url }}" alt="Book Cover" style="width: 50px;">
+                        </div class="text-left">
+                        <div class="d-flex flex-column" style="margin-left: 20px;">
+                            <div class="text-left text-wrap">
+                                <h6 class="mb-0 mt-2">{{ comment.book.title }}</h6>
                             </div>
-                        </li>
+                            <div class="text-left text-wrap">
+                                <p class="mb-0 mt-2">{{ comment.comment }}</p>
+                            </div>
+                        </div>
+                    </li>
                     {% empty %}
                     <li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                         <h6 class="mb-0 mt-2">No comment yet</h6>
                     </li>
                     {% endfor %}
-                  </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md mt-4 h-100">
+            <div class="card shadow" style="padding: 20px 20px 10px 20px;">
+                <h5 style="margin-bottom: 15px;">Reading List</h5>
+                <ul class="list-group list-group-flush" style="overflow: auto;">
+                    {% for item in reading_list %}
+                    <li class="list-group-item d-flex flex-row">
+                        <div class="text-left d-flex align-items-center">
+                            <img src="{{ item.book.cover_url }}" alt="Book Cover" style="width: 50px;">
+                        </div class="text-left">
+                        <div class="d-flex flex-column" style="margin-left: 20px;">
+                            <div class="text-left text-wrap">
+                                <h6 class="mb-0 mt-2">{{ item.book.title }}</h6>
+                            </div>
+                        </div>
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item"
+                        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                        <h6 class="mb-0 mt-2">Nothing Here :D</h6>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>
