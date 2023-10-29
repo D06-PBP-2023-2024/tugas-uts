@@ -1,16 +1,13 @@
 name: Deploy
 
 on:
-  push:
-    branches:
-      - main
-      - master
+  workflow_run:
+    workflows: ["Django CI"]
+    types:
+      - completed
 
 jobs:
   Deployment:
-    needs:
-      - Test
-
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
