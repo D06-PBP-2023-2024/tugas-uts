@@ -1,26 +1,63 @@
-{% extends "base.html" %}
+{% extends "container.html" %}
 
-{% block content %}
+{% block container_content %}
 
-<h1>You Searched:</h1>
-<ul>
-    <li>Title: {{title}}</li>
-    <li>Tags: {{tags}}</li>
-</ul>
+<div class="d-flex">
+    <div class="mt-3">
+        <h1>You Searched:</h1>
+        <ul>
+            <li>Title: {{title}}</li>
+            <li>Tags: {{tags}}</li>
+        </ul>
+    
+        <h2>Result:</h2>
+    
+        {% if books %}
+        
+            <div class="d-flex flex-wrap">
+                {% for book in books %}
+                    <li>
+                        <a href="/book/{{book.pk}}">
+                            <div class="card book-card mx-2 my-2" style="width: 18rem;">
+                                <img style="height: 50%; object-fit: cover; object-position: center;" class="card-img-top" src={{book.cover_url}} alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{book.title}}</h5>
+                                </div>
+                                {% if user.is_authenticated %}
+                                <form action="{% url 'main:add_reading_list' book.pk %}" method="post">
+                                    {% csrf_token %}
+                                    {% if added %}
+                                    <input type="submit" class="btn btn-danger" value="Remove from Reading List">
+                                    {% else %}
+                                    <input type="submit" class="btn btn-outline-success" value="Add to Reading List">
+                                    {% endif %}
+                                </form>
+                                {% endif %}
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </div>
+                
+        {% else %}
+            <p>No book(s) was found</p>
+    
+        {% endif %}
+    </div>
+</div>
 
-<h2>Result:</h2>
+<style>
+    .book-card {
+      height: 350px;
+      text-align: center;
+      cursor: pointer;
+      transition: color 0.2s ease-in-out, background 0.2s ease-in-out;
+    }
+  
+    .book-card:hover {
+      background: #dedede !important;
+    }
+</style>
 
-{% if books %}
 
-    {% for book in books %}
-        <p>{{book.title}}</p>
-    {% endfor %}
-
-{% else %}
-    <p>No book(s) was found</p>
-
-{% endif %}
-
-
-
-{% endblock content %}
+{% endblock container_content %}

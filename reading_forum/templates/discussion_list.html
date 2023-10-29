@@ -1,24 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Daftar Diskusi</h1>
-
-    <div class="dropdown">
-        <button id="filterDropdown" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Filter
-        </button>
-        <div class="dropdown-menu" aria-labelledby="filterDropdown">
-            <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}">Semua Post</a>
-            <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}?filter_by=replies">Dengan Balasan</a>
-            <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}?filter_by=noreplies">Tanpa Balasan</a>
+<div class="m-5">
+    <h1 class="text-center mb-5">Daftar Diskusi</h1>
+    <div class="d-flex">
+        <div class="me-3">
+            <form method="GET" action="{% url 'reading_forum:create_discussion' %}">
+                <button type="submit" class="btn btn-primary">Buat Post</button>
+            </form>
         </div>
-        
+        <div class="dropdown">
+            <button id="filterDropdown" type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Filter
+            </button>
+            <div class="dropdown-menu" aria-labelledby="filterDropdown">
+                <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}">Semua Post</a>
+                <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}?filter_by=replies">Dengan
+                    Balasan</a>
+                <a class="dropdown-item" href="{% url 'reading_forum:discussion_list' %}?filter_by=noreplies">Tanpa
+                    Balasan</a>
+            </div>
+        </div>
     </div>
-
-    <form method="GET" action="{% url 'reading_forum:create_discussion' %}">
-        <button type="submit" class="btn btn-primary">Buat Post</button>
-    </form>
-    
     <table class="table">
         <thead>
             <tr>
@@ -30,23 +34,24 @@
         </thead>
         <tbody>
             {% for discussion in discussions %}
-                <tr>
-                    <td>
-                        <a href="{% url 'reading_forum:discussion_detail' discussion.id %}">{{ discussion.title }}</a>
-                    </td>
-                    <td>{{ discussion.created_at|date:"F j, Y H:i" }}</td>
-                    <td>{{ discussion.reply_set.count }}</td>
-                    <td>
-                        {% if discussion.reply_set.all %}
-                            {{ discussion.reply_set.last.user.username }}
-                            <br>
-                            {{ discussion.reply_set.last.created_at|date:"F j, Y H:i" }}
-                        {% else %}
-                            N/A
-                        {% endif %}
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    <a href="{% url 'reading_forum:discussion_detail' discussion.id %}">{{ discussion.title }}</a>
+                </td>
+                <td>{{ discussion.created_at|date:"F j, Y H:i" }}</td>
+                <td>{{ discussion.reply_set.count }}</td>
+                <td>
+                    {% if discussion.reply_set.all %}
+                    {{ discussion.reply_set.last.user.username }}
+                    <br>
+                    {{ discussion.reply_set.last.created_at|date:"F j, Y H:i" }}
+                    {% else %}
+                    N/A
+                    {% endif %}
+                </td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
+</div>
 {% endblock %}

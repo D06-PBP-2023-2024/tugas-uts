@@ -35,7 +35,7 @@ def discussion_detail(request, discussion_id):
 
     return render(request, 'discussion_detail.html', {'discussion': discussion, 'replies': replies, 'reply_form': reply_form})
 
-@login_required
+@login_required(login_url='user:login')
 def create_discussion(request):
     if request.method == 'POST':
         discussion_form = DiscussionForm(request.POST)
@@ -43,13 +43,13 @@ def create_discussion(request):
             new_discussion = discussion_form.save(commit=False)
             new_discussion.user = request.user  
             new_discussion.save()
-            return redirect('discussion_list')
+            return redirect('reading_forum:discussion_list')
     else:
         discussion_form = DiscussionForm()
 
     return render(request, 'discussion_form.html', {'discussion_form': discussion_form})
 
-@login_required
+@login_required(login_url='user:login')
 def create_reply(request, discussion_id):
     discussion = Discussion.objects.get(pk=discussion_id)
 
