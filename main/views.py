@@ -127,20 +127,30 @@ def search_result_ajax(request):
     if title == "":
         title = request.GET.get("title") or ""
 
+    # fixed something on search
     if tags != "":
-        tag = Tag.objects.filter(subject__contains=tags).first()
-
-    books = None
+        tag = Tag.objects.filter(subject__contains=tags)
+ 
+    books = []
     if title != "":
         books = Book.objects.filter(title__contains=title)
-    if books is None and tags != "" and tag is not None:
-        books = Book.objects.filter(tags=tag)
-    elif books and tags != "" and tag is not None:
-        books = books.filter(tags=tag)
 
-    if books is not None:
-        books = serializers.serialize('json', books)
+    if books == [] and tags != "" and tag != []:
+        for tg in tag:
+            book = Book.objects.filter(tags=tg)
+            books += book
+
+    elif books and tags != "" and tag != [] and title != "":
+        filtered_book = []
+        for tg in tag:
+            book = books.filter(subject__contains=tg)
+            filtered_book += book
+        books = filtered_book
     
+    if books != []:
+        books = set(books)
+        books = serializers.serialize('json', books)
+
     context = {
         'books': books,
         'title': title,
