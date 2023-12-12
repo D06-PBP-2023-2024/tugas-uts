@@ -12,4 +12,8 @@ urlpatterns = [
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
     path('info/', user_info, name='user_info'),
+    path('json', user_json, name='user_json'),
+    path('like-json', user_like_json, name='user_like_json'),
+    path('comment-json', user_comment_json, name='user_comment_json'),
+    path('readinglist-json', user_readlist_json, name='user_readinglist_json'),
 ]
