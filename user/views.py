@@ -14,6 +14,7 @@ from main.models import ReadingList
 from django.core import serializers
 import json
 import random
+from django.contrib.auth import logout as auth_logout
 
 def register(request):
     form = UserCreationForm()
@@ -141,6 +142,34 @@ def liked_book_json(request):
 
     return JsonResponse({"books" : books_liked})
 
+def comment_book_json(request):
+    user = request.user
+    comments = Comment.objects.filter(user=user)
+    books_comment = []
+    for comment in comments:
+        tmp = {
+            "title" : comment.book.title,
+            "cover_url" : comment.book.cover_url,
+            "author" : comment.book.author.name
+        }           
+        books_comment.append(tmp)
+
+    return JsonResponse({"books" : books_comment})
+
+def readinglist_json(request):
+    user = request.user
+    lists = ReadingList.objects.filter(user=user)
+    readinglist_list = []
+    for list in lists:
+        tmp = {
+            "title" : list.book.title,
+            "cover_url" : list.book.cover_url,
+            "author" : list.book.author.name
+        }           
+        readinglist_list.append(tmp)
+
+    return JsonResponse({"books" : readinglist_list})
+
 @csrf_exempt
 def update_profile(request):
     form = UserForm(request.POST or None)
@@ -177,6 +206,18 @@ def user_json(request):
     return HttpResponse(serializers.serialize("json", [data]), content_type="application/json")
 
 @csrf_exempt
+def user_json_2(request):
+    user = request.user
+    profile_data = Profile.objects.get(user=user)
+
+    user_data = {
+        'profile': serializers.serialize("json", [profile_data]),
+        'username': user.username,
+    }
+
+    return JsonResponse(user_data, safe=False)
+
+@csrf_exempt
 def user_like_json(request):
     data = Like.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
@@ -191,6 +232,41 @@ def user_readlist_json(request):
     data = ReadingList.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
+@csrf_exempt
+def update_profile_flutter(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        user_profile = Profile.objects.get(user=request.user)
+
+        user_profile.first_name = data.get("first_name", user_profile.first_name)
+        user_profile.last_name = data.get("last_name", user_profile.last_name)
+        user_profile.email = data.get("email", user_profile.email)
+        user_profile.phone_number = data.get("phone_number", user_profile.phone_number)
+        user_profile.domicile = data.get("domicile", user_profile.domicile)
+
+        user_profile.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+
 def logout_user(request):
     logout(request)
     return redirect('user:login')
+
+@csrf_exempt
+def logout_flutter(request):
+    username = request.user.username
+
+    try:
+        auth_logout(request)
+        return JsonResponse({
+            "username": username,
+            "status": True,
+            "message": "Logout berhasil!"
+        }, status=200)
+    except:
+        return JsonResponse({
+        "status": False,
+        "message": "Logout gagal."
+        }, status=401)
