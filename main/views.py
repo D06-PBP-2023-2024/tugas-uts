@@ -63,7 +63,8 @@ def book_details(request: HttpRequest, book_id: int):
 def get_books(request: HttpRequest):
     limit = 8
     if request.GET.get("page", None) == "all":
-        books = Book.objects.all()
+        books = Book.objects.prefetch_related("tags", "author").all()
+
         return HttpResponse(serializers.serialize("json", books), content_type="application/json")
     else:
         page = int(request.GET.get("page", 1))
