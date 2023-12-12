@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from main.models import Profile, Like, Comment, Author
+from main.models import Profile, Like, Comment, Author, ReadingList
 from user.forms import UserForm
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
@@ -169,6 +169,27 @@ def update_profile(request):
 
     context = {'form': form}
     return render(request, "user.html", context)
+
+@csrf_exempt
+def user_json(request):
+    user = request.user
+    data = Profile.objects.get(user=user)
+    return HttpResponse(serializers.serialize("json", [data]), content_type="application/json")
+
+@csrf_exempt
+def user_like_json(request):
+    data = Like.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+@csrf_exempt
+def user_comment_json(request):
+    data = Comment.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+@csrf_exempt
+def user_readlist_json(request):
+    data = ReadingList.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
 def logout_user(request):
     logout(request)
