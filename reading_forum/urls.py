@@ -10,5 +10,9 @@ urlpatterns = [
     path('create-discussion/', views.create_discussion, name='create_discussion'),
     path('discussion/<int:discussion_id>/reply/', views.create_reply, name='create_reply'),
     path('reply_form/<int:discussion_id>/', views.reply_form, name='reply_form'),
+    path('reply_form_by_AJAX/<int:discussion_id>/', views.reply_form, name='reply_form_by_AJAX'),
+    path('discussion_detail_json/<int:discussion_id>/', views.discussion_detail_json, name='discussion_detail_json'),
+    path('discussion_list_json/', views.discussion_list_json, name='discussion_list_json')
+
     
 ]
