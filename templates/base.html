@@ -49,6 +49,9 @@
                     <a class="nav-link" href="{% url 'user:login' %}">Login</a>
                     {% endif %}
                     <a class="nav-link" href="{% url 'main:search_form' %}">Filter Search</a>
+                    {% if last_login %}
+                    <li class="nav-link">{{last_login}}</li>
+                    {% endif %}
                 </div>
             </div>
         </div>

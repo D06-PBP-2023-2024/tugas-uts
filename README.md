@@ -1,4 +1,7 @@
 # Tugas UTS - Kindle Kids 📝
+![test workflow](https://github.com/D06-PBP-2023-2024/tugas-uts/actions/workflows/django.yml/badge.svg)
+![deploy workflow](https://github.com/D06-PBP-2023-2024/tugas-uts/actions/workflows/pbp-deploy.yml/badge.svg)
+[kindle-kids-d06-tk.pbp.cs.ui.ac.id](http://kindle-kids-d06-tk.pbp.cs.ui.ac.id)
 ## Kelompok D06 👨‍👨‍👧‍👧
 - 2206081521 - Juan Dharmananda Khusuma
 - 2206081673 - Rachel Mathilda
