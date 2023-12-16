@@ -281,6 +281,34 @@ def update_profile_flutter(request):
         return JsonResponse({"status": "success"}, status=200)
     else:
         return JsonResponse({"status": "error"}, status=401)
+    
+@csrf_exempt
+def update_profile_flutter2(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        user_profile = Profile.objects.get(user=request.user)
+
+        first_name = data.get("first_name", user_profile.first_name)
+        if (first_name != "" and not first_name.isspace()):
+            user_profile.first_name = first_name
+        last_name = data.get("last_name", user_profile.last_name)
+        if (last_name != "" and not last_name.isspace()):
+            user_profile.last_name = last_name
+        email = data.get("email", user_profile.email)
+        if (email != "" and not email.isspace()):
+            user_profile.email = email
+        phone_number = data.get("phone_number", user_profile.phone_number)
+        if (phone_number != "" and not phone_number.isspace()):
+            user_profile.phone_number = phone_number
+        domicile = data.get("domicile", user_profile.domicile)
+        if (domicile != "" and not domicile.isspace()):
+            user_profile.domicile = domicile
+
+        user_profile.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
 
 def logout_user(request):
     logout(request)
