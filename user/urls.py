@@ -19,7 +19,7 @@ urlpatterns = [
     path('update-profile-flutter/', update_profile_flutter, name='update_profile_flutter'),
 
     path('json2/', user_json_2, name='user_json_2'),
-    path('like-json/', user_like_json, name='user_like_json'),
-    path('comment-json/', user_comment_json, name='user_comment_json'),
-    path('readinglist-json/', user_readlist_json, name='user_readinglist_json'),
+    path('liked-books-2/', liked_book_json2, name='user_like_json'),
+    path('comment-books-2/', comment_book_json2, name='user_comment_json'),
+    path('readinglist-books-2/', readinglist_json2, name='user_readinglist_json'),
 ]
