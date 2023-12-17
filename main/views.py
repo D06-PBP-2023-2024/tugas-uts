@@ -305,3 +305,11 @@ def add_reading_list(request, book_id):
     else:
         ReadingList.objects.create(user=request.user, book=book)
     return redirect('main:book_details', book_id=book.id)
+
+def json_rl(request):
+    data = ReadingList.objects.all()
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+def json_cm(request):
+    data = Comment.objects.all()
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
