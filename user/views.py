@@ -142,6 +142,23 @@ def liked_book_json(request):
 
     return JsonResponse({"books" : books_liked})
 
+def liked_book_json2(request):
+    user = request.user
+    likes = Like.objects.filter(user=user)
+    books_liked = []
+    for like in likes:
+        tmp = {
+            "fields": {
+                "title" : like.book.title,
+                "cover_url" : like.book.cover_url,
+                "author" : like.book.author.name
+            }
+        }           
+        books_liked.append(tmp)
+
+    return JsonResponse(books_liked, safe=False)
+
+
 def comment_book_json(request):
     user = request.user
     comments = Comment.objects.filter(user=user)
@@ -150,11 +167,27 @@ def comment_book_json(request):
         tmp = {
             "title" : comment.book.title,
             "cover_url" : comment.book.cover_url,
-            "author" : comment.book.author.name
+            "author" : comment.book.author.name,
+            "comment" : comment.comment,
         }           
         books_comment.append(tmp)
 
     return JsonResponse({"books" : books_comment})
+
+def comment_book_json2(request):
+    user = request.user
+    comments = Comment.objects.filter(user=user)
+    books_comment = []
+    for comment in comments:
+        tmp = {
+            "title" : comment.book.title,
+            "cover_url" : comment.book.cover_url,
+            "author" : comment.book.author.name,
+            "comment" : comment.comment,
+        }           
+        books_comment.append(tmp)
+
+    return JsonResponse(books_comment, safe=False)
 
 def readinglist_json(request):
     user = request.user
@@ -169,6 +202,20 @@ def readinglist_json(request):
         readinglist_list.append(tmp)
 
     return JsonResponse({"books" : readinglist_list})
+
+def readinglist_json2(request):
+    user = request.user
+    lists = ReadingList.objects.filter(user=user)
+    readinglist_list = []
+    for list in lists:
+        tmp = {
+            "title" : list.book.title,
+            "cover_url" : list.book.cover_url,
+            "author" : list.book.author.name
+        }           
+        readinglist_list.append(tmp)
+
+    return JsonResponse(readinglist_list, safe=False)
 
 @csrf_exempt
 def update_profile(request):
@@ -218,21 +265,6 @@ def user_json_2(request):
     return JsonResponse(user_data, safe=False)
 
 @csrf_exempt
-def user_like_json(request):
-    data = Like.objects.filter(user=request.user)
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-
-@csrf_exempt
-def user_comment_json(request):
-    data = Comment.objects.filter(user=request.user)
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-
-@csrf_exempt
-def user_readlist_json(request):
-    data = ReadingList.objects.filter(user=request.user)
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-
-@csrf_exempt
 def update_profile_flutter(request):
     if request.method == 'POST':
         data = json.loads(request.body)
@@ -243,6 +275,34 @@ def update_profile_flutter(request):
         user_profile.email = data.get("email", user_profile.email)
         user_profile.phone_number = data.get("phone_number", user_profile.phone_number)
         user_profile.domicile = data.get("domicile", user_profile.domicile)
+
+        user_profile.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+    
+@csrf_exempt
+def update_profile_flutter2(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        user_profile = Profile.objects.get(user=request.user)
+
+        first_name = data.get("first_name", user_profile.first_name)
+        if (first_name != "" and not first_name.isspace()):
+            user_profile.first_name = first_name
+        last_name = data.get("last_name", user_profile.last_name)
+        if (last_name != "" and not last_name.isspace()):
+            user_profile.last_name = last_name
+        email = data.get("email", user_profile.email)
+        if (email != "" and not email.isspace()):
+            user_profile.email = email
+        phone_number = data.get("phone_number", user_profile.phone_number)
+        if (phone_number != "" and not phone_number.isspace()):
+            user_profile.phone_number = phone_number
+        domicile = data.get("domicile", user_profile.domicile)
+        if (domicile != "" and not domicile.isspace()):
+            user_profile.domicile = domicile
 
         user_profile.save()
 
