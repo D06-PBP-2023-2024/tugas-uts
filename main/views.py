@@ -31,6 +31,22 @@ def author_details(request: HttpRequest, author_id: int):
     return render(request, "author_details.html", context)
 
 
+@csrf_exempt
+def book_details_json(request: HttpRequest, book_id: int):
+    book = Book.objects.get(id=book_id)
+    data = book.to_dict()
+    data["tags"] = [{"id": tag.pk, "subject": tag.subject}
+                    for tag in book.tags.all()]
+    data["comments"] = [{"id": comment.pk, "comment": comment.comment, "user": comment.user.username}
+                        for comment in book.comments.all()]
+    data["likes"] = [{"id": like.pk, "user": like.user.username}
+                     for like in book.likes.all()]
+    if not request.user.is_authenticated:
+        data["liked"] = False
+        data["comments"] = None
+    return JsonResponse(data)
+
+
 def book_details(request: HttpRequest, book_id: int):
     book = Book.objects.get(id=book_id)
     if not request.user.is_authenticated:
@@ -119,11 +135,12 @@ def group_tags(request):
 
     return render(request, 'group_tags.html', context)
 
+
 def group_tags_json(request):
     tags = Tag.objects.all()
 
     books_by_tag = {}
-    
+
     for tag in tags:
         rawbooks = Book.objects.filter(tags=tag)
         books = []
@@ -137,6 +154,7 @@ def group_tags_json(request):
     }
 
     return JsonResponse(context)
+
 
 def search_form(request):
     context = {}
@@ -195,18 +213,19 @@ def search_result_ajax(request):
 
     return JsonResponse(context)
 
+
 @csrf_exempt
 def search_result_ajax_flutter(request):
     title = request.POST.get("title") or ""
     tags = request.POST.get("tags") or ""
-    
+
     if title == "":
         title = request.GET.get("title") or ""
 
     # fixed something on search
     if tags != "":
         tag = Tag.objects.filter(subject__contains=tags)
- 
+
     books = []
     if title != "":
         books = Book.objects.filter(title__contains=title)
@@ -222,19 +241,19 @@ def search_result_ajax_flutter(request):
             book = books.filter(subject__contains=tg)
             filtered_book += book
         books = filtered_book
-    
+
     if books != []:
         books = set(books)
         send_book = []
         for book in books:
             send_book.append(book.to_dict())
 
-
     context = {
         'books': send_book,
     }
 
     return JsonResponse(context)
+
 
 @login_required(login_url="user:login")
 @csrf_exempt
