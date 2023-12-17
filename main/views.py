@@ -119,6 +119,24 @@ def group_tags(request):
 
     return render(request, 'group_tags.html', context)
 
+def group_tags_json(request):
+    tags = Tag.objects.all()
+
+    books_by_tag = {}
+    
+    for tag in tags:
+        rawbooks = Book.objects.filter(tags=tag)
+        books = []
+        for book in rawbooks:
+            books.append(book.to_dict())
+
+        books_by_tag[tag.subject] = books
+
+    context = {
+        'books_by_tag': books_by_tag
+    }
+
+    return JsonResponse(context)
 
 def search_form(request):
     context = {}
@@ -141,6 +159,7 @@ def create_comment_by_ajax(request: HttpRequest, book_id):
 def search_result_ajax(request):
     title = request.POST.get("title") or ""
     tags = request.POST.get("tags") or ""
+
     if title == "":
         title = request.GET.get("title") or ""
 
@@ -176,6 +195,46 @@ def search_result_ajax(request):
 
     return JsonResponse(context)
 
+@csrf_exempt
+def search_result_ajax_flutter(request):
+    title = request.POST.get("title") or ""
+    tags = request.POST.get("tags") or ""
+    
+    if title == "":
+        title = request.GET.get("title") or ""
+
+    # fixed something on search
+    if tags != "":
+        tag = Tag.objects.filter(subject__contains=tags)
+ 
+    books = []
+    if title != "":
+        books = Book.objects.filter(title__contains=title)
+
+    if books == [] and tags != "" and tag != []:
+        for tg in tag:
+            book = Book.objects.filter(tags=tg)
+            books += book
+
+    elif books and tags != "" and tag != [] and title != "":
+        filtered_book = []
+        for tg in tag:
+            book = books.filter(subject__contains=tg)
+            filtered_book += book
+        books = filtered_book
+    
+    if books != []:
+        books = set(books)
+        send_book = []
+        for book in books:
+            send_book.append(book.to_dict())
+
+
+    context = {
+        'books': send_book,
+    }
+
+    return JsonResponse(context)
 
 @login_required(login_url="user:login")
 @csrf_exempt

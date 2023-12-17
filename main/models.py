@@ -46,5 +46,20 @@ class Book(models.Model):
     comments = models.ManyToManyField(User, related_name='book_comments', through=Comment)
     reading_list = models.ManyToManyField(User, related_name='reading_list', through=ReadingList)
     
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'fields':{
+                'title': self.title,
+                'author': self.author.name,
+                'cover_url': self.cover_url,
+            },
+            'download_count': self.download_count,
+            'content': self.content,
+            'tags': list(self.tags.values_list('id', flat=True)),
+            'likes': list(self.likes.values_list('id', flat=True)),
+            'comments': list(self.comments.values_list('id', flat=True)),
+            'reading_list': list(self.reading_list.values_list('id', flat=True)),}
+
     def __str__(self):
         return self.title
