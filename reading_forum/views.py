@@ -9,6 +9,7 @@ import json
 
 from django.db.models import Count
 
+@csrf_exempt
 def discussion_list(request):
     filter_by = request.GET.get('filter_by', 'all')  # Ambil parameter 'filter_by' dari URL
 
@@ -22,6 +23,7 @@ def discussion_list(request):
     return render(request, 'discussion_list.html', {'discussions': discussions, 'filter_by': filter_by})
 
 
+@csrf_exempt
 def discussion_detail(request, discussion_id):
     discussion = Discussion.objects.get(id=discussion_id)
     replies = Reply.objects.filter(discussion=discussion)
@@ -38,6 +40,7 @@ def discussion_detail(request, discussion_id):
 
     return render(request, 'discussion_detail.html', {'discussion': discussion, 'replies': replies, 'reply_form': reply_form, 'discussion_id': discussion_id})
 
+@csrf_exempt
 @login_required(login_url='user:login')
 def create_discussion(request):
     if request.method == 'POST':
@@ -52,6 +55,20 @@ def create_discussion(request):
 
     return render(request, 'discussion_form.html', {'discussion_form': discussion_form})
 
+@csrf_exempt
+def create_discussion_flutter(request):
+    if request.method == 'POST':
+        discussion_form = DiscussionForm(request.POST)
+        if discussion_form.is_valid():
+            new_discussion = discussion_form.save(commit=False)
+            new_discussion.user = request.user  
+            new_discussion.save()
+            response_data = {'success': 'Discussion created successfully.'}
+            return JsonResponse(response_data)
+    
+
+
+@csrf_exempt
 @login_required(login_url='user:login')
 def create_reply(request, discussion_id):
     discussion = Discussion.objects.get(pk=discussion_id)
@@ -67,6 +84,7 @@ def create_reply(request, discussion_id):
 
     return redirect('discussion_list')
 
+@csrf_exempt
 def reply_form(request, discussion_id):
     discussion = Discussion.objects.get(pk=discussion_id)
     reply_form = ReplyForm()
