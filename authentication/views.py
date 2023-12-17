@@ -1,4 +1,5 @@
 from django.shortcuts import render
+<<<<<<< HEAD
 
 # Create your views here.
 from django.shortcuts import render
@@ -6,6 +7,11 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+=======
+from django.contrib.auth import authenticate, login as auth_login
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+>>>>>>> 0baec6089fb8392a73d63c3eaf4c47971176688c
 
 @csrf_exempt
 def login(request):
@@ -32,6 +38,7 @@ def login(request):
         return JsonResponse({
             "status": False,
             "message": "Login gagal, periksa kembali email atau kata sandi."
+<<<<<<< HEAD
         }, status=401)
 
 from django.contrib.auth import logout as auth_logout
@@ -67,3 +74,6 @@ def register(request):
 
    return JsonResponse({"username": user.username, "status": True, "message": "Register successful!"}, status=201)
 
+=======
+        }, status=401)
+>>>>>>> 0baec6089fb8392a73d63c3eaf4c47971176688c

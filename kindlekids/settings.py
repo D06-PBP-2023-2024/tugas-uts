@@ -52,9 +52,16 @@ INSTALLED_APPS = [
     "main.apps.MainConfig",
     'user.apps.UserConfig',
     'corsheaders',
-    'authentication',
+    'authentication.apps.AuthenticationConfig',
+
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -66,7 +73,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
 
 ROOT_URLCONF = "kindlekids.urls"
 
