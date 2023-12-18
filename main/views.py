@@ -37,13 +37,10 @@ def book_details_json(request: HttpRequest, book_id: int):
     data = book.to_dict()
     data["tags"] = [{"id": tag.pk, "subject": tag.subject}
                     for tag in book.tags.all()]
-    data["comments"] = [{"id": comment.pk, "comment": comment.comment, "user": comment.user.username}
-                        for comment in book.comments.all()]
+    data["comments"] = [{"id": comment.pk, "user": comment.user.username, "comment": comment.comment}
+                        for comment in book.comment_set.all()]
     data["likes"] = [{"id": like.pk, "user": like.user.username}
-                     for like in book.likes.all()]
-    if not request.user.is_authenticated:
-        data["liked"] = False
-        data["comments"] = None
+                     for like in book.like_set.all()]
     return JsonResponse(data)
 
 
