@@ -8,6 +8,7 @@ class Discussion(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     replies = models.ManyToManyField('Reply', related_name='discussion_replies')
+    num_replies = models.IntegerField(default=0)
 
 ## model buat represent struktur data per reply di certain forum post
 class Reply(models.Model):
