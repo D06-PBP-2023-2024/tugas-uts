@@ -17,6 +17,8 @@ urlpatterns = [
     path('reading_list/<int:book_id>/', views.add_reading_list, name='add_reading_list'),
     path('book/<int:id>/create_tag/', views.create_tag, name='create_tag'),
     path('create-comment-ajax/<int:book_id>/', views.create_comment_by_ajax, name='create_comment_ajax'),
+    path('json_rl/', views.json_rl, name='json_reading_list'),
+    path('json_cm/', views.json_cm, name='json_comment'),
 ]
 
 
