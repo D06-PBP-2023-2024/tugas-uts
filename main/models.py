@@ -49,11 +49,9 @@ class Book(models.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'fields':{
-                'title': self.title,
-                'author': self.author.name,
-                'cover_url': self.cover_url,
-            },
+            'title': self.title,
+            'author': self.author.name,
+            'cover_url': self.cover_url,
             'download_count': self.download_count,
             'content': self.content,
             'tags': list(self.tags.values_list('id', flat=True)),

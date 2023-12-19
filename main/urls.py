@@ -24,3 +24,4 @@ urlpatterns = [
     path('comment-flutter/<int:book_id>/', views.comment_book_flutter, name='comment_book_flutter'),
     path('readinglist-flutter/<int:book_id>/', views.add_reading_list_flutter, name='add_reading_list_flutter'),
 ]
+
