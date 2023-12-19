@@ -2,12 +2,14 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <main class="m-5">
-    <div class="card">
-        <div class="card-body">
-            <h1 class="card-title">{{ discussion.title }}</h1>
-            <p class="card-subtitle text-muted mb-3">{{ discussion.created_at|date:"F j, Y H:i" }}</p>
-            <p class="card-text">{{ discussion.user.username }}</p>
-            <p class="card-text">{{ discussion.content }}</p>
+    <div id="discussion">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">{{ discussion.title }}</h1>
+                <p class="card-subtitle text-muted mb-3">{{ discussion.created_at|date:"F j, Y H:i" }}</p>
+                <p class="card-text">{{ discussion.user.username }}</p>
+                <p class="card-text">{{ discussion.content }}</p>
+            </div>
         </div>
     </div>
 
@@ -18,11 +20,26 @@
         <button type="submit" class="btn btn-outline-danger mt-5 mb-2">Back to Discussion List</button>
     </form>
     <h4>Replies</h4>
-    <form method="get" action="{% url 'reading_forum:reply_form' discussion.id %}">
-        <button type="submit" class="btn btn-primary my-3">Reply</button>
-    </form>
+    
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Reply</button>
 
-    <div class="row mx-1">
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="form" onsubmit="return false;">
+                {% csrf_token %}
+                <div class="modal-content">
+                    {{reply_form.as_div}}
+                    <div class="modal-footer">
+                        
+                        <button type="submit" onclick="addReply('{{discussion_id}}')" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="replies" class="row mx-1">
         {% for reply in replies %}
         <div class="card mb-3">
             <div class="card-body">
@@ -60,7 +77,8 @@
 </style>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(
+        function () {
         // handle klik tombol "Reply to this"
         $(".reply-to-this").click(function () {
             var replyId = $(this).data("reply-id"); // Mendapatkan ID reply
@@ -78,7 +96,93 @@
 
 
         });
+
+        
     });
+        async function getProducts(discussion_id) {
+            return fetch(`/reading_forum/discussion_detail_json/${discussion_id}/`).then((res) => res.json())
+        }
+
+        async function refreshProducts() {
+           // Get the current URL
+            var currentURL = window.location.href;
+
+            // Define a regular expression pattern to match the number after the last '/'
+            var pattern = /\/(\d+)\/$/;
+
+            // Use the pattern to extract the number from the URL
+            var match = currentURL.match(pattern);
+
+            // Check if a match was found
+            if (match) {
+            // Extracted number is in match[1]
+            var number = match[1];
+            console.log(number);
+            } else {
+            console.log("Number not found in the URL.");
+            }
+
+            document.getElementById("discussion").innerHTML = ""
+            const products = await getProducts(number)
+            console.log(products)
+            let htmlString = `
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">${products.title}</h1>
+                    <p class="card-subtitle text-muted mb-3">${products.created_at}</p>
+                    <p class="card-text">${products.user}</p>
+                    <p class="card-text">${products.content}</p>
+                </div>
+            </div>`
+            let repliesString =""
+            
+            document.getElementById("replies").innerHTML = ""
+            products.replies.forEach((item) => {
+                repliesString += `\n
+                <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">
+                    ${item.user}
+                </h5>
+                <h6 class="card-subtitle text-muted">${item.created_at}</h6>
+                <p class="card-text">${item.content}</p>
+
+                <!-- Button to reply to this reply -->
+                <button class="btn btn-primary reply-to-this" data-reply-id="${item.pk}">Reply to
+                    this</button>
+
+                <div class="reply-form" data-hidden="true">
+                    <form method="post" action="reading_forum/reply_form_by_AJAX/${number}">
+                        {% csrf_token %}
+                        <input type="hidden" name="quoted_reply_id" value="${item.pk}">
+                        {{ reply_form|crispy }}
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>` 
+            })
+        
+        document.getElementById("discussion").innerHTML = htmlString
+        document.getElementById("replies").innerHTML = repliesString
+        
+    }
+
+    refreshProducts()
+
+    
+        function addReply(discussion_id){
+            fetch(`/reading_forum/reply_form_by_AJAX/${discussion_id}/`,{
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset()
+        return false
+        }
+    
+
+    
 
 </script>
 

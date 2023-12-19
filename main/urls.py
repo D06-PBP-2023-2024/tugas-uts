@@ -11,12 +11,14 @@ urlpatterns = [
     path('tags-ajax/', views.group_tags_json, name='group_tags_json'),
     path('search/', views.search_form, name='search_form'),
     path('search-ajax/', views.search_result_ajax, name='search_result_ajax'),
-    path('search-ajax-flutter/', views.search_result_ajax_flutter, name='search_result_ajax_flutter'),
+    path("api/books/<int:book_id>/", views.book_details_json, name="get_book"),
+    path('search-ajax-flutter/', views.search_result_ajax_flutter,
+         name='search_result_ajax_flutter'),
     path('book/<int:book_id>/comment/', views.comment_book, name='comment_book'),
     path('like/<int:book_id>/', views.like_book, name='like_book'),
-    path('reading_list/<int:book_id>/', views.add_reading_list, name='add_reading_list'),
+    path('reading_list/<int:book_id>/',
+         views.add_reading_list, name='add_reading_list'),
     path('book/<int:id>/create_tag/', views.create_tag, name='create_tag'),
-    path('create-comment-ajax/<int:book_id>/', views.create_comment_by_ajax, name='create_comment_ajax'),
+    path('create-comment-ajax/<int:book_id>/',
+         views.create_comment_by_ajax, name='create_comment_ajax'),
 ]
-
-

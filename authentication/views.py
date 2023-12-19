@@ -1,3 +1,4 @@
+from django.contrib.auth import logout as auth_logout
 from django.shortcuts import render
 
 # Create your views here.
@@ -6,6 +7,7 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from main.models import Profile
 
 @csrf_exempt
 def login(request):
@@ -34,7 +36,6 @@ def login(request):
             "message": "Login gagal, periksa kembali email atau kata sandi."
         }, status=401)
 
-from django.contrib.auth import logout as auth_logout
 
 @csrf_exempt
 def logout(request):
@@ -49,21 +50,22 @@ def logout(request):
         }, status=200)
     except:
         return JsonResponse({
-        "status": False,
-        "message": "Logout gagal."
+            "status": False,
+            "message": "Logout gagal."
         }, status=401)
-    
+
 
 @csrf_exempt
 def register(request):
-   username = request.POST.get('username')
-   password = request.POST.get('password')
+    username = request.POST.get('username')
+    password = request.POST.get('password')
 
-   if User.objects.filter(username=username).exists():
-      return JsonResponse({"status": False, "message": "Username already used."}, status=400)
+    if User.objects.filter(username=username).exists():
+        return JsonResponse({"status": False, "message": "Username already used."}, status=400)
 
-   user = User.objects.create_user(username=username, password=password)
-   user.save()
+    user = User.objects.create_user(username=username, password=password)
+    user.save()
+    logged_in_user = Profile(user=user)
+    logged_in_user.save()
 
-   return JsonResponse({"username": user.username, "status": True, "message": "Register successful!"}, status=201)
-
+    return JsonResponse({"username": user.username, "status": True, "message": "Register successful!"}, status=201)
