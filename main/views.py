@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from main.models import Book, Tag, Author, Like, Comment, ReadingList
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, JsonResponse, HttpRequest
+from django.http import HttpResponse, JsonResponse, HttpRequest, HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
 import django.core.serializers as serializers
 from main.forms import CommentForm, TagForm
+import json
 
 
 # Create your views here.
@@ -253,6 +254,7 @@ def search_result_ajax_flutter(request):
 
     return JsonResponse(context)
 
+
 @csrf_exempt
 def like_book_flutter(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
@@ -267,6 +269,7 @@ def like_book_flutter(request, book_id):
 
     response_data = {'liked': liked, 'likes_count': book.likes.count()}
     return JsonResponse(response_data)
+
 
 @login_required(login_url="user:login")
 @csrf_exempt
@@ -305,6 +308,34 @@ def create_tag(request, id):
     return render(request, 'create_tag.html', {'form': form})
 
 
+@csrf_exempt
+def create_tag_ajax(request, id):
+    book = get_object_or_404(Book, pk=id)
+    if request.method == 'POST':
+        subject = json.loads(request.body).get('subject')
+
+        if subject == "" or subject is None:
+            return HttpResponseBadRequest()
+        if not Tag.objects.filter(subject=subject).exists():
+            tag = Tag.objects.create(subject=subject)
+        else:
+            tag = Tag.objects.get(subject=subject)
+        tag.books.add(book)
+        tag.save()
+        book.tags.add(tag)
+        book.save()
+        return JsonResponse({'success': True})
+    return HttpResponseBadRequest()
+
+@csrf_exempt
+def delete_tag(request, id):
+    if request.method == 'DELETE':
+        tag = get_object_or_404(Tag, pk=id)
+        tag.delete()
+        return JsonResponse({'success': True})
+    return HttpResponseBadRequest()
+
+
 @login_required(login_url="user:login")
 def comment_book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
@@ -327,6 +358,7 @@ def comment_book(request, book_id):
 
     return render(request, 'comment_form.html', context)
 
+
 def comment_book_flutter(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
 
@@ -348,6 +380,7 @@ def comment_book_flutter(request, book_id):
 
     return JsonResponse(context)
 
+
 @login_required(login_url="user:login")
 def add_reading_list(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
@@ -358,15 +391,18 @@ def add_reading_list(request, book_id):
         ReadingList.objects.create(user=request.user, book=book)
     return redirect('main:book_details', book_id=book.id)
 
+
 def add_reading_list_flutter(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     rl = ReadingList.objects.filter(user=request.user, book=book)
-    
+
     if rl.exists():
         rl.delete()
-        response_data = {'status': 'success', 'message': 'Reading list item removed.'}
+        response_data = {'status': 'success',
+                         'message': 'Reading list item removed.'}
     else:
         ReadingList.objects.create(user=request.user, book=book)
-        response_data = {'status': 'success', 'message': 'Reading list item added.'}
+        response_data = {'status': 'success',
+                         'message': 'Reading list item added.'}
 
     return JsonResponse(response_data)
