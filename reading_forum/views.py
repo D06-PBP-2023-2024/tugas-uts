@@ -56,18 +56,18 @@ def create_discussion(request):
     return render(request, 'discussion_form.html', {'discussion_form': discussion_form})
 
 @csrf_exempt
-@login_required(login_url='user:login')
 def create_discussion_flutter(request):
-    if request.method == 'POST':
-        discussion_form = DiscussionForm(request.POST)
-        if discussion_form.is_valid():
-            new_discussion = discussion_form.save(commit=False)
-            new_discussion.user = request.user  
-            new_discussion.save()
-            response_data = {'success': 'Discussion created successfully.'}
-            return JsonResponse(response_data)
     
+    if request.method == 'POST':
+        print(request.body)
+        body=json.loads(request.body)
 
+        new_discussion = Discussion(title=body['title'], content=body['content'])
+        new_discussion.user = request.user  
+        new_discussion.save()
+        response_data = {'success': 'Discussion created successfully.'}
+        return JsonResponse(response_data)
+    
 
 @csrf_exempt
 @login_required(login_url='user:login')
