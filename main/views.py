@@ -266,7 +266,7 @@ def like_book_flutter(request, book_id):
         liked = True
 
     response_data = {'liked': liked, 'likes_count': book.likes.count()}
-    return JsonResponse(response_data)
+    return JsonResponse(response_data, status=200)
 
 
 @login_required(login_url="user:login")
@@ -396,4 +396,4 @@ def add_reading_list_flutter(request, book_id):
         response_data = {'status': 'success',
                          'message': 'Reading list item added.'}
 
-    return JsonResponse(response_data)
+    return JsonResponse(response_data, status=200)
