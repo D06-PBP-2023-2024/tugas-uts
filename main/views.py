@@ -362,11 +362,13 @@ def comment_book(request, book_id):
 
 @csrf_exempt
 def comment_book_flutter(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
     if request.method == 'POST':
         form = json.loads(request.body)
 
         comment_temp = Comment(comment= form['comment'])
         comment_temp.user = request.user
+        comment_temp.book = book
         comment_temp.save()
         response_data = {'status': 'success',
                          'message': 'Comment created successfully.'}
