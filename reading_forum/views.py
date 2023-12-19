@@ -9,14 +9,18 @@ import json
 
 from django.db.models import Count
 
+
 @csrf_exempt
 def discussion_list(request):
-    filter_by = request.GET.get('filter_by', 'all')  # Ambil parameter 'filter_by' dari URL
+    # Ambil parameter 'filter_by' dari URL
+    filter_by = request.GET.get('filter_by', 'all')
 
     if filter_by == 'replies':
-        discussions = Discussion.objects.annotate(num_replies=Count('reply')).filter(num_replies__gt=0)
+        discussions = Discussion.objects.annotate(
+            num_replies=Count('reply')).filter(num_replies__gt=0)
     elif filter_by == 'noreplies':
-        discussions = Discussion.objects.annotate(num_replies=Count('reply')).filter(num_replies=0)
+        discussions = Discussion.objects.annotate(
+            num_replies=Count('reply')).filter(num_replies=0)
     else:
         discussions = Discussion.objects.all()  # default
 
@@ -33,12 +37,13 @@ def discussion_detail(request, discussion_id):
         reply_form = ReplyForm(request.POST)
         if reply_form.is_valid():
             new_reply = reply_form.save(commit=False)
-            new_reply.user = request.user  
+            new_reply.user = request.user
             new_reply.discussion = discussion
             new_reply.save()
             return redirect('discussion_detail', discussion_id=discussion_id)
 
     return render(request, 'discussion_detail.html', {'discussion': discussion, 'replies': replies, 'reply_form': reply_form, 'discussion_id': discussion_id})
+
 
 @csrf_exempt
 @login_required(login_url='user:login')
@@ -47,7 +52,7 @@ def create_discussion(request):
         discussion_form = DiscussionForm(request.POST)
         if discussion_form.is_valid():
             new_discussion = discussion_form.save(commit=False)
-            new_discussion.user = request.user  
+            new_discussion.user = request.user
             new_discussion.save()
             return redirect('reading_forum:discussion_list')
     else:
@@ -55,19 +60,20 @@ def create_discussion(request):
 
     return render(request, 'discussion_form.html', {'discussion_form': discussion_form})
 
+
 @csrf_exempt
 def create_discussion_flutter(request):
-    
     if request.method == 'POST':
         print(request.body)
-        body=json.loads(request.body)
+        body = json.loads(request.body)
 
-        new_discussion = Discussion(title=body['title'], content=body['content'])
-        new_discussion.user = request.user  
+        new_discussion = Discussion(
+            title=body['title'], content=body['content'])
+        new_discussion.user = request.user
         new_discussion.save()
         response_data = {'success': 'Discussion created successfully.'}
         return JsonResponse(response_data)
-    
+
 
 @csrf_exempt
 @login_required(login_url='user:login')
@@ -85,6 +91,7 @@ def create_reply(request, discussion_id):
 
     return redirect('discussion_list')
 
+
 @csrf_exempt
 @login_required(login_url='user:login')
 def create_reply_flutter(request, discussion_id):
@@ -100,7 +107,6 @@ def create_reply_flutter(request, discussion_id):
             response_data = {'success': 'Discussion created successfully.'}
             return JsonResponse(response_data)
 
-   
 
 @csrf_exempt
 def reply_form(request, discussion_id):
@@ -115,12 +121,13 @@ def reply_form(request, discussion_id):
             new_reply.discussion = discussion
             new_reply.save()
             return redirect('reading_forum:discussion_detail', discussion_id=discussion_id)
-    
+
     context = {
         'discussion': discussion,
         'reply_form': reply_form,
     }
     return render(request, 'reply_form.html', context)
+
 
 @csrf_exempt
 def reply_form_by_AJAX(request, discussion_id):
@@ -142,17 +149,19 @@ def reply_form_by_AJAX(request, discussion_id):
 
     return JsonResponse({'error': 'Invalid request.'}, status=400)
 
+
 def discussion_detail_json(request, discussion_id):
     discussion = Discussion.objects.get(id=discussion_id)
     replies = Reply.objects.filter(discussion=discussion)
     model_data = {
         "pk": discussion.pk,
         "title": discussion.title,
-        "created_at": discussion.created_at.strftime("%d %B %Y %H:%M"), # "20 November 2020 20:00
+        # "20 November 2020 20:00
+        "created_at": discussion.created_at.strftime("%d %B %Y %H:%M"),
         "content": discussion.content,
         "user": discussion.user.username,
         "replies": []
-        }
+    }
     for item in replies:
         temp = {
             "pk": item.pk,
@@ -165,13 +174,16 @@ def discussion_detail_json(request, discussion_id):
     json_data = json.dumps(model_data)
     return JsonResponse(json_data, content_type="application/json")
 
+
 def discussion_list_json(request):
     filter_by = request.GET.get('filter_by', 'all')
 
     if filter_by == 'replies':
-        discussions = Discussion.objects.annotate(num_replies=Count('replies')).filter(num_replies__gt=0)
+        discussions = Discussion.objects.annotate(
+            num_replies=Count('replies')).filter(num_replies__gt=0)
     elif filter_by == 'noreplies':
-        discussions = Discussion.objects.annotate(num_replies=Count('replies')).filter(num_replies=0)
+        discussions = Discussion.objects.annotate(
+            num_replies=Count('replies')).filter(num_replies=0)
     else:
         discussions = Discussion.objects.all()
 
@@ -182,7 +194,7 @@ def discussion_list_json(request):
             'content': discussion.content,
             'created_at': discussion.created_at.strftime("%d %B %Y %H:%M"),
             'user': discussion.user.username,
-            'num_replies': discussion.num_replies  
+            'num_replies': discussion.num_replies
         }
         for discussion in discussions
     ]

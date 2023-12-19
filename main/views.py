@@ -254,8 +254,6 @@ def search_result_ajax_flutter(request):
 
     return JsonResponse(context)
 
-
-@csrf_exempt
 def like_book_flutter(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     user = request.user
@@ -361,24 +359,17 @@ def comment_book(request, book_id):
 
 def comment_book_flutter(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
+    comment = get_object_or_404(Comment, pk=book_id)
 
     if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.book = book
-            comment.user = request.user
-            comment.save()
-            return redirect('main:book_details', book_id=book.id)
-    else:
-        form = CommentForm()
-
-    context = {
-        'form': form,
-        'book': book,
-    }
-
-    return JsonResponse(context)
+        form = json.loads(request.body)
+        
+        comment_temp = form.get("comment", comment.comment)
+        if (comment_temp != ""):
+            comment.comment = comment_temp
+            
+        response_data = {'status': 'success', 'message': 'Comment created successfully.'}
+        return JsonResponse(response_data)
 
 
 @login_required(login_url="user:login")
