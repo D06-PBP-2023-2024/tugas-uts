@@ -251,6 +251,20 @@ def search_result_ajax_flutter(request):
 
     return JsonResponse(context)
 
+@csrf_exempt
+def like_book_flutter(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+    user = request.user
+
+    if Like.objects.filter(user=user, book=book).exists():
+        Like.objects.filter(user=user, book=book).delete()
+        liked = False
+    else:
+        Like.objects.create(user=user, book=book)
+        liked = True
+
+    response_data = {'liked': liked, 'likes_count': book.likes.count()}
+    return JsonResponse(response_data)
 
 @login_required(login_url="user:login")
 @csrf_exempt
@@ -311,6 +325,26 @@ def comment_book(request, book_id):
 
     return render(request, 'comment_form.html', context)
 
+def comment_book_flutter(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.book = book
+            comment.user = request.user
+            comment.save()
+            return redirect('main:book_details', book_id=book.id)
+    else:
+        form = CommentForm()
+
+    context = {
+        'form': form,
+        'book': book,
+    }
+
+    return JsonResponse(context)
 
 @login_required(login_url="user:login")
 def add_reading_list(request, book_id):
@@ -322,10 +356,15 @@ def add_reading_list(request, book_id):
         ReadingList.objects.create(user=request.user, book=book)
     return redirect('main:book_details', book_id=book.id)
 
-def json_rl(request):
-    data = ReadingList.objects.all()
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+def add_reading_list_flutter(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+    rl = ReadingList.objects.filter(user=request.user, book=book)
+    
+    if rl.exists():
+        rl.delete()
+        response_data = {'status': 'success', 'message': 'Reading list item removed.'}
+    else:
+        ReadingList.objects.create(user=request.user, book=book)
+        response_data = {'status': 'success', 'message': 'Reading list item added.'}
 
-def json_cm(request):
-    data = Comment.objects.all()
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+    return JsonResponse(response_data)
