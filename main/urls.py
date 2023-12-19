@@ -29,4 +29,6 @@ urlpatterns = [
          views.add_reading_list_flutter, name='add_reading_list_flutter'),
     path('create-tag-flutter/<int:id>',
          views.create_tag_ajax, name="create_tag_flutter"),
+    path('add-reading-list-flutter/<int:book_id>/',
+         views.add_reading_list_json, name="add_reading_list_flutter"),
 ]

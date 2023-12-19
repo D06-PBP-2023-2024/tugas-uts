@@ -36,12 +36,15 @@ def author_details(request: HttpRequest, author_id: int):
 def book_details_json(request: HttpRequest, book_id: int):
     book = Book.objects.get(id=book_id)
     data = book.to_dict()
+    user = request.user
     data["tags"] = [{"id": tag.pk, "subject": tag.subject}
                     for tag in book.tags.all()]
     data["comments"] = [{"id": comment.pk, "user": comment.user.username, "comment": comment.comment}
                         for comment in book.comment_set.all()]
     data["likes"] = [{"id": like.pk, "user": like.user.username}
                      for like in book.like_set.all()]
+    data["liked"] = Like.objects.filter(user=user, book=book).exists()
+    data["added"] = ReadingList.objects.filter(user=user, book=book).exists()
     return JsonResponse(data)
 
 
@@ -366,7 +369,7 @@ def comment_book_flutter(request, book_id):
     if request.method == 'POST':
         form = json.loads(request.body)
 
-        comment_temp = Comment(comment= form['comment'])
+        comment_temp = Comment(comment=form['comment'])
         comment_temp.user = request.user
         comment_temp.book = book
         comment_temp.save()
@@ -384,6 +387,20 @@ def add_reading_list(request, book_id):
     else:
         ReadingList.objects.create(user=request.user, book=book)
     return redirect('main:book_details', book_id=book.id)
+
+
+@csrf_exempt
+def add_reading_list_json(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+    rl = ReadingList.objects.filter(user=request.user, book=book)
+    if rl.exists():
+        rl.delete()
+        response_data = {'added': False}
+    else:
+        ReadingList.objects.create(user=request.user, book=book)
+        response_data = {'added': True}
+
+    return JsonResponse(response_data, status=200)
 
 
 @csrf_exempt
