@@ -56,6 +56,7 @@ def create_discussion(request):
     return render(request, 'discussion_form.html', {'discussion_form': discussion_form})
 
 @csrf_exempt
+@login_required(login_url='user:login')
 def create_discussion_flutter(request):
     if request.method == 'POST':
         discussion_form = DiscussionForm(request.POST)
@@ -83,6 +84,23 @@ def create_reply(request, discussion_id):
             return redirect('discussion_detail', discussion_id=discussion_id)
 
     return redirect('discussion_list')
+
+@csrf_exempt
+@login_required(login_url='user:login')
+def create_reply_flutter(request, discussion_id):
+    discussion = Discussion.objects.get(pk=discussion_id)
+
+    if request.method == 'POST':
+        form = ReplyForm(request.POST)
+        if form.is_valid():
+            reply = form.save(commit=False)
+            reply.discussion = discussion
+            reply.user = request.user  # Atur pengguna yang membuat balasan
+            reply.save()
+            response_data = {'success': 'Discussion created successfully.'}
+            return JsonResponse(response_data)
+
+   
 
 @csrf_exempt
 def reply_form(request, discussion_id):
@@ -145,7 +163,7 @@ def discussion_detail_json(request, discussion_id):
         model_data["replies"].append(temp)
 
     json_data = json.dumps(model_data)
-    return HttpResponse(json_data, content_type="application/json")
+    return JsonResponse(json_data, content_type="application/json")
 
 def discussion_list_json(request):
     filter_by = request.GET.get('filter_by', 'all')
