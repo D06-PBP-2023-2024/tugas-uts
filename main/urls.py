@@ -19,6 +19,8 @@ urlpatterns = [
     path('reading_list/<int:book_id>/',
          views.add_reading_list, name='add_reading_list'),
     path('book/<int:id>/create_tag/', views.create_tag, name='create_tag'),
-    path('create-comment-ajax/<int:book_id>/',
-         views.create_comment_by_ajax, name='create_comment_ajax'),
+    path('create-comment-ajax/<int:book_id>/', views.create_comment_by_ajax, name='create_comment_ajax'),
+    path('like-flutter/', views.like_book_flutter, name='like_book_flutter'),
+    path('comment-flutter/', views.comment_book_flutter, name='comment_book_flutter'),
+    path('readinglist-flutter', views.add_reading_list_flutter, name='add_reading_list_flutter'),
 ]
