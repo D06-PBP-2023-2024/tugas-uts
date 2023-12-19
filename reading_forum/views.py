@@ -98,14 +98,15 @@ def create_reply_flutter(request, discussion_id):
     discussion = Discussion.objects.get(pk=discussion_id)
 
     if request.method == 'POST':
-        form = ReplyForm(request.POST)
-        if form.is_valid():
-            reply = form.save(commit=False)
-            reply.discussion = discussion
-            reply.user = request.user  # Atur pengguna yang membuat balasan
-            reply.save()
-            response_data = {'success': 'Discussion created successfully.'}
-            return JsonResponse(response_data)
+        print(request.body)
+        body=json.loads(request.body)
+        
+        reply = Reply(content=body['content'])
+        reply.discussion = discussion
+        reply.user = request.user  # Atur pengguna yang membuat balasan
+        reply.save()
+        response_data = {'success': 'Discussion created successfully.'}
+        return JsonResponse(response_data)
 
 
 @csrf_exempt
