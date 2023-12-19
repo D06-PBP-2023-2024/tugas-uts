@@ -228,7 +228,8 @@ def search_result_ajax_flutter(request):
         send_book = []
         for book in books:
             send_book.append(book.to_dict())
-
+    else:
+        send_book = []
 
     context = {
         'books': send_book,
