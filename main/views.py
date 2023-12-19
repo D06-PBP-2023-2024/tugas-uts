@@ -254,6 +254,7 @@ def search_result_ajax_flutter(request):
 
     return JsonResponse(context)
 
+@csrf_exempt
 def like_book_flutter(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     user = request.user
@@ -356,7 +357,7 @@ def comment_book(request, book_id):
 
     return render(request, 'comment_form.html', context)
 
-
+@csrf_exempt
 def comment_book_flutter(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     comment = get_object_or_404(Comment, pk=book_id)
@@ -382,7 +383,7 @@ def add_reading_list(request, book_id):
         ReadingList.objects.create(user=request.user, book=book)
     return redirect('main:book_details', book_id=book.id)
 
-
+@csrf_exempt
 def add_reading_list_flutter(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     rl = ReadingList.objects.filter(user=request.user, book=book)
