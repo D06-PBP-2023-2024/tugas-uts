@@ -251,7 +251,6 @@ def search_result_ajax_flutter(request):
 
     return JsonResponse(context)
 
-@csrf_exempt
 def like_book_flutter(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     user = request.user
