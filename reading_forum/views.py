@@ -163,8 +163,8 @@ def discussion_detail_json(request, discussion_id):
         }
         model_data["replies"].append(temp)
 
-    json_data = json.dumps(model_data)
-    return JsonResponse(json_data, content_type="application/json")
+    return JsonResponse(model_data, content_type="application/json", safe=False)
+
 
 def discussion_list_json(request):
     filter_by = request.GET.get('filter_by', 'all')
