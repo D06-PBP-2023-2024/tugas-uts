@@ -335,16 +335,8 @@ def comment_book_flutter(request, book_id):
             comment.book = book
             comment.user = request.user
             comment.save()
-            return redirect('main:book_details', book_id=book.id)
-    else:
-        form = CommentForm()
-
-    context = {
-        'form': form,
-        'book': book,
-    }
-
-    return JsonResponse(context)
+            response_data = {'status': 'success', 'message': 'Comment created successfully.'}
+            return JsonResponse(response_data)
 
 @login_required(login_url="user:login")
 def add_reading_list(request, book_id):

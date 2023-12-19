@@ -65,8 +65,6 @@ def create_discussion_flutter(request):
             new_discussion.save()
             response_data = {'success': 'Discussion created successfully.'}
             return JsonResponse(response_data)
-    
-
 
 @csrf_exempt
 @login_required(login_url='user:login')
