@@ -254,6 +254,7 @@ def search_result_ajax_flutter(request):
 
     return JsonResponse(context)
 
+
 def like_book_flutter(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     user = request.user
@@ -325,6 +326,7 @@ def create_tag_ajax(request, id):
         return JsonResponse({'success': True})
     return HttpResponseBadRequest()
 
+
 @csrf_exempt
 def delete_tag(request, id):
     if request.method == 'DELETE':
@@ -363,12 +365,13 @@ def comment_book_flutter(request, book_id):
 
     if request.method == 'POST':
         form = json.loads(request.body)
-        
+
         comment_temp = form.get("comment", comment.comment)
         if (comment_temp != ""):
             comment.comment = comment_temp
-            
-        response_data = {'status': 'success', 'message': 'Comment created successfully.'}
+
+        response_data = {'status': 'success',
+                         'message': 'Comment created successfully.'}
         return JsonResponse(response_data)
 
 
