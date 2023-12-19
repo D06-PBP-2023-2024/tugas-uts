@@ -285,6 +285,7 @@ def update_profile_flutter(request):
 @csrf_exempt
 def update_profile_flutter2(request):
     if request.method == 'POST':
+        print(request.user)
         data = json.loads(request.body)
         user_profile = Profile.objects.get(user=request.user)
 
