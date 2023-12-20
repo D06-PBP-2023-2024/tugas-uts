@@ -108,7 +108,7 @@ def search_result(request):
     elif books and tags != "" and tag != [] and title != "":
         filtered_book = []
         for tg in tag:
-            book = books.filter(subject__contains=tg)
+            book = books.filter(tags__subject__contains=tg)
             filtered_book += book
         books = filtered_book
 
@@ -198,7 +198,7 @@ def search_result_ajax(request):
     elif books and tags != "" and tag != [] and title != "":
         filtered_book = []
         for tg in tag:
-            book = books.filter(subject__contains=tg)
+            book = books.filter(tags__subject__contains=tg)
             filtered_book += book
         books = filtered_book
 
@@ -239,7 +239,7 @@ def search_result_ajax_flutter(request):
     elif books and tags != "" and tag != [] and title != "":
         filtered_book = []
         for tg in tag:
-            book = books.filter(subject__contains=tg)
+            book = books.filter(tags__subject__contains=tg)
             filtered_book += book
         books = filtered_book
 
